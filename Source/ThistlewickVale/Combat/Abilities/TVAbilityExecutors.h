@@ -74,6 +74,8 @@ protected:
 	void ChannelFinished();
 	FTimerHandle TickTimerHandle;
 	FTimerHandle EndTimerHandle;
+	int32 TicksDone = 0;
+	int32 TicksTotal = 0;
 };
 
 UCLASS() class THISTLEWICKVALE_API UGA_TV_Taunt : public UTVGameplayAbility
@@ -104,6 +106,9 @@ UCLASS() class THISTLEWICKVALE_API UGA_TV_SummonMount : public UTVGameplayAbilit
 	GENERATED_BODY()
 public:
 	UGA_TV_SummonMount();
+	/** Mounted: dismounts at once (toggle). Otherwise the normal 1.5 s cast, broken by damage or moving. */
+	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+		const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 protected:
 	virtual void ExecuteAbility() override;
 	virtual bool NeedsUnitTarget() const override { return false; }

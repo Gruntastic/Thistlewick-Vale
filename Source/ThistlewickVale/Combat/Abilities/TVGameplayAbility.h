@@ -52,8 +52,8 @@ public:
 protected:
 	/** Authority + predicting client. Default implementation ends the ability. */
 	virtual void ExecuteAbility();
-	/** True if the executor needs an enemy/friendly target resolved for this row. */
-	virtual bool NeedsUnitTarget() const;
+	/** False for executors that never use a unit target (ground, channel, mount); the row decides otherwise. */
+	virtual bool NeedsUnitTarget() const { return true; }
 	/** Executors that manage their own lifetime (channel, leap) return true and call FinishAbility later. */
 	virtual bool IsLatent() const { return false; }
 
@@ -94,6 +94,8 @@ protected:
 	bool bCasting = false;
 	bool bChanneling = false;
 	bool bEnding = false;
+	/** True while ActivateAbility runs synchronously (prediction window open on the predicting client). */
+	bool bInActivationScope = false;
 	FTimerHandle CastTimerHandle;
 	FTimerHandle MoveCheckTimerHandle;
 };
