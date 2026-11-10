@@ -1,0 +1,58 @@
+{
+  "Name": "DA_Boss_Rotfang",
+  "BossMobId": "MOB_ROTFANG",
+  "ArenaRadius": 2500.0,
+  "EnrageTime": 0.0,
+  "EnrageAbilityId": "ABL_MOB_BOSS_ENRAGE",
+  "Phases": [
+    {
+      "HealthThreshold": 1.0,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_SUNDERING_BLOWS",
+          "Interval": 4.0,
+          "InitialDelay": 2.0
+        }
+      ],
+      "OnEnterAbilities": []
+    },
+    {
+      "HealthThreshold": 0.7,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_SUNDERING_BLOWS",
+          "Interval": 4.0,
+          "InitialDelay": 3.0
+        }
+      ],
+      "OnEnterAbilities": [
+        "ABL_MOB_WARCHIEF_CALL"
+      ]
+    },
+    {
+      "HealthThreshold": 0.4,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_SUNDERING_BLOWS",
+          "Interval": 3.2,
+          "InitialDelay": 3.0
+        }
+      ],
+      "OnEnterAbilities": [
+        "ABL_MOB_WARCHIEF_CALL"
+      ]
+    }
+  ],
+  "AddSpawns": [
+    {
+      "MobId": "MOB_SCRAPPER_ADD",
+      "Count": 3,
+      "HealthTrigger": 0.7
+    },
+    {
+      "MobId": "MOB_SCRAPPER_ADD",
+      "Count": 3,
+      "HealthTrigger": 0.4
+    }
+  ]
+}

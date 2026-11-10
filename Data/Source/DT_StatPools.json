@@ -1,0 +1,850 @@
+[
+  {
+    "Name": "POOL_PLATE_HEAD",
+    "StatPoolId": "POOL_PLATE_HEAD",
+    "Slot": "Head",
+    "ArmorFamily": "Plate",
+    "Stats": [
+      {
+        "Stat": "Strength",
+        "Weight": 34,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 30,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 4,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 14,
+        "MinPerIlvl": 0.64,
+        "MaxPerIlvl": 0.96
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 9,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 6,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      }
+    ]
+  },
+  {
+    "Name": "POOL_PLATE_CHEST",
+    "StatPoolId": "POOL_PLATE_CHEST",
+    "Slot": "Chest",
+    "ArmorFamily": "Plate",
+    "Stats": [
+      {
+        "Stat": "Strength",
+        "Weight": 34,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 30,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 4,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 14,
+        "MinPerIlvl": 0.8,
+        "MaxPerIlvl": 1.2
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 9,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 6,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      }
+    ]
+  },
+  {
+    "Name": "POOL_PLATE_LEGS",
+    "StatPoolId": "POOL_PLATE_LEGS",
+    "Slot": "Legs",
+    "ArmorFamily": "Plate",
+    "Stats": [
+      {
+        "Stat": "Strength",
+        "Weight": 34,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 30,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 4,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 14,
+        "MinPerIlvl": 0.72,
+        "MaxPerIlvl": 1.08
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 9,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 6,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      }
+    ]
+  },
+  {
+    "Name": "POOL_PLATE_BOOTS",
+    "StatPoolId": "POOL_PLATE_BOOTS",
+    "Slot": "Boots",
+    "ArmorFamily": "Plate",
+    "Stats": [
+      {
+        "Stat": "Strength",
+        "Weight": 34,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 30,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 4,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 14,
+        "MinPerIlvl": 0.48,
+        "MaxPerIlvl": 0.72
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 9,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 6,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      }
+    ]
+  },
+  {
+    "Name": "POOL_LEATHER_HEAD",
+    "StatPoolId": "POOL_LEATHER_HEAD",
+    "Slot": "Head",
+    "ArmorFamily": "Leather",
+    "Stats": [
+      {
+        "Stat": "Agility",
+        "Weight": 38,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 24,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 6,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 7,
+        "MinPerIlvl": 0.64,
+        "MaxPerIlvl": 0.96
+      }
+    ]
+  },
+  {
+    "Name": "POOL_LEATHER_CHEST",
+    "StatPoolId": "POOL_LEATHER_CHEST",
+    "Slot": "Chest",
+    "ArmorFamily": "Leather",
+    "Stats": [
+      {
+        "Stat": "Agility",
+        "Weight": 38,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 24,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 6,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 7,
+        "MinPerIlvl": 0.8,
+        "MaxPerIlvl": 1.2
+      }
+    ]
+  },
+  {
+    "Name": "POOL_LEATHER_LEGS",
+    "StatPoolId": "POOL_LEATHER_LEGS",
+    "Slot": "Legs",
+    "ArmorFamily": "Leather",
+    "Stats": [
+      {
+        "Stat": "Agility",
+        "Weight": 38,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 24,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 6,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 7,
+        "MinPerIlvl": 0.72,
+        "MaxPerIlvl": 1.08
+      }
+    ]
+  },
+  {
+    "Name": "POOL_LEATHER_BOOTS",
+    "StatPoolId": "POOL_LEATHER_BOOTS",
+    "Slot": "Boots",
+    "ArmorFamily": "Leather",
+    "Stats": [
+      {
+        "Stat": "Agility",
+        "Weight": 38,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 24,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 6,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 2,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 3,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 7,
+        "MinPerIlvl": 0.48,
+        "MaxPerIlvl": 0.72
+      }
+    ]
+  },
+  {
+    "Name": "POOL_ROBE_HEAD",
+    "StatPoolId": "POOL_ROBE_HEAD",
+    "Slot": "Head",
+    "ArmorFamily": "Robe",
+    "Stats": [
+      {
+        "Stat": "Intellect",
+        "Weight": 32,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 28,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 16,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 2,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 1,
+        "MinPerIlvl": 0.4,
+        "MaxPerIlvl": 0.6
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.2,
+        "MaxPerIlvl": 0.3
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 3,
+        "MinPerIlvl": 0.64,
+        "MaxPerIlvl": 0.96
+      }
+    ]
+  },
+  {
+    "Name": "POOL_ROBE_CHEST",
+    "StatPoolId": "POOL_ROBE_CHEST",
+    "Slot": "Chest",
+    "ArmorFamily": "Robe",
+    "Stats": [
+      {
+        "Stat": "Intellect",
+        "Weight": 32,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 28,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 16,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 2,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 1,
+        "MinPerIlvl": 0.5,
+        "MaxPerIlvl": 0.75
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.25,
+        "MaxPerIlvl": 0.375
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 3,
+        "MinPerIlvl": 0.8,
+        "MaxPerIlvl": 1.2
+      }
+    ]
+  },
+  {
+    "Name": "POOL_ROBE_LEGS",
+    "StatPoolId": "POOL_ROBE_LEGS",
+    "Slot": "Legs",
+    "ArmorFamily": "Robe",
+    "Stats": [
+      {
+        "Stat": "Intellect",
+        "Weight": 32,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 28,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 16,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 2,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 1,
+        "MinPerIlvl": 0.45,
+        "MaxPerIlvl": 0.675
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.225,
+        "MaxPerIlvl": 0.338
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 3,
+        "MinPerIlvl": 0.72,
+        "MaxPerIlvl": 1.08
+      }
+    ]
+  },
+  {
+    "Name": "POOL_ROBE_BOOTS",
+    "StatPoolId": "POOL_ROBE_BOOTS",
+    "Slot": "Boots",
+    "ArmorFamily": "Robe",
+    "Stats": [
+      {
+        "Stat": "Intellect",
+        "Weight": 32,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 28,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 16,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 2,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 1,
+        "MinPerIlvl": 0.3,
+        "MaxPerIlvl": 0.45
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.15,
+        "MaxPerIlvl": 0.225
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 3,
+        "MinPerIlvl": 0.48,
+        "MaxPerIlvl": 0.72
+      }
+    ]
+  },
+  {
+    "Name": "POOL_WEAPON_WARRIOR",
+    "StatPoolId": "POOL_WEAPON_WARRIOR",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "Stats": [
+      {
+        "Stat": "Strength",
+        "Weight": 40,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 25,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Agility",
+        "Weight": 4,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 14,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 10,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 7,
+        "MinPerIlvl": 1.04,
+        "MaxPerIlvl": 1.56
+      }
+    ]
+  },
+  {
+    "Name": "POOL_WEAPON_MAGE",
+    "StatPoolId": "POOL_WEAPON_MAGE",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "Stats": [
+      {
+        "Stat": "Intellect",
+        "Weight": 45,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Spirit",
+        "Weight": 20,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 12,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 15,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 14,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 2,
+        "MinPerIlvl": 1.04,
+        "MaxPerIlvl": 1.56
+      }
+    ]
+  },
+  {
+    "Name": "POOL_WEAPON_CLERIC",
+    "StatPoolId": "POOL_WEAPON_CLERIC",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "Stats": [
+      {
+        "Stat": "Spirit",
+        "Weight": 40,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Intellect",
+        "Weight": 28,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 14,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 8,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 12,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 4,
+        "MinPerIlvl": 1.04,
+        "MaxPerIlvl": 1.56
+      }
+    ]
+  },
+  {
+    "Name": "POOL_WEAPON_RANGER",
+    "StatPoolId": "POOL_WEAPON_RANGER",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "Stats": [
+      {
+        "Stat": "Agility",
+        "Weight": 45,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Stamina",
+        "Weight": 18,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Strength",
+        "Weight": 4,
+        "MinPerIlvl": 0.65,
+        "MaxPerIlvl": 0.975
+      },
+      {
+        "Stat": "Crit",
+        "Weight": 18,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Haste",
+        "Weight": 14,
+        "MinPerIlvl": 0.325,
+        "MaxPerIlvl": 0.488
+      },
+      {
+        "Stat": "Armor",
+        "Weight": 3,
+        "MinPerIlvl": 1.04,
+        "MaxPerIlvl": 1.56
+      }
+    ]
+  }
+]

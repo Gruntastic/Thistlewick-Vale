@@ -1,0 +1,18 @@
+{
+  "Name": "DA_SetBonus_T3",
+  "SetTier": "T3_HollowCrown",
+  "Bonuses": [
+    {
+      "PiecesRequired": 2,
+      "DisplayText": "+5% critical strike chance.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_CritChance",
+      "Magnitude": 0.05
+    },
+    {
+      "PiecesRequired": 4,
+      "DisplayText": "Your ultimate ability deals and heals 20% more, and glows with crown-fire.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_UltimatePower",
+      "Magnitude": 0.2
+    }
+  ]
+}

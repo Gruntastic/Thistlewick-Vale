@@ -1,0 +1,415 @@
+[
+  {
+    "Name": "DLG_ELDER_WREN_GREETING",
+    "DialogueId": "DLG_ELDER_WREN_GREETING",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "Come in out of the dark, friend. Lanternrest is small, but there is always room by the fire."
+    ],
+    "Options": [
+      {
+        "Text": "Farewell.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_BRAM_TALLOW_GREETING",
+    "DialogueId": "DLG_BRAM_TALLOW_GREETING",
+    "NpcId": "NPC_BRAM_TALLOW",
+    "Lines": [
+      "Welcome, welcome! Mind the barrels. Looking to buy something sturdy, or sell something shiny?"
+    ],
+    "Options": [
+      {
+        "Text": "Show me your wares.",
+        "ActionType": "OpenVendor",
+        "Param": "NPC_BRAM_TALLOW"
+      },
+      {
+        "Text": "Farewell.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_YSOLDE_THORN_GREETING",
+    "DialogueId": "DLG_YSOLDE_THORN_GREETING",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "Lines": [
+      "Softly, now. The forest has long ears. Sit by the fire and tell me what you have seen."
+    ],
+    "Options": [
+      {
+        "Text": "Farewell.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_BROTHER_CAEL_GREETING",
+    "DialogueId": "DLG_BROTHER_CAEL_GREETING",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "Lines": [
+      "Peace be with you. The hills are restless tonight, but the tower is warm and the tea is hot."
+    ],
+    "Options": [
+      {
+        "Text": "Farewell.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_DAWNSTAG_GREETING",
+    "DialogueId": "DLG_DAWNSTAG_GREETING",
+    "NpcId": "NPC_DAWNSTAG",
+    "Lines": [
+      "The antlers glow softly, and a warm voice like wind through lanterns speaks in your mind: 'Little light, you have come at last.'"
+    ],
+    "Options": [
+      {
+        "Text": "Farewell.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q01_OFFER",
+    "DialogueId": "DLG_Q01_OFFER",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "Look at the lanterns, traveler. They used to burn all night, and now they sputter before the stars are even out.",
+      "The glowmoss in Glimmer Meadow is what feeds them, and it is fading. Would you gather some fresh clumps for me?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q01_FADING_GLOW"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q02_OFFER",
+    "DialogueId": "DLG_Q02_OFFER",
+    "NpcId": "NPC_BRAM_TALLOW",
+    "Lines": [
+      "Those Scrappers have been into my stores again, the cheeky little scoundrels.",
+      "Eight of them gone from the meadow would let me sleep at night. What do you say?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q02_MOSSBACK_MISCHIEF"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q03_OFFER",
+    "DialogueId": "DLG_Q03_OFFER",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "The Scrappers keep a chest at their camp, and in it lies a shard of the Ember Crown.",
+      "It is guarded by four of them. Will you fetch it for Lanternrest?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q03_FIRST_SHARD"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q04_OFFER",
+    "DialogueId": "DLG_Q04_OFFER",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "Lines": [
+      "The forest lanterns went dark long ago, and the wisps have grown bold.",
+      "Relight four of them for me, and the Hollow will remember the road home."
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q04_LANTERNS_HOLLOW"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q05_OFFER",
+    "DialogueId": "DLG_Q05_OFFER",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "Lines": [
+      "Elder Hask wears a crown shard like a trophy. He is a clever old shaman, so mind his bog bolts.",
+      "Bring him down and bring the shard back. Will you do it?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q05_SECOND_SHARD"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q06_OFFER",
+    "DialogueId": "DLG_Q06_OFFER",
+    "NpcId": "NPC_DAWNSTAG",
+    "Lines": [
+      "I have watched you from the cliffs, little light. You carry the glow with you.",
+      "Bring me the two shards and three glowmoss clumps. The wisps will come, so stand guard until the lamp-stones are lit."
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q06_DAWNSTAG_TRUST"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q07_OFFER",
+    "DialogueId": "DLG_Q07_OFFER",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "Lines": [
+      "Do you see the lights on the hillside? Those are hollowed knights, marching their patrol without rest.",
+      "Six of them laid to peace would make the hills safer. Will you help me?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q07_HOLLOW_PATROL"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q08_OFFER",
+    "DialogueId": "DLG_Q08_OFFER",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "Lines": [
+      "Gristlehorn the Moss Titan holds the third shard, and he is as dangerous as he looks.",
+      "Bring friends if you can. Will you take the hills back from him?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q08_TITAN_OF_HILLS"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q09_OFFER",
+    "DialogueId": "DLG_Q09_OFFER",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "All three shards are gathered. The time has come to go beneath the hills.",
+      "Take a party into Maldrek's Barrow and end the Hollow King's reign. Are you ready?"
+    ],
+    "Options": [
+      {
+        "Text": "I will help.",
+        "ActionType": "AcceptQuest",
+        "Param": "Q09_RELIGHT_EMBER_CROWN"
+      },
+      {
+        "Text": "Not just yet.",
+        "ActionType": "Close",
+        "Param": ""
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q01_TURNIN",
+    "DialogueId": "DLG_Q01_TURNIN",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "You have the glowmoss! Let me see it.",
+      "Wonderful. Wonderful! Here, take this with my thanks."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q01_FADING_GLOW"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q02_TURNIN",
+    "DialogueId": "DLG_Q02_TURNIN",
+    "NpcId": "NPC_BRAM_TALLOW",
+    "Lines": [
+      "Is it done? The Scrappers are gone from the meadow?",
+      "Splendid! A little something for your trouble."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q02_MOSSBACK_MISCHIEF"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q03_TURNIN",
+    "DialogueId": "DLG_Q03_TURNIN",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "Is that... it is! The first shard!",
+      "Warm as a hearth. Thank you, from the bottom of Lanternrest's heart."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q03_FIRST_SHARD"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q04_TURNIN",
+    "DialogueId": "DLG_Q04_TURNIN",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "Lines": [
+      "I saw the lanterns glow from the ridge. Every one of them.",
+      "You are a friend of the forest. Take this."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q04_LANTERNS_HOLLOW"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q05_TURNIN",
+    "DialogueId": "DLG_Q05_TURNIN",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "Lines": [
+      "Hask is down? And the shard?",
+      "Two pieces of the crown now. Well done, truly."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q05_SECOND_SHARD"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q06_TURNIN",
+    "DialogueId": "DLG_Q06_TURNIN",
+    "NpcId": "NPC_DAWNSTAG",
+    "Lines": [
+      "The lamp-stones glow again, and the wisps are gone.",
+      "You stood your ground, little light. I will carry you now."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q06_DAWNSTAG_TRUST"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q07_TURNIN",
+    "DialogueId": "DLG_Q07_TURNIN",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "Lines": [
+      "They are at rest now, aren't they? I felt it from the tower.",
+      "Thank you for your mercy. Please take this."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q07_HOLLOW_PATROL"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q08_TURNIN",
+    "DialogueId": "DLG_Q08_TURNIN",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "Lines": [
+      "The third shard! And you are in one piece!",
+      "The Vale owes you a great debt. Take this gift."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q08_TITAN_OF_HILLS"
+      }
+    ]
+  },
+  {
+    "Name": "DLG_Q09_TURNIN",
+    "DialogueId": "DLG_Q09_TURNIN",
+    "NpcId": "NPC_ELDER_WREN",
+    "Lines": [
+      "The crown glows in your hands. Is it over?",
+      "Come, let us go up to the square and see what you have done."
+    ],
+    "Options": [
+      {
+        "Text": "Here you are.",
+        "ActionType": "CompleteQuest",
+        "Param": "Q09_RELIGHT_EMBER_CROWN"
+      }
+    ]
+  }
+]

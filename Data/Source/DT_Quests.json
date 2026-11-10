@@ -1,0 +1,374 @@
+[
+  {
+    "Name": "Q01_FADING_GLOW",
+    "QuestId": "Q01_FADING_GLOW",
+    "Title": "A Fading Glow",
+    "Description": "Welcome to Lanternrest, traveler. Do you see how our lanterns flicker like candles in a draught? They once burned golden from dusk to dawn, fed by the glowmoss that grows on the stones of Glimmer Meadow. Now the moss is fading, and so is our village's courage. Gather six clumps of glowmoss from the meadow and bring them to me. Let us see whether this old village still has a little light left in it.",
+    "CompletionText": "Oh, look how it shimmers in your hands! Even a small light is a comfort on a long night. You have done more for us already than you know. Please take these boots. The road ahead is rough, and the Vale ought to see you well shod.",
+    "GiverNpcId": "NPC_ELDER_WREN",
+    "TurnInNpcId": "NPC_ELDER_WREN",
+    "RequiredLevel": 1,
+    "PrereqQuestIds": [],
+    "Objectives": [
+      {
+        "Type": "Collect",
+        "TargetId": "NODE_GLOWMOSS",
+        "Count": 6,
+        "AreaTag": "Area.GlimmerMeadow",
+        "TrackerText": "Glowmoss clumps gathered"
+      }
+    ],
+    "RewardXP": 150,
+    "RewardGold": 0,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T1_PLATE_BOOTS",
+        "Rarity": "Uncommon"
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_BOOTS",
+        "Rarity": "Uncommon"
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_BOOTS",
+        "Rarity": "Uncommon"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q02_MOSSBACK_MISCHIEF",
+    "QuestId": "Q02_MOSSBACK_MISCHIEF",
+    "Title": "Mossback Mischief",
+    "Description": "Ah, you are the one the elder has been talking about! I am Bram Tallow, keeper of the stores, and I have a problem with fewer crates than I ought to have. The Mossback Scrappers have been creeping out of the reeds at night, nicking lamp oil and turnips alike. They are small and cheeky, but there are a great many of them. Thin their numbers in Glimmer Meadow, would you? Eight should teach them manners.",
+    "CompletionText": "Eight! That is a tidy bit of work. The crates will stay full a little longer, and I will sleep better for it. Here is something for your trouble. Spend it wisely, or spend it on pie, I will not judge.",
+    "GiverNpcId": "NPC_BRAM_TALLOW",
+    "TurnInNpcId": "NPC_BRAM_TALLOW",
+    "RequiredLevel": 1,
+    "PrereqQuestIds": [
+      "Q01_FADING_GLOW"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_MOSSBACK_SCRAPPER",
+        "Count": 8,
+        "AreaTag": "Area.GlimmerMeadow",
+        "TrackerText": "Mossback Scrappers defeated"
+      }
+    ],
+    "RewardXP": 220,
+    "RewardGold": 25,
+    "RewardItems": [],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q03_FIRST_SHARD",
+    "QuestId": "Q03_FIRST_SHARD",
+    "Title": "The First Shard",
+    "Description": "Long ago the Ember Crown was broken into shards, and the Scrappers have been hoarding every glimmer they can find. One shard lies in a chest at their camp on the meadow's far edge, watched by four of their best. I would not ask if the Vale were not in need. Fight your way in, open the chest, and bring the shard home to the light.",
+    "CompletionText": "It is warm. Can you feel that? Warm as a hearth at midwinter. The first shard of the Ember Crown, back in Lanternrest after all these years. You have brought hope to a very tired village. Take this, and may it serve you well.",
+    "GiverNpcId": "NPC_ELDER_WREN",
+    "TurnInNpcId": "NPC_ELDER_WREN",
+    "RequiredLevel": 3,
+    "PrereqQuestIds": [
+      "Q02_MOSSBACK_MISCHIEF"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_MOSSBACK_SCRAPPER",
+        "Count": 4,
+        "AreaTag": "Area.ScrapperCamp",
+        "TrackerText": "Camp guards defeated"
+      },
+      {
+        "Type": "Interact",
+        "TargetId": "OBJ_CHEST_SHARD_1",
+        "Count": 1,
+        "AreaTag": "Area.ScrapperCamp",
+        "TrackerText": "Open the camp chest"
+      }
+    ],
+    "RewardXP": 330,
+    "RewardGold": 30,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T1_PLATE_CHEST",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_CHEST",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_CHEST",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q04_LANTERNS_HOLLOW",
+    "QuestId": "Q04_LANTERNS_HOLLOW",
+    "Title": "Lanterns in the Hollow",
+    "Description": "Quiet now, the forest listens. I am Ysolde, and I have walked these trees since I was a girl. Once the Hollow Forest was lit by hanging lanterns, and travelers could follow them home. Now they are dark, and wisps and shamans lurk beneath. Relight four of the lost lanterns. Each is guarded, so watch your step and keep your blade near.",
+    "CompletionText": "Look at them glow, one after another, like a path of tiny stars. The forest feels braver already. You have a ranger's patience, friend, and that is the best compliment I know. Here, a weapon fit for the road ahead.",
+    "GiverNpcId": "NPC_YSOLDE_THORN",
+    "TurnInNpcId": "NPC_YSOLDE_THORN",
+    "RequiredLevel": 4,
+    "PrereqQuestIds": [
+      "Q03_FIRST_SHARD"
+    ],
+    "Objectives": [
+      {
+        "Type": "Interact",
+        "TargetId": "NODE_LOST_LANTERN",
+        "Count": 4,
+        "AreaTag": "Area.HollowForest",
+        "TrackerText": "Lost lanterns relit"
+      }
+    ],
+    "RewardXP": 450,
+    "RewardGold": 40,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T1_WEAPON_WARRIOR",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_MAGE",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_CLERIC",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_RANGER",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q05_SECOND_SHARD",
+    "QuestId": "Q05_SECOND_SHARD",
+    "Title": "The Second Shard",
+    "Description": "The lanterns you lit have shown us something. Deep in the forest the shamans have gathered around Elder Hask, and he wears a glittering crown shard on a cord about his neck. He is cunning, he heals his friends, and he casts bog magic that will test your reflexes. Defeat Shaman Elder Hask and take back what he has stolen.",
+    "CompletionText": "Hask has fallen, and the shard is ours. Two pieces of the Ember Crown, and the forest seems to breathe again. The old guards of the Vale would have been proud of you. Here is a piece of their gear, polished and ready.",
+    "GiverNpcId": "NPC_YSOLDE_THORN",
+    "TurnInNpcId": "NPC_YSOLDE_THORN",
+    "RequiredLevel": 5,
+    "PrereqQuestIds": [
+      "Q04_LANTERNS_HOLLOW"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_SHAMAN_ELDER_HASK",
+        "Count": 1,
+        "AreaTag": "Area.HollowForest",
+        "TrackerText": "Shaman Elder Hask defeated"
+      }
+    ],
+    "RewardXP": 580,
+    "RewardGold": 60,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T2_PLATE_LEGS",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_LEGS",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_LEGS",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q06_DAWNSTAG_TRUST",
+    "QuestId": "Q06_DAWNSTAG_TRUST",
+    "Title": "Trust of the Dawnstag",
+    "Description": "Child of the road, I know the light you carry. I am the last of the Dawnstag, who once tended the Ember Crown. Bring the two shards you have found and three clumps of glowmoss to my shrine, and I will rest them in the old lamp-stones. But beware. The wisps smell the light and will come in waves to snuff it out. Stand with me, and I will carry you through the Vale.",
+    "CompletionText": "The lamp-stones are lit, and the wisps have scattered like smoke. You stood where others would have fled. From this day, I will run beside you, and when you call, I will come. Climb on whenever you wish, and may your road be swift.",
+    "GiverNpcId": "NPC_DAWNSTAG",
+    "TurnInNpcId": "NPC_DAWNSTAG",
+    "RequiredLevel": 6,
+    "PrereqQuestIds": [
+      "Q03_FIRST_SHARD",
+      "Q05_SECOND_SHARD"
+    ],
+    "Objectives": [
+      {
+        "Type": "Collect",
+        "TargetId": "NODE_GLOWMOSS",
+        "Count": 3,
+        "AreaTag": "Area.GlimmerMeadow",
+        "TrackerText": "Glowmoss clumps gathered"
+      },
+      {
+        "Type": "Interact",
+        "TargetId": "OBJ_STAG_SHRINE_LAMPSTONE",
+        "Count": 1,
+        "AreaTag": "Area.StagShrine",
+        "TrackerText": "Place the shards on the lamp-stones"
+      },
+      {
+        "Type": "Defend",
+        "TargetId": "EVT_SHRINE_DEFEND",
+        "Count": 3,
+        "AreaTag": "Area.StagShrine",
+        "TrackerText": "Waves of wisps repelled"
+      }
+    ],
+    "RewardXP": 700,
+    "RewardGold": 0,
+    "RewardItems": [],
+    "RewardMount": "MNT_DAWNSTAG",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q07_HOLLOW_PATROL",
+    "QuestId": "Q07_HOLLOW_PATROL",
+    "Title": "The Hollow Patrol",
+    "Description": "Peace be with you, friend. I am Brother Cael, and from this watchtower I see the Ruined Hills at their saddest. The knights who once guarded this land now walk without rest, hollowed by Maldrek's curse. They march the same patrol every night, and every night there are a few more. Lay six of the Hollowed Footmen to rest. Strike from the side, for they carry shields.",
+    "CompletionText": "They are at peace now, and I said a prayer for each. Thank you for treating them with respect, even in battle. The hills are quieter tonight. Please accept this armor of the Vale Guard, who once stood where those knights fell.",
+    "GiverNpcId": "NPC_BROTHER_CAEL",
+    "TurnInNpcId": "NPC_BROTHER_CAEL",
+    "RequiredLevel": 7,
+    "PrereqQuestIds": [
+      "Q06_DAWNSTAG_TRUST"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_HOLLOWED_FOOTMAN",
+        "Count": 6,
+        "AreaTag": "Area.RuinedHills",
+        "TrackerText": "Hollowed Footmen defeated"
+      }
+    ],
+    "RewardXP": 850,
+    "RewardGold": 80,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T2_PLATE_HEAD",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_HEAD",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_HEAD",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q08_TITAN_OF_HILLS",
+    "QuestId": "Q08_TITAN_OF_HILLS",
+    "Title": "The Titan of the Hills",
+    "Description": "There is one more shard, and it sits upon the brow of Gristlehorn, the Moss Titan. He rides a boulder beast the size of a barn and hurls stones when you least expect it. He is a great danger, so bring a friend or two if you can, and watch for his slam. Interrupt the boulder throw if you are able. When he falls, take the third shard.",
+    "CompletionText": "Three shards, and each one hard-won. When I first saw the titan's shadow I feared the hills were lost. You have proved me wrong in the best possible way. Here is a gift from the old Vale Guard armory, and the gratitude of all of us.",
+    "GiverNpcId": "NPC_BROTHER_CAEL",
+    "TurnInNpcId": "NPC_BROTHER_CAEL",
+    "RequiredLevel": 8,
+    "PrereqQuestIds": [
+      "Q07_HOLLOW_PATROL"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_GRISTLEHORN",
+        "Count": 1,
+        "AreaTag": "Area.RuinedHills",
+        "TrackerText": "Gristlehorn defeated"
+      },
+      {
+        "Type": "Interact",
+        "TargetId": "OBJ_SHARD_3",
+        "Count": 1,
+        "AreaTag": "Area.RuinedHills",
+        "TrackerText": "Take the third shard"
+      }
+    ],
+    "RewardXP": 1000,
+    "RewardGold": 100,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T2_PLATE_CHEST",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_CHEST",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_CHEST",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": ""
+  },
+  {
+    "Name": "Q09_RELIGHT_EMBER_CROWN",
+    "QuestId": "Q09_RELIGHT_EMBER_CROWN",
+    "Title": "Relight the Ember Crown",
+    "Description": "You have gathered all three shards, and the time has come. Beneath the hills lies Maldrek's Barrow, where the Hollow King still sits upon his stolen throne. Bring a party, for no one should face him alone. Defeat him, and the shards will knit themselves into the reforged crown. Use it, and let the glowmoss bloom again over Lanternrest.",
+    "CompletionText": "Look! Look at the lanterns! The moss is blooming gold again, from the square to the farthest cottage. You have done what no one thought could be done. Lanternrest will remember your name in every song and every glowing lamp. Thank you, from all of us.",
+    "GiverNpcId": "NPC_ELDER_WREN",
+    "TurnInNpcId": "NPC_ELDER_WREN",
+    "RequiredLevel": 10,
+    "PrereqQuestIds": [
+      "Q08_TITAN_OF_HILLS"
+    ],
+    "Objectives": [
+      {
+        "Type": "Kill",
+        "TargetId": "MOB_MALDREK",
+        "Count": 1,
+        "AreaTag": "Area.MaldreksBarrow",
+        "TrackerText": "Maldrek, the Hollow King defeated"
+      },
+      {
+        "Type": "Interact",
+        "TargetId": "OBJ_EMBER_CROWN",
+        "Count": 1,
+        "AreaTag": "Area.MaldreksBarrow",
+        "TrackerText": "Use the reforged Ember Crown"
+      }
+    ],
+    "RewardXP": 0,
+    "RewardGold": 200,
+    "RewardItems": [
+      {
+        "ItemDefId": "ITM_T3_PLATE_HEAD",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_HEAD",
+        "Rarity": "Roll"
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_HEAD",
+        "Rarity": "Roll"
+      }
+    ],
+    "RewardMount": "",
+    "SetsWorldFlag": "WF_EMBER_CROWN_RELIT"
+  }
+]

@@ -1,0 +1,548 @@
+[
+  {
+    "Name": "LT_MOB_T1",
+    "LootTableId": "LT_MOB_T1",
+    "GoldMin": 1,
+    "GoldMax": 4,
+    "DropChance": 0.18,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T1_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Common",
+        "Weight": 70
+      },
+      {
+        "Rarity": "Uncommon",
+        "Weight": 27
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 3
+      }
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 7,
+    "GuaranteedDrops": 0
+  },
+  {
+    "Name": "LT_MOB_T2",
+    "LootTableId": "LT_MOB_T2",
+    "GoldMin": 3,
+    "GoldMax": 9,
+    "DropChance": 0.22,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T1_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_ROBE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T1_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Common",
+        "Weight": 55
+      },
+      {
+        "Rarity": "Uncommon",
+        "Weight": 38
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 7
+      }
+    ],
+    "ItemLevelMin": 6,
+    "ItemLevelMax": 8,
+    "GuaranteedDrops": 0
+  },
+  {
+    "Name": "LT_ELITE_GRISTLEHORN",
+    "LootTableId": "LT_ELITE_GRISTLEHORN",
+    "GoldMin": 40,
+    "GoldMax": 70,
+    "DropChance": 0.35,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T2_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Uncommon",
+        "Weight": 40
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 60
+      }
+    ],
+    "ItemLevelMin": 10,
+    "ItemLevelMax": 12,
+    "GuaranteedDrops": 1
+  },
+  {
+    "Name": "LT_DUNGEON_TRASH",
+    "LootTableId": "LT_DUNGEON_TRASH",
+    "GoldMin": 6,
+    "GoldMax": 14,
+    "DropChance": 0.25,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T2_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_ROBE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T2_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Uncommon",
+        "Weight": 55
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 42
+      },
+      {
+        "Rarity": "Epic",
+        "Weight": 3
+      }
+    ],
+    "ItemLevelMin": 10,
+    "ItemLevelMax": 12,
+    "GuaranteedDrops": 0
+  },
+  {
+    "Name": "LT_BOSS_ROTFANG",
+    "LootTableId": "LT_BOSS_ROTFANG",
+    "GoldMin": 30,
+    "GoldMax": 50,
+    "DropChance": 0.35,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T3_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_BOOTS",
+        "Weight": 10
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Uncommon",
+        "Weight": 30
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 55
+      },
+      {
+        "Rarity": "Epic",
+        "Weight": 15
+      }
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 15,
+    "GuaranteedDrops": 1
+  },
+  {
+    "Name": "LT_BOSS_MORROW",
+    "LootTableId": "LT_BOSS_MORROW",
+    "GoldMin": 40,
+    "GoldMax": 60,
+    "DropChance": 0.35,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T3_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Uncommon",
+        "Weight": 20
+      },
+      {
+        "Rarity": "Rare",
+        "Weight": 60
+      },
+      {
+        "Rarity": "Epic",
+        "Weight": 20
+      }
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "GuaranteedDrops": 1
+  },
+  {
+    "Name": "LT_BOSS_MALDREK",
+    "LootTableId": "LT_BOSS_MALDREK",
+    "GoldMin": 80,
+    "GoldMax": 120,
+    "DropChance": 0.5,
+    "Entries": [
+      {
+        "ItemDefId": "ITM_T3_PLATE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_PLATE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_PLATE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_PLATE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_LEATHER_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_HEAD",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_CHEST",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_LEGS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_ROBE_BOOTS",
+        "Weight": 10
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_WARRIOR",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_MAGE",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_CLERIC",
+        "Weight": 6
+      },
+      {
+        "ItemDefId": "ITM_T3_WEAPON_RANGER",
+        "Weight": 6
+      }
+    ],
+    "RarityWeights": [
+      {
+        "Rarity": "Rare",
+        "Weight": 55
+      },
+      {
+        "Rarity": "Epic",
+        "Weight": 45
+      }
+    ],
+    "ItemLevelMin": 15,
+    "ItemLevelMax": 16,
+    "GuaranteedDrops": 2
+  }
+]

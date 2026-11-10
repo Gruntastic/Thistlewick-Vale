@@ -1,0 +1,59 @@
+{
+  "Name": "DA_Boss_Maldrek",
+  "BossMobId": "MOB_MALDREK",
+  "ArenaRadius": 3000.0,
+  "EnrageTime": 420.0,
+  "EnrageAbilityId": "ABL_MOB_BOSS_ENRAGE",
+  "Phases": [
+    {
+      "HealthThreshold": 1.0,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_HOLLOW_CLEAVE",
+          "Interval": 8.0,
+          "InitialDelay": 6.0
+        },
+        {
+          "AbilityId": "ABL_MOB_GRAVE_BRAND",
+          "Interval": 20.0,
+          "InitialDelay": 10.0
+        },
+        {
+          "AbilityId": "ABL_MOB_SHARD_PILLARS",
+          "Interval": 45.0,
+          "InitialDelay": 30.0
+        }
+      ],
+      "OnEnterAbilities": []
+    },
+    {
+      "HealthThreshold": 0.4,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_HOLLOW_CLEAVE_FURY",
+          "Interval": 5.5,
+          "InitialDelay": 3.0
+        },
+        {
+          "AbilityId": "ABL_MOB_GRAVE_BRAND",
+          "Interval": 20.0,
+          "InitialDelay": 8.0
+        },
+        {
+          "AbilityId": "ABL_MOB_SHARD_PILLARS",
+          "Interval": 45.0,
+          "InitialDelay": 20.0
+        },
+        {
+          "AbilityId": "ABL_MOB_CROWNFIRE",
+          "Interval": 12.0,
+          "InitialDelay": 6.0
+        }
+      ],
+      "OnEnterAbilities": [
+        "ABL_MOB_CROWNFIRE"
+      ]
+    }
+  ],
+  "AddSpawns": []
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "LVL_1",
+    "Level": 1,
+    "XPToNext": 120
+  },
+  {
+    "Name": "LVL_2",
+    "Level": 2,
+    "XPToNext": 200
+  },
+  {
+    "Name": "LVL_3",
+    "Level": 3,
+    "XPToNext": 300
+  },
+  {
+    "Name": "LVL_4",
+    "Level": 4,
+    "XPToNext": 420
+  },
+  {
+    "Name": "LVL_5",
+    "Level": 5,
+    "XPToNext": 560
+  },
+  {
+    "Name": "LVL_6",
+    "Level": 6,
+    "XPToNext": 720
+  },
+  {
+    "Name": "LVL_7",
+    "Level": 7,
+    "XPToNext": 900
+  },
+  {
+    "Name": "LVL_8",
+    "Level": 8,
+    "XPToNext": 1100
+  },
+  {
+    "Name": "LVL_9",
+    "Level": 9,
+    "XPToNext": 1320
+  },
+  {
+    "Name": "LVL_10",
+    "Level": 10,
+    "XPToNext": 0
+  }
+]
