@@ -119,9 +119,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TV|Camera") TObjectPtr<USpringArmComponent> CameraBoom;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "TV|Camera") TObjectPtr<UCameraComponent> FollowCamera;
 
+	/** Mesh/anim/scale from the class row (called on pawn setup and when ATVPlayerState::ClassId replicates). */
+	void ApplyClassVisuals();
+
 protected:
 	void InitAbilityActorInfoFromPlayerState();
-	void ApplyClassVisuals();
 };
 
 /** AI mob. Spawned by ATVSpawnPoint (or summoned); configured from DT_Mobs. */
@@ -166,7 +168,14 @@ public:
 
 	/** Server spawn helper used by spawn points and summons. Returns null if the row is missing. */
 	static ATVMobCharacter* SpawnMob(UWorld* World, TSubclassOf<ATVMobCharacter> MobClass, FName InMobId, int32 Level,
-		const FTransform& Transform, float HealthScale, float DamageScale);
+		const FTransform& Transform, float HealthScale, float DamageScale, ULevel* OverrideLevel = nullptr);
+
+	/** Server. Re-applies party/dungeon scaling to a living mob (health fraction kept). */
+	void ApplyScaling(float HealthScale, float DamageScale);
+	/** Server. Open-world PartyScaling mobs (BALANCE section 1): scale to the puller's party size when the fight starts. */
+	void ApplyPullScaling(AActor* Puller);
+	/** Server. Back to the scaling it had before the pull (evade). */
+	void ResetPullScaling();
 
 	/** Seconds the corpse stays before it is destroyed. */
 	UPROPERTY(EditDefaultsOnly, Category = "TV|Mob") float CorpseLifetime = 12.f;
@@ -192,4 +201,7 @@ protected:
 	TArray<FVector> PatrolPoints;
 	TWeakObjectPtr<AActor> Summoner;
 	TWeakObjectPtr<ATVSpawnPoint> OwningSpawnPoint;
+	/** Scaling set by a spawn point / dungeon (pull scaling is skipped). */
+	bool bScaledExternally = false;
+	bool bPullScaled = false;
 };

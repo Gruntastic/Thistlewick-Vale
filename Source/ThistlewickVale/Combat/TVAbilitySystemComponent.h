@@ -117,6 +117,9 @@ protected:
 	UFUNCTION() void OnRep_GrantedAbilities();
 	UFUNCTION() void OnRep_CastBar();
 	UFUNCTION() void OnRep_Combo();
+	UFUNCTION() void OnRep_InCombat();
+	void SetInCombat(bool bNewInCombat);
+	void RefreshAvatarMovement() const;
 
 	void RegenTick();
 	void OnStatChanged(const struct FOnAttributeChangeData& Data);
@@ -130,7 +133,7 @@ protected:
 	UPROPERTY(ReplicatedUsing = OnRep_Combo) int32 DevotionStacks = 0;
 	UPROPERTY(Replicated) ETVResource ResourceType = ETVResource::None;
 	UPROPERTY(Replicated) FName ClassId;
-	UPROPERTY(Replicated) bool bInCombat = false;
+	UPROPERTY(ReplicatedUsing = OnRep_InCombat) bool bInCombat = false;
 
 	UPROPERTY(Transient) TWeakObjectPtr<UTVGameplayAbility> ActiveCastAbility;
 

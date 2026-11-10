@@ -91,6 +91,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "TV") float TickPeriod = 0.f;
 	/** Counts as a hostile debuff (dispel/cleanup on evade). */
 	UPROPERTY(EditDefaultsOnly, Category = "TV") bool bIsDebuff = false;
+	/** Applied to the ability's caster instead of its target (Quick Shot's Focus gain). */
+	UPROPERTY(EditDefaultsOnly, Category = "TV") bool bAppliesToSource = false;
 
 protected:
 	void AddSetByCallerModifier(const FGameplayAttribute& Attribute, EGameplayModOp::Type Op, FName DataName);

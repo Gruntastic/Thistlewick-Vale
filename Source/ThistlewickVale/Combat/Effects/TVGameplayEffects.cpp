@@ -197,6 +197,7 @@ UGE_TV_FocusGain::UGE_TV_FocusGain(const FObjectInitializer& OI) : Super(OI)
 	MakeDurationEffect(3.f);
 	MakePeriodic(1.f);
 	MagnitudeMode = ETVMagnitudeMode::TotalOverDuration;
+	bAppliesToSource = true;
 	AddSetByCallerModifier(UTVAttributeSet_Vitals::GetResourceAttribute(), EGameplayModOp::AddBase, TVSetByCaller::Magnitude);
 }
 

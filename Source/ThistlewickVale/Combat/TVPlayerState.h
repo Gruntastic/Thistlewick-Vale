@@ -72,6 +72,7 @@ public:
 
 protected:
 	UFUNCTION() void OnRep_Level(int32 OldLevel);
+	UFUNCTION() void OnRep_ClassId();
 	UFUNCTION() void OnRep_XP();
 	UFUNCTION() void OnRep_Gold();
 	UFUNCTION() void OnRep_ActionBar();
@@ -92,7 +93,7 @@ protected:
 
 public:
 	// Public on request of Systems and Net (they read these directly). Write through InitCharacter/AddXP/AddGold on the server.
-	UPROPERTY(Replicated, BlueprintReadOnly, Category = "TV|Player") FName ClassId;
+	UPROPERTY(ReplicatedUsing = OnRep_ClassId, BlueprintReadOnly, Category = "TV|Player") FName ClassId;
 	UPROPERTY(Replicated, BlueprintReadOnly, Category = "TV|Player") FString CharacterName;
 	UPROPERTY(ReplicatedUsing = OnRep_Level, BlueprintReadOnly, Category = "TV|Player") int32 Level = 1;
 	UPROPERTY(ReplicatedUsing = OnRep_XP, BlueprintReadOnly, Category = "TV|Player") int32 XP = 0;
