@@ -1,0 +1,1786 @@
+[
+  {
+    "Name": "MAT_MASTER_LOWPOLY",
+    "AssetType": "Material",
+    "Asset": "/Game/MMO/Core/Materials/M_Master_LowPoly.M_Master_LowPoly",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_MASTER_MASKED",
+    "AssetType": "Material",
+    "Asset": "/Game/MMO/Core/Materials/M_Master_LowPoly_Masked.M_Master_LowPoly_Masked",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_MASTER_FX",
+    "AssetType": "Material",
+    "Asset": "/Game/MMO/Core/Materials/M_Master_Unlit_FX.M_Master_Unlit_FX",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "TEX_PALETTE_ATLAS",
+    "AssetType": "Texture",
+    "Asset": "/Game/MMO/Core/Textures/T_Palette_Atlas.T_Palette_Atlas",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_WARRIOR_BODY",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/Warrior/SK_Class_Warrior.SK_Class_Warrior",
+    "Status": "Placeholder",
+    "TriCount": 204,
+    "Budget": 5000
+  },
+  {
+    "Name": "MAT_CLASS_WARRIOR",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Characters/Warrior/MI_Class_Warrior.MI_Class_Warrior",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_PORTRAIT_WARRIOR",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Portrait_Warrior.T_Portrait_Warrior",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_MAGE_BODY",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/Mage/SK_Class_Mage.SK_Class_Mage",
+    "Status": "Placeholder",
+    "TriCount": 226,
+    "Budget": 5000
+  },
+  {
+    "Name": "MAT_CLASS_MAGE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Characters/Mage/MI_Class_Mage.MI_Class_Mage",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_PORTRAIT_MAGE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Portrait_Mage.T_Portrait_Mage",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_CLERIC_BODY",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/Cleric/SK_Class_Cleric.SK_Class_Cleric",
+    "Status": "Placeholder",
+    "TriCount": 208,
+    "Budget": 5000
+  },
+  {
+    "Name": "MAT_CLASS_CLERIC",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Characters/Cleric/MI_Class_Cleric.MI_Class_Cleric",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_PORTRAIT_CLERIC",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Portrait_Cleric.T_Portrait_Cleric",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_RANGER_BODY",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/Ranger/SK_Class_Ranger.SK_Class_Ranger",
+    "Status": "Placeholder",
+    "TriCount": 204,
+    "Budget": 5000
+  },
+  {
+    "Name": "MAT_CLASS_RANGER",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Characters/Ranger/MI_Class_Ranger.MI_Class_Ranger",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_PORTRAIT_RANGER",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Portrait_Ranger.T_Portrait_Ranger",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_HUMANOID_SKELETON",
+    "AssetType": "Skeleton",
+    "Asset": "/Game/MMO/Characters/Shared/SKEL_MMO_Humanoid.SKEL_MMO_Humanoid",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_ABP_HUMANOID",
+    "AssetType": "AnimBlueprint",
+    "Asset": "/Game/MMO/Characters/Shared/ABP_MMO_Humanoid.ABP_MMO_Humanoid",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_ABP_QUADRUPED",
+    "AssetType": "AnimBlueprint",
+    "Asset": "/Game/MMO/Characters/Shared/ABP_MMO_Quadruped.ABP_MMO_Quadruped",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_IDLE",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Idle.A_Hum_Idle",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_WALK",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Walk.A_Hum_Walk",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_RUN",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Run.A_Hum_Run",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_JUMP_START",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Jump_Start.A_Hum_Jump_Start",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_JUMP_LOOP",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Jump_Loop.A_Hum_Jump_Loop",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_JUMP_LAND",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Jump_Land.A_Hum_Jump_Land",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_ATTACK_MELEE_01",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Attack_Melee_01.A_Hum_Attack_Melee_01",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_ATTACK_MELEE_02",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Attack_Melee_02.A_Hum_Attack_Melee_02",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_CAST_START",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Cast_Start.A_Hum_Cast_Start",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_CAST_LOOP",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Cast_Loop.A_Hum_Cast_Loop",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_CAST_RELEASE",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Cast_Release.A_Hum_Cast_Release",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_HIT_REACT",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Hit_React.A_Hum_Hit_React",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_DEATH",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Death.A_Hum_Death",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_HUM_MOUNTED_IDLE",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Characters/Shared/Anims/A_Hum_Mounted_Idle.A_Hum_Mounted_Idle",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_IDLE",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Idle.A_Quad_Idle",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_WALK",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Walk.A_Quad_Walk",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_TROT",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Trot.A_Quad_Trot",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_GALLOP",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Gallop.A_Quad_Gallop",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_ATTACK",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Attack.A_Quad_Attack",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_HIT_REACT",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Hit_React.A_Quad_Hit_React",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ANIM_QUAD_DEATH",
+    "AssetType": "AnimSequence",
+    "Asset": "/Game/MMO/Mobs/Shared/Anims/A_Quad_Death.A_Quad_Death",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MOB_MOSSBACK_SCRAPPER",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Mossback_Scrapper/SK_Mob_Mossback_Scrapper.SK_Mob_Mossback_Scrapper",
+    "Status": "Placeholder",
+    "TriCount": 252,
+    "Budget": 3000
+  },
+  {
+    "Name": "MOB_MOSSBACK_SHAMAN",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Mossback_Shaman/SK_Mob_Mossback_Shaman.SK_Mob_Mossback_Shaman",
+    "Status": "Placeholder",
+    "TriCount": 262,
+    "Budget": 3000
+  },
+  {
+    "Name": "MOB_THORNBACK_BOAR",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Thornback_Boar/SK_Mob_Thornback_Boar.SK_Mob_Thornback_Boar",
+    "Status": "Placeholder",
+    "TriCount": 246,
+    "Budget": 3000
+  },
+  {
+    "Name": "MOB_BARROW_WISP",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Barrow_Wisp/SK_Mob_Barrow_Wisp.SK_Mob_Barrow_Wisp",
+    "Status": "Placeholder",
+    "TriCount": 152,
+    "Budget": 1000
+  },
+  {
+    "Name": "MOB_HOLLOWED_FOOTMAN",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Hollowed_Footman/SK_Mob_Hollowed_Footman.SK_Mob_Hollowed_Footman",
+    "Status": "Placeholder",
+    "TriCount": 252,
+    "Budget": 3000
+  },
+  {
+    "Name": "MOB_ROTFANG",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Rotfang/SK_Mob_Rotfang.SK_Mob_Rotfang",
+    "Status": "Placeholder",
+    "TriCount": 288,
+    "Budget": 8000
+  },
+  {
+    "Name": "MOB_SISTER_MORROW",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Sister_Morrow/SK_Mob_Sister_Morrow.SK_Mob_Sister_Morrow",
+    "Status": "Placeholder",
+    "TriCount": 238,
+    "Budget": 8000
+  },
+  {
+    "Name": "MOB_GRISTLEHORN",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Gristlehorn/SK_Mob_Gristlehorn.SK_Mob_Gristlehorn",
+    "Status": "Placeholder",
+    "TriCount": 448,
+    "Budget": 8000
+  },
+  {
+    "Name": "MOB_MALDREK",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mobs/Maldrek_HollowKing/SK_Mob_Maldrek_HollowKing.SK_Mob_Maldrek_HollowKing",
+    "Status": "Placeholder",
+    "TriCount": 288,
+    "Budget": 8000
+  },
+  {
+    "Name": "MNT_DAWNSTAG",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Mounts/Dawnstag/SK_Mount_Dawnstag.SK_Mount_Dawnstag",
+    "Status": "Placeholder",
+    "TriCount": 304,
+    "Budget": 4000
+  },
+  {
+    "Name": "MNT_DAWNSTAG_ABP",
+    "AssetType": "AnimBlueprint",
+    "Asset": "/Game/MMO/Mounts/Dawnstag/ABP_Mount_Dawnstag.ABP_Mount_Dawnstag",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "CHR_NPC_ELDERWREN",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/NPC/SK_NPC_ElderWren.SK_NPC_ElderWren",
+    "Status": "Placeholder",
+    "TriCount": 220,
+    "Budget": 5000
+  },
+  {
+    "Name": "CHR_NPC_BRAMTALLOW",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/NPC/SK_NPC_BramTallow.SK_NPC_BramTallow",
+    "Status": "Placeholder",
+    "TriCount": 180,
+    "Budget": 5000
+  },
+  {
+    "Name": "CHR_NPC_YSOLDETHORN",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/NPC/SK_NPC_YsoldeThorn.SK_NPC_YsoldeThorn",
+    "Status": "Placeholder",
+    "TriCount": 180,
+    "Budget": 5000
+  },
+  {
+    "Name": "CHR_NPC_BROTHERCAEL",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Characters/NPC/SK_NPC_BrotherCael.SK_NPC_BrotherCael",
+    "Status": "Placeholder",
+    "TriCount": 228,
+    "Budget": 5000
+  },
+  {
+    "Name": "GEAR_PLATE_HEAD",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Plate/SK_Gear_Plate_Head.SK_Gear_Plate_Head",
+    "Status": "Placeholder",
+    "TriCount": 36,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_PLATE_CHEST",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Plate/SK_Gear_Plate_Chest.SK_Gear_Plate_Chest",
+    "Status": "Placeholder",
+    "TriCount": 72,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_PLATE_LEGS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Plate/SK_Gear_Plate_Legs.SK_Gear_Plate_Legs",
+    "Status": "Placeholder",
+    "TriCount": 60,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_PLATE_BOOTS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Plate/SK_Gear_Plate_Boots.SK_Gear_Plate_Boots",
+    "Status": "Placeholder",
+    "TriCount": 48,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_LEATHER_HEAD",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Leather/SK_Gear_Leather_Head.SK_Gear_Leather_Head",
+    "Status": "Placeholder",
+    "TriCount": 32,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_LEATHER_CHEST",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Leather/SK_Gear_Leather_Chest.SK_Gear_Leather_Chest",
+    "Status": "Placeholder",
+    "TriCount": 36,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_LEATHER_LEGS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Leather/SK_Gear_Leather_Legs.SK_Gear_Leather_Legs",
+    "Status": "Placeholder",
+    "TriCount": 36,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_LEATHER_BOOTS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Leather/SK_Gear_Leather_Boots.SK_Gear_Leather_Boots",
+    "Status": "Placeholder",
+    "TriCount": 24,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_ROBE_HEAD",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Robe/SK_Gear_Robe_Head.SK_Gear_Robe_Head",
+    "Status": "Placeholder",
+    "TriCount": 30,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_ROBE_CHEST",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Robe/SK_Gear_Robe_Chest.SK_Gear_Robe_Chest",
+    "Status": "Placeholder",
+    "TriCount": 64,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_ROBE_LEGS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Robe/SK_Gear_Robe_Legs.SK_Gear_Robe_Legs",
+    "Status": "Placeholder",
+    "TriCount": 28,
+    "Budget": 1200
+  },
+  {
+    "Name": "GEAR_ROBE_BOOTS",
+    "AssetType": "SkeletalMesh",
+    "Asset": "/Game/MMO/Gear/Robe/SK_Gear_Robe_Boots.SK_Gear_Robe_Boots",
+    "Status": "Placeholder",
+    "TriCount": 24,
+    "Budget": 1200
+  },
+  {
+    "Name": "MAT_GEAR_T1_PLATE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Plate.MI_Gear_T1_Wanderers_Plate",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T1_LEATHER",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Leather.MI_Gear_T1_Wanderers_Leather",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T1_ROBE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Robe.MI_Gear_T1_Wanderers_Robe",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T2_PLATE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T2_ValeGuard_Plate.MI_Gear_T2_ValeGuard_Plate",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T2_LEATHER",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T2_ValeGuard_Leather.MI_Gear_T2_ValeGuard_Leather",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T2_ROBE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T2_ValeGuard_Robe.MI_Gear_T2_ValeGuard_Robe",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T3_PLATE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Plate.MI_Gear_T3_HollowCrown_Plate",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T3_LEATHER",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Leather.MI_Gear_T3_HollowCrown_Leather",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAT_GEAR_T3_ROBE",
+    "AssetType": "MaterialInstance",
+    "Asset": "/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Robe.MI_Gear_T3_HollowCrown_Robe",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "WPN_SWORDSHIELD",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Gear/Weapons/SM_Wpn_SwordShield.SM_Wpn_SwordShield",
+    "Status": "Placeholder",
+    "TriCount": 118,
+    "Budget": 800
+  },
+  {
+    "Name": "WPN_STAFF",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Gear/Weapons/SM_Wpn_Staff.SM_Wpn_Staff",
+    "Status": "Placeholder",
+    "TriCount": 88,
+    "Budget": 800
+  },
+  {
+    "Name": "WPN_MACETOME",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Gear/Weapons/SM_Wpn_MaceTome.SM_Wpn_MaceTome",
+    "Status": "Placeholder",
+    "TriCount": 88,
+    "Budget": 800
+  },
+  {
+    "Name": "WPN_BOWDAGGERS",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Gear/Weapons/SM_Wpn_BowDaggers.SM_Wpn_BowDaggers",
+    "Status": "Placeholder",
+    "TriCount": 132,
+    "Budget": 800
+  },
+  {
+    "Name": "UI_ICON_T1_HEAD",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T1_Head.T_Icon_T1_Head",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T1_CHEST",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T1_Chest.T_Icon_T1_Chest",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T1_LEGS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T1_Legs.T_Icon_T1_Legs",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T1_BOOTS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T1_Boots.T_Icon_T1_Boots",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T1_WEAPON",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T1_Weapon.T_Icon_T1_Weapon",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T2_HEAD",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T2_Head.T_Icon_T2_Head",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T2_CHEST",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T2_Chest.T_Icon_T2_Chest",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T2_LEGS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T2_Legs.T_Icon_T2_Legs",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T2_BOOTS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T2_Boots.T_Icon_T2_Boots",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T2_WEAPON",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T2_Weapon.T_Icon_T2_Weapon",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T3_HEAD",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T3_Head.T_Icon_T3_Head",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T3_CHEST",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T3_Chest.T_Icon_T3_Chest",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T3_LEGS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T3_Legs.T_Icon_T3_Legs",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T3_BOOTS",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T3_Boots.T_Icon_T3_Boots",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_T3_WEAPON",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_T3_Weapon.T_Icon_T3_Weapon",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "ENV_TREE_OAK_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_TreeOakA.SM_Env_TreeOakA",
+    "Status": "Cleaned",
+    "TriCount": 248,
+    "Budget": 800
+  },
+  {
+    "Name": "ENV_TREE_OAK_B",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_TreeOakB.SM_Env_TreeOakB",
+    "Status": "Cleaned",
+    "TriCount": 228,
+    "Budget": 800
+  },
+  {
+    "Name": "ENV_TREE_PINE_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_TreePineA.SM_Env_TreePineA",
+    "Status": "Cleaned",
+    "TriCount": 90,
+    "Budget": 800
+  },
+  {
+    "Name": "ENV_TREE_HOLLOW_DEAD",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_TreeHollowDead.SM_Env_TreeHollowDead",
+    "Status": "Cleaned",
+    "TriCount": 240,
+    "Budget": 800
+  },
+  {
+    "Name": "ENV_BUSH_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_BushA.SM_Env_BushA",
+    "Status": "Cleaned",
+    "TriCount": 232,
+    "Budget": 500
+  },
+  {
+    "Name": "ENV_GLOWMOSS_CLUMP",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_GlowmossClump.SM_Env_GlowmossClump",
+    "Status": "Cleaned",
+    "TriCount": 184,
+    "Budget": 500
+  },
+  {
+    "Name": "ENV_ROCK_LARGE_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RockLargeA.SM_Env_RockLargeA",
+    "Status": "Cleaned",
+    "TriCount": 100,
+    "Budget": 400
+  },
+  {
+    "Name": "ENV_ROCK_LARGE_B",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RockLargeB.SM_Env_RockLargeB",
+    "Status": "Cleaned",
+    "TriCount": 100,
+    "Budget": 400
+  },
+  {
+    "Name": "ENV_ROCK_SMALL_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RockSmallA.SM_Env_RockSmallA",
+    "Status": "Cleaned",
+    "TriCount": 20,
+    "Budget": 400
+  },
+  {
+    "Name": "ENV_COTTAGE_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_CottageA.SM_Env_CottageA",
+    "Status": "Cleaned",
+    "TriCount": 280,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_COTTAGE_B",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_CottageB.SM_Env_CottageB",
+    "Status": "Cleaned",
+    "TriCount": 280,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_INN_LANTERNREST",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_InnLanternrest.SM_Env_InnLanternrest",
+    "Status": "Cleaned",
+    "TriCount": 420,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_WATCHTOWER",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_Watchtower.SM_Env_Watchtower",
+    "Status": "Cleaned",
+    "TriCount": 266,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_FENCE_STRAIGHT",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_FenceStraight.SM_Env_FenceStraight",
+    "Status": "Cleaned",
+    "TriCount": 72,
+    "Budget": 500
+  },
+  {
+    "Name": "ENV_FENCE_CORNER",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_FenceCorner.SM_Env_FenceCorner",
+    "Status": "Cleaned",
+    "TriCount": 144,
+    "Budget": 500
+  },
+  {
+    "Name": "ENV_RUIN_WALL_A",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RuinWallA.SM_Env_RuinWallA",
+    "Status": "Cleaned",
+    "TriCount": 236,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_RUIN_ARCH",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RuinArch.SM_Env_RuinArch",
+    "Status": "Cleaned",
+    "TriCount": 224,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_RUIN_PILLAR",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_RuinPillar.SM_Env_RuinPillar",
+    "Status": "Cleaned",
+    "TriCount": 76,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_STAG_SHRINE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_StagShrine.SM_Env_StagShrine",
+    "Status": "Cleaned",
+    "TriCount": 488,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_BARROW_ENTRANCE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_BarrowEntrance.SM_Env_BarrowEntrance",
+    "Status": "Cleaned",
+    "TriCount": 312,
+    "Budget": 2000
+  },
+  {
+    "Name": "ENV_DGN_WALL",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnWall.SM_Dgn_DgnWall",
+    "Status": "Cleaned",
+    "TriCount": 72,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_DGN_WALL_DOOR",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnWallDoor.SM_Dgn_DgnWallDoor",
+    "Status": "Cleaned",
+    "TriCount": 108,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_DGN_FLOOR",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnFloor.SM_Dgn_DgnFloor",
+    "Status": "Cleaned",
+    "TriCount": 204,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_DGN_PILLAR",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnPillar.SM_Dgn_DgnPillar",
+    "Status": "Cleaned",
+    "TriCount": 76,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_DGN_STAIRS",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnStairs.SM_Dgn_DgnStairs",
+    "Status": "Cleaned",
+    "TriCount": 120,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_DGN_THRONE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Dgn_DgnThrone.SM_Dgn_DgnThrone",
+    "Status": "Cleaned",
+    "TriCount": 194,
+    "Budget": 600
+  },
+  {
+    "Name": "ENV_TORCH_WALL",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Environment/SM_Env_TorchWall.SM_Env_TorchWall",
+    "Status": "Cleaned",
+    "TriCount": 74,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_LANTERN",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_Lantern.SM_Prop_Lantern",
+    "Status": "Cleaned",
+    "TriCount": 144,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_CRATE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_Crate.SM_Prop_Crate",
+    "Status": "Cleaned",
+    "TriCount": 96,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_BARREL",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_Barrel.SM_Prop_Barrel",
+    "Status": "Cleaned",
+    "TriCount": 128,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_SIGNPOST",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_Signpost.SM_Prop_Signpost",
+    "Status": "Cleaned",
+    "TriCount": 86,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_CAMPFIRE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_Campfire.SM_Prop_Campfire",
+    "Status": "Cleaned",
+    "TriCount": 288,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_CHEST_QUEST",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_ChestQuest.SM_Prop_ChestQuest",
+    "Status": "Cleaned",
+    "TriCount": 76,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_BIND_STONE",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_BindStone.SM_Prop_BindStone",
+    "Status": "Cleaned",
+    "TriCount": 98,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_SHARD_PILLAR",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_ShardPillar.SM_Prop_ShardPillar",
+    "Status": "Cleaned",
+    "TriCount": 94,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_EMBER_CROWN",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_EmberCrown.SM_Prop_EmberCrown",
+    "Status": "Cleaned",
+    "TriCount": 184,
+    "Budget": 500
+  },
+  {
+    "Name": "PRP_CROWN_SHARD",
+    "AssetType": "StaticMesh",
+    "Asset": "/Game/MMO/Props/SM_Prop_CrownShard.SM_Prop_CrownShard",
+    "Status": "Cleaned",
+    "TriCount": 28,
+    "Budget": 500
+  },
+  {
+    "Name": "VFX_CAST_FIRE",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_CastFire.NS_CastFire",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_IMPACT_FIRE",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_ImpactFire.NS_ImpactFire",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_CAST_HOLY",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_CastHoly.NS_CastHoly",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_IMPACT_HOLY",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_ImpactHoly.NS_ImpactHoly",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_HEAL_AOE",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_HealAoe.NS_HealAoe",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_FROST_ROOT",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_FrostRoot.NS_FrostRoot",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_SHIELD_ABSORB",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_ShieldAbsorb.NS_ShieldAbsorb",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_TAUNT_SHOUT",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_TauntShout.NS_TauntShout",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_ARROW_TRAIL",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_ArrowTrail.NS_ArrowTrail",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_TRAP",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_Trap.NS_Trap",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_STARFALL",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_Starfall.NS_Starfall",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_MOUNT_SUMMON",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_MountSummon.NS_MountSummon",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_LEVEL_UP",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_LevelUp.NS_LevelUp",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_LOOT_GLOW",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_LootGlow.NS_LootGlow",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_CROWNFIRE_POOL",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_CrownfirePool.NS_CrownfirePool",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_GRAVE_BRAND",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_GraveBrand.NS_GraveBrand",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "VFX_GLOWMOSS_AMBIENT",
+    "AssetType": "Niagara",
+    "Asset": "/Game/MMO/VFX/NS_GlowmossAmbient.NS_GlowmossAmbient",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MUS_HUB_LANTERNREST",
+    "AssetType": "Music",
+    "Asset": "/Game/MMO/Audio/Music/MUS_HubLanternrest.MUS_HubLanternrest",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MUS_ZONE_VALE",
+    "AssetType": "Music",
+    "Asset": "/Game/MMO/Audio/Music/MUS_ZoneVale.MUS_ZoneVale",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MUS_DUNGEON_BARROW",
+    "AssetType": "Music",
+    "Asset": "/Game/MMO/Audio/Music/MUS_DungeonBarrow.MUS_DungeonBarrow",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MUS_BOSS_MALDREK",
+    "AssetType": "Music",
+    "Asset": "/Game/MMO/Audio/Music/MUS_BossMaldrek.MUS_BossMaldrek",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_WAR_CLEAVE_STRIKE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_WAR_CleaveStrike.SFX_Ability_WAR_CleaveStrike",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_WAR_CLEAVE_STRIKE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_WAR_CleaveStrike.T_Icon_Ability_WAR_CleaveStrike",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_WAR_SHIELD_SLAM",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_WAR_ShieldSlam.SFX_Ability_WAR_ShieldSlam",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_WAR_SHIELD_SLAM",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_WAR_ShieldSlam.T_Icon_Ability_WAR_ShieldSlam",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_WAR_TAUNTING_ROAR",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_WAR_TauntingRoar.SFX_Ability_WAR_TauntingRoar",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_WAR_TAUNTING_ROAR",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_WAR_TauntingRoar.T_Icon_Ability_WAR_TauntingRoar",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_WAR_IRON_WALL",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_WAR_IronWall.SFX_Ability_WAR_IronWall",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_WAR_IRON_WALL",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_WAR_IronWall.T_Icon_Ability_WAR_IronWall",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_WAR_BULWARK",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_WAR_Bulwark.SFX_Ability_WAR_Bulwark",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_WAR_BULWARK",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_WAR_Bulwark.T_Icon_Ability_WAR_Bulwark",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_MAG_EMBER_BOLT",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_MAG_EmberBolt.SFX_Ability_MAG_EmberBolt",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_MAG_EMBER_BOLT",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_MAG_EmberBolt.T_Icon_Ability_MAG_EmberBolt",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_MAG_CROWN_FLARE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_MAG_CrownFlare.SFX_Ability_MAG_CrownFlare",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_MAG_CROWN_FLARE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_MAG_CrownFlare.T_Icon_Ability_MAG_CrownFlare",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_MAG_FROST_SNARE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_MAG_FrostSnare.SFX_Ability_MAG_FrostSnare",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_MAG_FROST_SNARE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_MAG_FrostSnare.T_Icon_Ability_MAG_FrostSnare",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_MAG_GLIMMER_WARD",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_MAG_GlimmerWard.SFX_Ability_MAG_GlimmerWard",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_MAG_GLIMMER_WARD",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_MAG_GlimmerWard.T_Icon_Ability_MAG_GlimmerWard",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_MAG_STARFALL",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_MAG_Starfall.SFX_Ability_MAG_Starfall",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_MAG_STARFALL",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_MAG_Starfall.T_Icon_Ability_MAG_Starfall",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_CLR_RADIANT_SMITE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_CLR_RadiantSmite.SFX_Ability_CLR_RadiantSmite",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_CLR_RADIANT_SMITE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_CLR_RadiantSmite.T_Icon_Ability_CLR_RadiantSmite",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_CLR_SANCTUARY_PULSE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_CLR_SanctuaryPulse.SFX_Ability_CLR_SanctuaryPulse",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_CLR_SANCTUARY_PULSE",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_CLR_SanctuaryPulse.T_Icon_Ability_CLR_SanctuaryPulse",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_CLR_PURIFY",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_CLR_Purify.SFX_Ability_CLR_Purify",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_CLR_PURIFY",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_CLR_Purify.T_Icon_Ability_CLR_Purify",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_CLR_MENDING_LIGHT",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_CLR_MendingLight.SFX_Ability_CLR_MendingLight",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_CLR_MENDING_LIGHT",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_CLR_MendingLight.T_Icon_Ability_CLR_MendingLight",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_CLR_DAWNS_VIGIL",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_CLR_DawnsVigil.SFX_Ability_CLR_DawnsVigil",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_CLR_DAWNS_VIGIL",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_CLR_DawnsVigil.T_Icon_Ability_CLR_DawnsVigil",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_RNG_QUICK_SHOT",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_RNG_QuickShot.SFX_Ability_RNG_QuickShot",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_RNG_QUICK_SHOT",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_RNG_QuickShot.T_Icon_Ability_RNG_QuickShot",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_RNG_TWIN_FANG",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_RNG_TwinFang.SFX_Ability_RNG_TwinFang",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_RNG_TWIN_FANG",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_RNG_TwinFang.T_Icon_Ability_RNG_TwinFang",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_RNG_SNARE_TRAP",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_RNG_SnareTrap.SFX_Ability_RNG_SnareTrap",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_RNG_SNARE_TRAP",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_RNG_SnareTrap.T_Icon_Ability_RNG_SnareTrap",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_RNG_FADE_STEP",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_RNG_FadeStep.SFX_Ability_RNG_FadeStep",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_RNG_FADE_STEP",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_RNG_FadeStep.T_Icon_Ability_RNG_FadeStep",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_ABL_RNG_STAG_VOLLEY",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_Ability_RNG_StagVolley.SFX_Ability_RNG_StagVolley",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ICON_ABL_RNG_STAG_VOLLEY",
+    "AssetType": "Icon",
+    "Asset": "/Game/MMO/UI/Icons/T_Icon_Ability_RNG_StagVolley.T_Icon_Ability_RNG_StagVolley",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_FOOTSTEP_GRASS",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_FootstepGrass.SFX_FootstepGrass",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_FOOTSTEP_STONE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_FootstepStone.SFX_FootstepStone",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_MOUNT_SUMMON",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_MountSummon.SFX_MountSummon",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_MOUNT_GALLOP",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_MountGallop.SFX_MountGallop",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_UI_CLICK",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_UiClick.SFX_UiClick",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_UI_OPEN",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_UiOpen.SFX_UiOpen",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_UI_CLOSE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_UiClose.SFX_UiClose",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_LOOT_PICKUP",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_LootPickup.SFX_LootPickup",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_LOOT_EPIC",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_LootEpic.SFX_LootEpic",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_LEVEL_UP",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_LevelUp.SFX_LevelUp",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_QUEST_ACCEPT",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_QuestAccept.SFX_QuestAccept",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_QUEST_COMPLETE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_QuestComplete.SFX_QuestComplete",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_HIT_MELEE",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_HitMelee.SFX_HitMelee",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_MOB_DEATH",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_MobDeath.SFX_MobDeath",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "AUD_BOSS_ROAR",
+    "AssetType": "Sound",
+    "Asset": "/Game/MMO/Audio/SFX/SFX_BossRoar.SFX_BossRoar",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_ACTION_BAR",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_ActionBar.WBP_ActionBar",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_UNIT_FRAME",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_UnitFrame.WBP_UnitFrame",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_PARTY_FRAME",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_PartyFrame.WBP_PartyFrame",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_CAST_BAR",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_CastBar.WBP_CastBar",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_BAGS",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_Bags.WBP_Bags",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_CHARACTER_SHEET",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_CharacterSheet.WBP_CharacterSheet",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_QUEST_LOG",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_QuestLog.WBP_QuestLog",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_QUEST_TRACKER",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_QuestTracker.WBP_QuestTracker",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_MINIMAP_FRAME",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_MinimapFrame.WBP_MinimapFrame",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_TOOLTIP",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_Tooltip.WBP_Tooltip",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_NAMEPLATE",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_Nameplate.WBP_Nameplate",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "UI_DIALOGUE",
+    "AssetType": "Widget",
+    "Asset": "/Game/MMO/UI/Widgets/WBP_Dialogue.WBP_Dialogue",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAP_ENTRY",
+    "AssetType": "Map",
+    "Asset": "/Game/MMO/Maps/L_Entry.L_Entry",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAP_THISTLEWICK",
+    "AssetType": "Map",
+    "Asset": "/Game/MMO/Maps/L_Thistlewick.L_Thistlewick",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  },
+  {
+    "Name": "MAP_BARROW",
+    "AssetType": "Map",
+    "Asset": "/Game/MMO/Maps/L_Barrow.L_Barrow",
+    "Status": "Planned",
+    "TriCount": 0,
+    "Budget": 0
+  }
+]

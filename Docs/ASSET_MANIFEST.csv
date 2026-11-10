@@ -3,16 +3,16 @@ MAT_MASTER_LOWPOLY,Material,/Game/MMO/Core/Materials/M_Master_LowPoly,planned,Ar
 MAT_MASTER_MASKED,Material,/Game/MMO/Core/Materials/M_Master_LowPoly_Masked,planned,ArtDirector,,,UE Python
 MAT_MASTER_FX,Material,/Game/MMO/Core/Materials/M_Master_Unlit_FX,planned,ArtDirector,,,UE Python
 TEX_PALETTE_ATLAS,Texture,/Game/MMO/Core/Textures/T_Palette_Atlas,planned,ArtDirector,,,Python (PIL)
-CHR_WARRIOR_BODY,SkeletalMesh,/Game/MMO/Characters/Warrior/SK_Class_Warrior,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
+CHR_WARRIOR_BODY,SkeletalMesh,/Game/MMO/Characters/Warrior/SK_Class_Warrior,placeholder,CharacterArtist,5000,204,ForgeGUI 3D + Blender
 MAT_CLASS_WARRIOR,MaterialInstance,/Game/MMO/Characters/Warrior/MI_Class_Warrior,planned,ArtDirector,,,UE Python
 UI_PORTRAIT_WARRIOR,Icon,/Game/MMO/UI/Icons/T_Portrait_Warrior,planned,ArtDirector,,,ForgeGUI image
-CHR_MAGE_BODY,SkeletalMesh,/Game/MMO/Characters/Mage/SK_Class_Mage,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
+CHR_MAGE_BODY,SkeletalMesh,/Game/MMO/Characters/Mage/SK_Class_Mage,placeholder,CharacterArtist,5000,226,ForgeGUI 3D + Blender
 MAT_CLASS_MAGE,MaterialInstance,/Game/MMO/Characters/Mage/MI_Class_Mage,planned,ArtDirector,,,UE Python
 UI_PORTRAIT_MAGE,Icon,/Game/MMO/UI/Icons/T_Portrait_Mage,planned,ArtDirector,,,ForgeGUI image
-CHR_CLERIC_BODY,SkeletalMesh,/Game/MMO/Characters/Cleric/SK_Class_Cleric,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
+CHR_CLERIC_BODY,SkeletalMesh,/Game/MMO/Characters/Cleric/SK_Class_Cleric,placeholder,CharacterArtist,5000,208,ForgeGUI 3D + Blender
 MAT_CLASS_CLERIC,MaterialInstance,/Game/MMO/Characters/Cleric/MI_Class_Cleric,planned,ArtDirector,,,UE Python
 UI_PORTRAIT_CLERIC,Icon,/Game/MMO/UI/Icons/T_Portrait_Cleric,planned,ArtDirector,,,ForgeGUI image
-CHR_RANGER_BODY,SkeletalMesh,/Game/MMO/Characters/Ranger/SK_Class_Ranger,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
+CHR_RANGER_BODY,SkeletalMesh,/Game/MMO/Characters/Ranger/SK_Class_Ranger,placeholder,CharacterArtist,5000,204,ForgeGUI 3D + Blender
 MAT_CLASS_RANGER,MaterialInstance,/Game/MMO/Characters/Ranger/MI_Class_Ranger,planned,ArtDirector,,,UE Python
 UI_PORTRAIT_RANGER,Icon,/Game/MMO/UI/Icons/T_Portrait_Ranger,planned,ArtDirector,,,ForgeGUI image
 CHR_HUMANOID_SKELETON,Skeleton,/Game/MMO/Characters/Shared/SKEL_MMO_Humanoid,planned,Animator,,,UE Mannequin-compatible
@@ -39,33 +39,33 @@ ANIM_QUAD_GALLOP,AnimSequence,/Game/MMO/Mobs/Shared/Anims/A_Quad_Gallop,planned,
 ANIM_QUAD_ATTACK,AnimSequence,/Game/MMO/Mobs/Shared/Anims/A_Quad_Attack,planned,Animator,,,ForgeGUI animate + retarget
 ANIM_QUAD_HIT_REACT,AnimSequence,/Game/MMO/Mobs/Shared/Anims/A_Quad_Hit_React,planned,Animator,,,ForgeGUI animate + retarget
 ANIM_QUAD_DEATH,AnimSequence,/Game/MMO/Mobs/Shared/Anims/A_Quad_Death,planned,Animator,,,ForgeGUI animate + retarget
-MOB_MOSSBACK_SCRAPPER,SkeletalMesh,/Game/MMO/Mobs/Mossback_Scrapper/SK_Mob_Mossback_Scrapper,planned,CharacterArtist,3000,,ForgeGUI 3D + Blender
-MOB_MOSSBACK_SHAMAN,SkeletalMesh,/Game/MMO/Mobs/Mossback_Shaman/SK_Mob_Mossback_Shaman,planned,CharacterArtist,3000,,ForgeGUI 3D + Blender
-MOB_THORNBACK_BOAR,SkeletalMesh,/Game/MMO/Mobs/Thornback_Boar/SK_Mob_Thornback_Boar,planned,CharacterArtist,3000,,ForgeGUI 3D + Blender
-MOB_BARROW_WISP,SkeletalMesh,/Game/MMO/Mobs/Barrow_Wisp/SK_Mob_Barrow_Wisp,planned,CharacterArtist,1000,,ForgeGUI 3D + Blender
-MOB_HOLLOWED_FOOTMAN,SkeletalMesh,/Game/MMO/Mobs/Hollowed_Footman/SK_Mob_Hollowed_Footman,planned,CharacterArtist,3000,,ForgeGUI 3D + Blender
-MOB_ROTFANG,SkeletalMesh,/Game/MMO/Mobs/Rotfang/SK_Mob_Rotfang,planned,CharacterArtist,8000,,ForgeGUI 3D + Blender
-MOB_SISTER_MORROW,SkeletalMesh,/Game/MMO/Mobs/Sister_Morrow/SK_Mob_Sister_Morrow,planned,CharacterArtist,8000,,ForgeGUI 3D + Blender
-MOB_GRISTLEHORN,SkeletalMesh,/Game/MMO/Mobs/Gristlehorn/SK_Mob_Gristlehorn,planned,CharacterArtist,8000,,ForgeGUI 3D + Blender
-MOB_MALDREK,SkeletalMesh,/Game/MMO/Mobs/Maldrek_HollowKing/SK_Mob_Maldrek_HollowKing,planned,CharacterArtist,8000,,ForgeGUI 3D + Blender
-MNT_DAWNSTAG,SkeletalMesh,/Game/MMO/Mounts/Dawnstag/SK_Mount_Dawnstag,planned,CharacterArtist,4000,,ForgeGUI 3D + Blender
+MOB_MOSSBACK_SCRAPPER,SkeletalMesh,/Game/MMO/Mobs/Mossback_Scrapper/SK_Mob_Mossback_Scrapper,placeholder,CharacterArtist,3000,252,ForgeGUI 3D + Blender
+MOB_MOSSBACK_SHAMAN,SkeletalMesh,/Game/MMO/Mobs/Mossback_Shaman/SK_Mob_Mossback_Shaman,placeholder,CharacterArtist,3000,262,ForgeGUI 3D + Blender
+MOB_THORNBACK_BOAR,SkeletalMesh,/Game/MMO/Mobs/Thornback_Boar/SK_Mob_Thornback_Boar,placeholder,CharacterArtist,3000,246,ForgeGUI 3D + Blender
+MOB_BARROW_WISP,SkeletalMesh,/Game/MMO/Mobs/Barrow_Wisp/SK_Mob_Barrow_Wisp,placeholder,CharacterArtist,1000,152,ForgeGUI 3D + Blender
+MOB_HOLLOWED_FOOTMAN,SkeletalMesh,/Game/MMO/Mobs/Hollowed_Footman/SK_Mob_Hollowed_Footman,placeholder,CharacterArtist,3000,252,ForgeGUI 3D + Blender
+MOB_ROTFANG,SkeletalMesh,/Game/MMO/Mobs/Rotfang/SK_Mob_Rotfang,placeholder,CharacterArtist,8000,288,ForgeGUI 3D + Blender
+MOB_SISTER_MORROW,SkeletalMesh,/Game/MMO/Mobs/Sister_Morrow/SK_Mob_Sister_Morrow,placeholder,CharacterArtist,8000,238,ForgeGUI 3D + Blender
+MOB_GRISTLEHORN,SkeletalMesh,/Game/MMO/Mobs/Gristlehorn/SK_Mob_Gristlehorn,placeholder,CharacterArtist,8000,448,ForgeGUI 3D + Blender
+MOB_MALDREK,SkeletalMesh,/Game/MMO/Mobs/Maldrek_HollowKing/SK_Mob_Maldrek_HollowKing,placeholder,CharacterArtist,8000,288,ForgeGUI 3D + Blender
+MNT_DAWNSTAG,SkeletalMesh,/Game/MMO/Mounts/Dawnstag/SK_Mount_Dawnstag,placeholder,CharacterArtist,4000,304,ForgeGUI 3D + Blender
 MNT_DAWNSTAG_ABP,AnimBlueprint,/Game/MMO/Mounts/Dawnstag/ABP_Mount_Dawnstag,planned,Animator,,,UE
-CHR_NPC_ELDERWREN,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_ElderWren,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
-CHR_NPC_BRAMTALLOW,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_BramTallow,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
-CHR_NPC_YSOLDETHORN,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_YsoldeThorn,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
-CHR_NPC_BROTHERCAEL,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_BrotherCael,planned,CharacterArtist,5000,,ForgeGUI 3D + Blender
-GEAR_PLATE_HEAD,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Head,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_PLATE_CHEST,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Chest,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_PLATE_LEGS,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Legs,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_PLATE_BOOTS,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Boots,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_LEATHER_HEAD,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Head,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_LEATHER_CHEST,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Chest,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_LEATHER_LEGS,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Legs,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_LEATHER_BOOTS,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Boots,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_ROBE_HEAD,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Head,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_ROBE_CHEST,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Chest,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_ROBE_LEGS,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Legs,planned,GearArtist,1200,,ForgeGUI 3D + Blender
-GEAR_ROBE_BOOTS,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Boots,planned,GearArtist,1200,,ForgeGUI 3D + Blender
+CHR_NPC_ELDERWREN,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_ElderWren,placeholder,CharacterArtist,5000,220,ForgeGUI 3D + Blender
+CHR_NPC_BRAMTALLOW,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_BramTallow,placeholder,CharacterArtist,5000,180,ForgeGUI 3D + Blender
+CHR_NPC_YSOLDETHORN,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_YsoldeThorn,placeholder,CharacterArtist,5000,180,ForgeGUI 3D + Blender
+CHR_NPC_BROTHERCAEL,SkeletalMesh,/Game/MMO/Characters/NPC/SK_NPC_BrotherCael,placeholder,CharacterArtist,5000,228,ForgeGUI 3D + Blender
+GEAR_PLATE_HEAD,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Head,placeholder,GearArtist,1200,36,ForgeGUI 3D + Blender
+GEAR_PLATE_CHEST,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Chest,placeholder,GearArtist,1200,72,ForgeGUI 3D + Blender
+GEAR_PLATE_LEGS,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Legs,placeholder,GearArtist,1200,60,ForgeGUI 3D + Blender
+GEAR_PLATE_BOOTS,SkeletalMesh,/Game/MMO/Gear/Plate/SK_Gear_Plate_Boots,placeholder,GearArtist,1200,48,ForgeGUI 3D + Blender
+GEAR_LEATHER_HEAD,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Head,placeholder,GearArtist,1200,32,ForgeGUI 3D + Blender
+GEAR_LEATHER_CHEST,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Chest,placeholder,GearArtist,1200,36,ForgeGUI 3D + Blender
+GEAR_LEATHER_LEGS,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Legs,placeholder,GearArtist,1200,36,ForgeGUI 3D + Blender
+GEAR_LEATHER_BOOTS,SkeletalMesh,/Game/MMO/Gear/Leather/SK_Gear_Leather_Boots,placeholder,GearArtist,1200,24,ForgeGUI 3D + Blender
+GEAR_ROBE_HEAD,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Head,placeholder,GearArtist,1200,30,ForgeGUI 3D + Blender
+GEAR_ROBE_CHEST,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Chest,placeholder,GearArtist,1200,64,ForgeGUI 3D + Blender
+GEAR_ROBE_LEGS,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Legs,placeholder,GearArtist,1200,28,ForgeGUI 3D + Blender
+GEAR_ROBE_BOOTS,SkeletalMesh,/Game/MMO/Gear/Robe/SK_Gear_Robe_Boots,placeholder,GearArtist,1200,24,ForgeGUI 3D + Blender
 MAT_GEAR_T1_PLATE,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Plate,planned,GearArtist,,,UE Python
 MAT_GEAR_T1_LEATHER,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Leather,planned,GearArtist,,,UE Python
 MAT_GEAR_T1_ROBE,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T1_Wanderers_Robe,planned,GearArtist,,,UE Python
@@ -75,10 +75,10 @@ MAT_GEAR_T2_ROBE,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T2_ValeGuard_
 MAT_GEAR_T3_PLATE,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Plate,planned,GearArtist,,,UE Python
 MAT_GEAR_T3_LEATHER,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Leather,planned,GearArtist,,,UE Python
 MAT_GEAR_T3_ROBE,MaterialInstance,/Game/MMO/Gear/Materials/MI_Gear_T3_HollowCrown_Robe,planned,GearArtist,,,UE Python
-WPN_SWORDSHIELD,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_SwordShield,planned,GearArtist,800,,ForgeGUI 3D + Blender
-WPN_STAFF,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_Staff,planned,GearArtist,800,,ForgeGUI 3D + Blender
-WPN_MACETOME,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_MaceTome,planned,GearArtist,800,,ForgeGUI 3D + Blender
-WPN_BOWDAGGERS,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_BowDaggers,planned,GearArtist,800,,ForgeGUI 3D + Blender
+WPN_SWORDSHIELD,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_SwordShield,placeholder,GearArtist,800,118,ForgeGUI 3D + Blender
+WPN_STAFF,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_Staff,placeholder,GearArtist,800,88,ForgeGUI 3D + Blender
+WPN_MACETOME,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_MaceTome,placeholder,GearArtist,800,88,ForgeGUI 3D + Blender
+WPN_BOWDAGGERS,StaticMesh,/Game/MMO/Gear/Weapons/SM_Wpn_BowDaggers,placeholder,GearArtist,800,132,ForgeGUI 3D + Blender
 UI_ICON_T1_HEAD,Icon,/Game/MMO/UI/Icons/T_Icon_T1_Head,planned,ArtDirector,,,ForgeGUI image
 UI_ICON_T1_CHEST,Icon,/Game/MMO/UI/Icons/T_Icon_T1_Chest,planned,ArtDirector,,,ForgeGUI image
 UI_ICON_T1_LEGS,Icon,/Game/MMO/UI/Icons/T_Icon_T1_Legs,planned,ArtDirector,,,ForgeGUI image
@@ -94,43 +94,43 @@ UI_ICON_T3_CHEST,Icon,/Game/MMO/UI/Icons/T_Icon_T3_Chest,planned,ArtDirector,,,F
 UI_ICON_T3_LEGS,Icon,/Game/MMO/UI/Icons/T_Icon_T3_Legs,planned,ArtDirector,,,ForgeGUI image
 UI_ICON_T3_BOOTS,Icon,/Game/MMO/UI/Icons/T_Icon_T3_Boots,planned,ArtDirector,,,ForgeGUI image
 UI_ICON_T3_WEAPON,Icon,/Game/MMO/UI/Icons/T_Icon_T3_Weapon,planned,ArtDirector,,,ForgeGUI image
-ENV_TREE_OAK_A,StaticMesh,/Game/MMO/Environment/SM_Env_TreeOakA,planned,EnvironmentArtist,800,,Blender procedural
-ENV_TREE_OAK_B,StaticMesh,/Game/MMO/Environment/SM_Env_TreeOakB,planned,EnvironmentArtist,800,,Blender procedural
-ENV_TREE_PINE_A,StaticMesh,/Game/MMO/Environment/SM_Env_TreePineA,planned,EnvironmentArtist,800,,Blender procedural
-ENV_TREE_HOLLOW_DEAD,StaticMesh,/Game/MMO/Environment/SM_Env_TreeHollowDead,planned,EnvironmentArtist,800,,Blender procedural
-ENV_BUSH_A,StaticMesh,/Game/MMO/Environment/SM_Env_BushA,planned,EnvironmentArtist,500,,Blender procedural
-ENV_GLOWMOSS_CLUMP,StaticMesh,/Game/MMO/Environment/SM_Env_GlowmossClump,planned,EnvironmentArtist,500,,Blender procedural
-ENV_ROCK_LARGE_A,StaticMesh,/Game/MMO/Environment/SM_Env_RockLargeA,planned,EnvironmentArtist,400,,Blender procedural
-ENV_ROCK_LARGE_B,StaticMesh,/Game/MMO/Environment/SM_Env_RockLargeB,planned,EnvironmentArtist,400,,Blender procedural
-ENV_ROCK_SMALL_A,StaticMesh,/Game/MMO/Environment/SM_Env_RockSmallA,planned,EnvironmentArtist,400,,Blender procedural
-ENV_COTTAGE_A,StaticMesh,/Game/MMO/Environment/SM_Env_CottageA,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_COTTAGE_B,StaticMesh,/Game/MMO/Environment/SM_Env_CottageB,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_INN_LANTERNREST,StaticMesh,/Game/MMO/Environment/SM_Env_InnLanternrest,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_WATCHTOWER,StaticMesh,/Game/MMO/Environment/SM_Env_Watchtower,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_FENCE_STRAIGHT,StaticMesh,/Game/MMO/Environment/SM_Env_FenceStraight,planned,EnvironmentArtist,500,,Blender procedural
-ENV_FENCE_CORNER,StaticMesh,/Game/MMO/Environment/SM_Env_FenceCorner,planned,EnvironmentArtist,500,,Blender procedural
-ENV_RUIN_WALL_A,StaticMesh,/Game/MMO/Environment/SM_Env_RuinWallA,planned,EnvironmentArtist,600,,Blender procedural
-ENV_RUIN_ARCH,StaticMesh,/Game/MMO/Environment/SM_Env_RuinArch,planned,EnvironmentArtist,600,,Blender procedural
-ENV_RUIN_PILLAR,StaticMesh,/Game/MMO/Environment/SM_Env_RuinPillar,planned,EnvironmentArtist,600,,Blender procedural
-ENV_STAG_SHRINE,StaticMesh,/Game/MMO/Environment/SM_Env_StagShrine,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_BARROW_ENTRANCE,StaticMesh,/Game/MMO/Environment/SM_Env_BarrowEntrance,planned,EnvironmentArtist,2000,,Blender procedural
-ENV_DGN_WALL,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnWall,planned,EnvironmentArtist,600,,Blender procedural
-ENV_DGN_WALL_DOOR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnWallDoor,planned,EnvironmentArtist,600,,Blender procedural
-ENV_DGN_FLOOR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnFloor,planned,EnvironmentArtist,600,,Blender procedural
-ENV_DGN_PILLAR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnPillar,planned,EnvironmentArtist,600,,Blender procedural
-ENV_DGN_STAIRS,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnStairs,planned,EnvironmentArtist,600,,Blender procedural
-ENV_DGN_THRONE,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnThrone,planned,EnvironmentArtist,600,,Blender procedural
-ENV_TORCH_WALL,StaticMesh,/Game/MMO/Environment/SM_Env_TorchWall,planned,EnvironmentArtist,500,,Blender procedural
-PRP_LANTERN,StaticMesh,/Game/MMO/Props/SM_Prop_Lantern,planned,EnvironmentArtist,500,,Blender procedural
-PRP_CRATE,StaticMesh,/Game/MMO/Props/SM_Prop_Crate,planned,EnvironmentArtist,500,,Blender procedural
-PRP_BARREL,StaticMesh,/Game/MMO/Props/SM_Prop_Barrel,planned,EnvironmentArtist,500,,Blender procedural
-PRP_SIGNPOST,StaticMesh,/Game/MMO/Props/SM_Prop_Signpost,planned,EnvironmentArtist,500,,Blender procedural
-PRP_CAMPFIRE,StaticMesh,/Game/MMO/Props/SM_Prop_Campfire,planned,EnvironmentArtist,500,,Blender procedural
-PRP_CHEST_QUEST,StaticMesh,/Game/MMO/Props/SM_Prop_ChestQuest,planned,EnvironmentArtist,500,,Blender procedural
-PRP_BIND_STONE,StaticMesh,/Game/MMO/Props/SM_Prop_BindStone,planned,EnvironmentArtist,500,,Blender procedural
-PRP_SHARD_PILLAR,StaticMesh,/Game/MMO/Props/SM_Prop_ShardPillar,planned,EnvironmentArtist,500,,Blender procedural
-PRP_EMBER_CROWN,StaticMesh,/Game/MMO/Props/SM_Prop_EmberCrown,planned,EnvironmentArtist,500,,Blender procedural
-PRP_CROWN_SHARD,StaticMesh,/Game/MMO/Props/SM_Prop_CrownShard,planned,EnvironmentArtist,500,,Blender procedural
+ENV_TREE_OAK_A,StaticMesh,/Game/MMO/Environment/SM_Env_TreeOakA,cleaned,EnvironmentArtist,800,248,Blender procedural
+ENV_TREE_OAK_B,StaticMesh,/Game/MMO/Environment/SM_Env_TreeOakB,cleaned,EnvironmentArtist,800,228,Blender procedural
+ENV_TREE_PINE_A,StaticMesh,/Game/MMO/Environment/SM_Env_TreePineA,cleaned,EnvironmentArtist,800,90,Blender procedural
+ENV_TREE_HOLLOW_DEAD,StaticMesh,/Game/MMO/Environment/SM_Env_TreeHollowDead,cleaned,EnvironmentArtist,800,240,Blender procedural
+ENV_BUSH_A,StaticMesh,/Game/MMO/Environment/SM_Env_BushA,cleaned,EnvironmentArtist,500,232,Blender procedural
+ENV_GLOWMOSS_CLUMP,StaticMesh,/Game/MMO/Environment/SM_Env_GlowmossClump,cleaned,EnvironmentArtist,500,184,Blender procedural
+ENV_ROCK_LARGE_A,StaticMesh,/Game/MMO/Environment/SM_Env_RockLargeA,cleaned,EnvironmentArtist,400,100,Blender procedural
+ENV_ROCK_LARGE_B,StaticMesh,/Game/MMO/Environment/SM_Env_RockLargeB,cleaned,EnvironmentArtist,400,100,Blender procedural
+ENV_ROCK_SMALL_A,StaticMesh,/Game/MMO/Environment/SM_Env_RockSmallA,cleaned,EnvironmentArtist,400,20,Blender procedural
+ENV_COTTAGE_A,StaticMesh,/Game/MMO/Environment/SM_Env_CottageA,cleaned,EnvironmentArtist,2000,280,Blender procedural
+ENV_COTTAGE_B,StaticMesh,/Game/MMO/Environment/SM_Env_CottageB,cleaned,EnvironmentArtist,2000,280,Blender procedural
+ENV_INN_LANTERNREST,StaticMesh,/Game/MMO/Environment/SM_Env_InnLanternrest,cleaned,EnvironmentArtist,2000,420,Blender procedural
+ENV_WATCHTOWER,StaticMesh,/Game/MMO/Environment/SM_Env_Watchtower,cleaned,EnvironmentArtist,2000,266,Blender procedural
+ENV_FENCE_STRAIGHT,StaticMesh,/Game/MMO/Environment/SM_Env_FenceStraight,cleaned,EnvironmentArtist,500,72,Blender procedural
+ENV_FENCE_CORNER,StaticMesh,/Game/MMO/Environment/SM_Env_FenceCorner,cleaned,EnvironmentArtist,500,144,Blender procedural
+ENV_RUIN_WALL_A,StaticMesh,/Game/MMO/Environment/SM_Env_RuinWallA,cleaned,EnvironmentArtist,600,236,Blender procedural
+ENV_RUIN_ARCH,StaticMesh,/Game/MMO/Environment/SM_Env_RuinArch,cleaned,EnvironmentArtist,600,224,Blender procedural
+ENV_RUIN_PILLAR,StaticMesh,/Game/MMO/Environment/SM_Env_RuinPillar,cleaned,EnvironmentArtist,600,76,Blender procedural
+ENV_STAG_SHRINE,StaticMesh,/Game/MMO/Environment/SM_Env_StagShrine,cleaned,EnvironmentArtist,2000,488,Blender procedural
+ENV_BARROW_ENTRANCE,StaticMesh,/Game/MMO/Environment/SM_Env_BarrowEntrance,cleaned,EnvironmentArtist,2000,312,Blender procedural
+ENV_DGN_WALL,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnWall,cleaned,EnvironmentArtist,600,72,Blender procedural
+ENV_DGN_WALL_DOOR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnWallDoor,cleaned,EnvironmentArtist,600,108,Blender procedural
+ENV_DGN_FLOOR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnFloor,cleaned,EnvironmentArtist,600,204,Blender procedural
+ENV_DGN_PILLAR,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnPillar,cleaned,EnvironmentArtist,600,76,Blender procedural
+ENV_DGN_STAIRS,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnStairs,cleaned,EnvironmentArtist,600,120,Blender procedural
+ENV_DGN_THRONE,StaticMesh,/Game/MMO/Environment/SM_Dgn_DgnThrone,cleaned,EnvironmentArtist,600,194,Blender procedural
+ENV_TORCH_WALL,StaticMesh,/Game/MMO/Environment/SM_Env_TorchWall,cleaned,EnvironmentArtist,500,74,Blender procedural
+PRP_LANTERN,StaticMesh,/Game/MMO/Props/SM_Prop_Lantern,cleaned,EnvironmentArtist,500,144,Blender procedural
+PRP_CRATE,StaticMesh,/Game/MMO/Props/SM_Prop_Crate,cleaned,EnvironmentArtist,500,96,Blender procedural
+PRP_BARREL,StaticMesh,/Game/MMO/Props/SM_Prop_Barrel,cleaned,EnvironmentArtist,500,128,Blender procedural
+PRP_SIGNPOST,StaticMesh,/Game/MMO/Props/SM_Prop_Signpost,cleaned,EnvironmentArtist,500,86,Blender procedural
+PRP_CAMPFIRE,StaticMesh,/Game/MMO/Props/SM_Prop_Campfire,cleaned,EnvironmentArtist,500,288,Blender procedural
+PRP_CHEST_QUEST,StaticMesh,/Game/MMO/Props/SM_Prop_ChestQuest,cleaned,EnvironmentArtist,500,76,Blender procedural
+PRP_BIND_STONE,StaticMesh,/Game/MMO/Props/SM_Prop_BindStone,cleaned,EnvironmentArtist,500,98,Blender procedural
+PRP_SHARD_PILLAR,StaticMesh,/Game/MMO/Props/SM_Prop_ShardPillar,cleaned,EnvironmentArtist,500,94,Blender procedural
+PRP_EMBER_CROWN,StaticMesh,/Game/MMO/Props/SM_Prop_EmberCrown,cleaned,EnvironmentArtist,500,184,Blender procedural
+PRP_CROWN_SHARD,StaticMesh,/Game/MMO/Props/SM_Prop_CrownShard,cleaned,EnvironmentArtist,500,28,Blender procedural
 VFX_CAST_FIRE,Niagara,/Game/MMO/VFX/NS_CastFire,planned,ArtDirector,,,UE Niagara
 VFX_IMPACT_FIRE,Niagara,/Game/MMO/VFX/NS_ImpactFire,planned,ArtDirector,,,UE Niagara
 VFX_CAST_HOLY,Niagara,/Game/MMO/VFX/NS_CastHoly,planned,ArtDirector,,,UE Niagara
