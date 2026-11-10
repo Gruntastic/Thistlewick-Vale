@@ -43,6 +43,8 @@ struct FTVDungeonInstance
 
 	bool bReady = false;
 	int32 ScaledForPartySize = 0;
+	int32 DesiredPartySize = 1;
+	bool bSpawnedOnce = false;
 	FTransform EntranceTransform = FTransform::Identity;
 
 	TArray<TWeakObjectPtr<ATVPlayerState>> Inside;
