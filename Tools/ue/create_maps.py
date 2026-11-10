@@ -15,7 +15,7 @@ or in the editor Output Log (Python mode):
   py "<path>/Tools/ue/create_maps.py" --force
 
 Owner: Network & Dungeon Engineer. Uses only LevelEditorSubsystem / EditorActorSubsystem / EditorAssetLibrary.
-VERIFY-5.8: written against the 5.x editor scripting API; not executed in this environment.
+Run headless against the 5.8.4 editor (UnrealEditor-Cmd -run=pythonscript) on 2026-11-10.
 """
 import sys
 

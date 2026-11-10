@@ -4,7 +4,7 @@ Headless:  UnrealEditor-Cmd.exe <ThistlewickVale.uproject> -run=pythonscript -sc
 Idempotent: existing assets are cleared and rebuilt in place (asset references stay valid).
 
 Parameter names are code-facing (ART_CONTRACT section 3); do not rename.
-Anything not confirmed against the 5.8 headers is tagged "# VERIFY-5.8:".
+Run and checked against the 5.8.4 editor Python API (2026-11-10). Every connect is checked; a wrong pin name raises.
 Authoring conventions (see Docs/STYLE_LOCK.md): atlas UVs, secondary region = vertex alpha (UseVertexColor on)
 or UV1.x > 0.5 (atlas mode), glow-only cells 1 / 11 / 15.
 """
@@ -43,7 +43,6 @@ def import_atlas():
     tex.set_editor_property("srgb", True)
     tex.set_editor_property("compression_settings", unreal.TextureCompressionSettings.TC_DEFAULT)
     tex.set_editor_property("never_stream", True)
-    # VERIFY-5.8: enum member spelling TEXTUREGROUP_PIXELS2D
     tex.set_editor_property("lod_group", unreal.TextureGroup.TEXTUREGROUP_PIXELS2D)
     tex.set_editor_property("address_x", unreal.TextureAddress.TA_CLAMP)
     tex.set_editor_property("address_y", unreal.TextureAddress.TA_CLAMP)
@@ -76,11 +75,15 @@ class Graph:
         return e
 
     def link(self, src, dst, dst_in, src_out=""):
-        MEL.connect_material_expressions(src, src_out, dst, dst_in)
+        # The connect calls return False (no exception) on a wrong pin name, so check them.
+        if not MEL.connect_material_expressions(src, src_out, dst, dst_in):
+            raise RuntimeError(f"{self.mat.get_name()}: could not connect {src.get_class().get_name()}.{src_out or '<default>'}"
+                               f" -> {dst.get_class().get_name()}.{dst_in}")
         return dst
 
     def to_prop(self, src, prop, src_out=""):
-        MEL.connect_material_property(src, src_out, prop)
+        if not MEL.connect_material_property(src, src_out, prop):
+            raise RuntimeError(f"{self.mat.get_name()}: could not connect {src.get_class().get_name()} to {prop}")
 
     # parameter nodes -------------------------------------------------
     def scalar(self, name, default, col=0, row=0):
@@ -125,7 +128,9 @@ class Graph:
         self.link(alpha, n, "Alpha", alpha_out)
         return n
 
-    def unary(self, cls, a, col=0, row=0, a_out="", in_name="Input"):
+    def unary(self, cls, a, col=0, row=0, a_out="", in_name=""):
+        # Single-input nodes: "" = first input (5.8 MaterialEditingLibrary GetExpressionInputByName); their pins have no
+        # matchable name, so "Input"/"Value"/"VectorInput" do not resolve.
         n = self.node(cls, col, row)
         self.link(a, n, in_name, a_out)
         return n
@@ -133,7 +138,7 @@ class Graph:
     def mask(self, src, channel, col=0, row=0, src_out=""):
         n = self.node(unreal.MaterialExpressionComponentMask, col, row,
                       r=("r" in channel), g=("g" in channel or channel == "rgb"), b=("b" in channel or channel == "rgb"), a=(channel == "a"))
-        self.link(src, n, "Input", src_out)
+        self.link(src, n, "", src_out)  # single input, see unary()
         return n
 
 
@@ -166,11 +171,11 @@ def atlas_color_and_glowmask(g, atlas_tex, y0=0):
 def build_lowpoly(name, masked, atlas_tex):
     mat = get_or_create_material(name)
     g = Graph(mat)
-    mat.set_editor_property("shading_model", unreal.MaterialShadingModel.MSM_DEFAULT_LIT)  # VERIFY-5.8: property is shading_model (may be shading_models struct)
+    mat.set_editor_property("shading_model", unreal.MaterialShadingModel.MSM_DEFAULT_LIT)
     mat.set_editor_property("blend_mode", unreal.BlendMode.BLEND_MASKED if masked else unreal.BlendMode.BLEND_OPAQUE)
     mat.set_editor_property("two_sided", masked)
     # world-space normal output so DDX/DDY normals need no tangent transform
-    mat.set_editor_property("tangent_space_normal", False)  # VERIFY-5.8: property name
+    mat.set_editor_property("tangent_space_normal", False)
 
     atlas, glow = atlas_color_and_glowmask(g, atlas_tex, 0)
 
@@ -183,8 +188,12 @@ def build_lowpoly(name, masked, atlas_tex):
     atlas_rgba = g.node(unreal.MaterialExpressionAppendVector, 5, 11)
     g.link(atlas, atlas_rgba, "A", "RGB")
     g.link(step, atlas_rgba, "B")
+    # VertexColor output 0 is RGB only (5.8 MaterialExpressions.cpp: mask 1,1,1,0); alpha is the separate "A" output.
+    vc_rgba = g.node(unreal.MaterialExpressionAppendVector, 5, 9)
+    g.link(vc, vc_rgba, "A")
+    g.link(vc, vc_rgba, "B", "A")
     sw_vc = g.switch("UseVertexColor", False, 10, 0)
-    g.link(vc, sw_vc, "True")             # VERIFY-5.8: static switch input pin names "True"/"False"
+    g.link(vc_rgba, sw_vc, "True")        # static switch pins are "True"/"False" (checked in 5.8)
     g.link(atlas_rgba, sw_vc, "False")
     sw_rgb = g.mask(sw_vc, "rgb", 11, 0)
     sw_mask = g.mask(sw_vc, "a", 11, 3)
@@ -203,8 +212,8 @@ def build_lowpoly(name, masked, atlas_tex):
     dissolve = g.scalar("DissolveAmount", 0.0, 12, 9)
     wp = g.node(unreal.MaterialExpressionWorldPosition, 12, 10)
     noise = g.node(unreal.MaterialExpressionNoise, 13, 10, scale=0.08, quality=1, levels=2,
-                   output_min=0.0, output_max=1.0, turbulence=False)  # VERIFY-5.8: noise property names / function default
-    g.link(wp, noise, "Position")
+                   output_min=0.0, output_max=1.0, turbulence=False)
+    g.link(wp, noise, "World Position")  # 5.8 pin name (MaterialEditingLibrary.get_material_expression_input_names)
     if masked:
         # opacity = saturate((noise + 0.001 - dissolve * 1.001) * 1000)
         d_scaled = g.mul(dissolve, 1.001, 14, 9)
@@ -238,17 +247,17 @@ def build_lowpoly(name, masked, atlas_tex):
     g.to_prop(rough, unreal.MaterialProperty.MP_ROUGHNESS)
 
     wp2 = g.node(unreal.MaterialExpressionWorldPosition, 0, 16)
-    ddx = g.unary(unreal.MaterialExpressionDDX, wp2, 1, 16, in_name="Value")
-    ddy = g.unary(unreal.MaterialExpressionDDY, wp2, 1, 17, in_name="Value")
+    ddx = g.unary(unreal.MaterialExpressionDDX, wp2, 1, 16)
+    ddy = g.unary(unreal.MaterialExpressionDDY, wp2, 1, 17)
     cr = g.node(unreal.MaterialExpressionCrossProduct, 2, 16)
     g.link(ddx, cr, "A")
     g.link(ddy, cr, "B")
-    flat_n = g.unary(unreal.MaterialExpressionNormalize, cr, 3, 16, in_name="VectorInput")
+    flat_n = g.unary(unreal.MaterialExpressionNormalize, cr, 3, 16)
     vnorm = g.node(unreal.MaterialExpressionVertexNormalWS, 3, 18)
     sw_flat = g.switch("FlatShaded", True, 4, 16)
     g.link(flat_n, sw_flat, "True")
     g.link(vnorm, sw_flat, "False")
-    # VERIFY-5.8: cross(ddx,ddy) orientation; if faces look inverted in the editor, swap A/B above.
+    # cross(ddx, ddy) is the order the 5.8 engine shaders use for world normals (DebugViewModePixelShader.usf).
     g.to_prop(sw_flat, unreal.MaterialProperty.MP_NORMAL)
 
     MEL.recompile_material(mat)
@@ -260,14 +269,14 @@ def build_lowpoly(name, masked, atlas_tex):
 def build_unlit_fx(atlas_tex):
     mat = get_or_create_material("M_Master_Unlit_FX")
     g = Graph(mat)
-    mat.set_editor_property("shading_model", unreal.MaterialShadingModel.MSM_UNLIT)  # VERIFY-5.8
+    mat.set_editor_property("shading_model", unreal.MaterialShadingModel.MSM_UNLIT)
     mat.set_editor_property("blend_mode", unreal.BlendMode.BLEND_TRANSLUCENT)
     mat.set_editor_property("two_sided", True)
 
     atlas, _ = atlas_color_and_glowmask(g, atlas_tex, 0)
     vc = g.node(unreal.MaterialExpressionVertexColor, 0, 9)  # particle color / alpha
     sw = g.switch("UseVertexColor", False, 10, 0)
-    g.link(vc, sw, "True", "RGB")
+    g.link(vc, sw, "True")  # VertexColor output 0 = RGB
     g.link(atlas, sw, "False", "RGB")
     base_t = g.vector("BaseTint", (1, 1, 1), 10, 2)
     em_col = g.vector("EmissiveColor", (0, 0, 0), 10, 4)
@@ -278,16 +287,15 @@ def build_unlit_fx(atlas_tex):
     dissolve = g.scalar("DissolveAmount", 0.0, 10, 8)
     wp = g.node(unreal.MaterialExpressionWorldPosition, 10, 9)
     noise = g.node(unreal.MaterialExpressionNoise, 11, 9, scale=0.08, quality=1, levels=2,
-                   output_min=0.0, output_max=1.0, turbulence=False)  # VERIFY-5.8
-    g.link(wp, noise, "Position")
+                   output_min=0.0, output_max=1.0, turbulence=False)
+    g.link(wp, noise, "World Position")  # 5.8 pin name (MaterialEditingLibrary.get_material_expression_input_names)
     diff = g.node(unreal.MaterialExpressionSubtract, 12, 9, const_b=-0.001)
     g.link(noise, diff, "A")
     diff2 = g.node(unreal.MaterialExpressionSubtract, 13, 9)
     g.link(diff, diff2, "A")
     g.link(g.mul(dissolve, 1.001, 12, 8), diff2, "B")
     clip = g.unary(unreal.MaterialExpressionSaturate, g.mul(diff2, 1000.0, 14, 9), 15, 9)
-    alpha = g.mask(vc, "a", 1, 9, )
-    opacity = g.mul(alpha, clip, 16, 9)
+    opacity = g.mul(vc, clip, 16, 9, a_out="A")  # vertex alpha
     g.to_prop(opacity, unreal.MaterialProperty.MP_OPACITY)
 
     MEL.recompile_material(mat)
