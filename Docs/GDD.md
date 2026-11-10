@@ -123,3 +123,10 @@ Server-authoritative UE replication, dedicated server + ≥2 clients. Party of u
 
 ## 13. Out of scope (stretch list)
 Talents, professions, trade/auction, mail, guilds, PvP, more zones, flying, raid frames, loot rolling, voice chat, real account login, persistence DB, server meshing.
+
+## 14. Design decisions made during Phase 1
+- **Interrupts:** Shield Slam (Warrior), Frost Snare (Mage) and Twin Fang (Ranger) also interrupt an interruptible cast. The Cleric has no interrupt.
+- **Mount:** abilities are blocked while mounted (press the mount key to dismount) rather than auto-dismounting on ability use. Taking damage still dismounts. The mount cannot be summoned in combat.
+- **World flags** (for example the relit crown) are global to the server and stored in `Saved/World/WorldFlags.json`, not per character.
+- **Dungeon instances:** each party member's client also loads its party's copy of the Barrow; the server keeps parties in separate copies.
+- **Sets** count the tier's weapon as a piece (5 possible pieces, bonuses at 2 and 4).

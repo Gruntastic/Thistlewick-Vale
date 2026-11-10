@@ -57,13 +57,20 @@
     "CoefficientStat": "Strength",
     "Coefficient": 1.15,
     "ThreatMultiplier": 3.0,
-    "Effects": [],
+    "Effects": [
+      {
+        "EffectClass": "/Script/ThistlewickVale.GE_TV_Interrupt",
+        "Duration": 0.0,
+        "Magnitude": 1.0,
+        "SetByCallerTag": ""
+      }
+    ],
     "MontageId": "",
     "VfxCastId": "",
     "VfxImpactId": "",
     "SfxId": "AUD_ABL_WAR_SHIELD_SLAM",
     "IconId": "UI_ICON_ABL_WAR_SHIELD_SLAM",
-    "Tooltip": "Slam your shield into an enemy for {Magnitude}+ damage. Costs 30 Rage. Generates heavy threat. {Cooldown} s cooldown."
+    "Tooltip": "Slam your shield into an enemy for {Magnitude}+ damage. Costs 30 Rage. Generates heavy threat. {Cooldown} s cooldown. Interrupts spellcasting."
   },
   {
     "Name": "ABL_WAR_TAUNTING_ROAR",
@@ -288,6 +295,12 @@
         "Duration": 4.0,
         "Magnitude": 1.0,
         "SetByCallerTag": "TV.SetByCaller.RootBreakGrace"
+      },
+      {
+        "EffectClass": "/Script/ThistlewickVale.GE_TV_Interrupt",
+        "Duration": 0.0,
+        "Magnitude": 1.0,
+        "SetByCallerTag": ""
       }
     ],
     "MontageId": "",
@@ -295,7 +308,7 @@
     "VfxImpactId": "VFX_FROST_ROOT",
     "SfxId": "AUD_ABL_MAG_FROST_SNARE",
     "IconId": "UI_ICON_ABL_MAG_FROST_SNARE",
-    "Tooltip": "Freeze an enemy in place for 4 s. The ice breaks if the target takes damage more than 1 s after it forms. {Cooldown} s cooldown."
+    "Tooltip": "Freeze an enemy in place for 4 s. The ice breaks if the target takes damage more than 1 s after it forms. {Cooldown} s cooldown. Interrupts spellcasting."
   },
   {
     "Name": "ABL_MAG_GLIMMER_WARD",
@@ -633,6 +646,12 @@
         "Duration": 0.0,
         "Magnitude": 2.0,
         "SetByCallerTag": "TV.SetByCaller.HitCount"
+      },
+      {
+        "EffectClass": "/Script/ThistlewickVale.GE_TV_Interrupt",
+        "Duration": 0.0,
+        "Magnitude": 1.0,
+        "SetByCallerTag": ""
       }
     ],
     "MontageId": "",
@@ -640,7 +659,7 @@
     "VfxImpactId": "",
     "SfxId": "AUD_ABL_RNG_TWIN_FANG",
     "IconId": "UI_ICON_ABL_RNG_TWIN_FANG",
-    "Tooltip": "Rush in and strike twice with your fang-daggers, each hit dealing {Magnitude}+ damage. Costs 40 Focus. Range 8 m."
+    "Tooltip": "Rush in and strike twice with your fang-daggers, each hit dealing {Magnitude}+ damage. Costs 40 Focus. Range 8 m. Interrupts spellcasting."
   },
   {
     "Name": "ABL_RNG_SNARE_TRAP",
@@ -1112,7 +1131,7 @@
     "AbilityId": "ABL_MOB_MOSS_SLAM",
     "ClassId": "MOB",
     "SlotKind": "MobAbility",
-    "AbilityClass": "/Script/ThistlewickVale.GA_TV_DirectDamage",
+    "AbilityClass": "/Script/ThistlewickVale.GA_TV_Cone",
     "AbilityTag": "TV.Ability.Mob.MossSlam",
     "CastTime": 1.5,
     "ChannelTime": 0.0,
@@ -1122,7 +1141,7 @@
     "ComboResource": "None",
     "ComboDelta": 0,
     "RangeCm": 700.0,
-    "RadiusCm": 0.0,
+    "RadiusCm": 700.0,
     "RequiresTarget": true,
     "RequiresLOS": true,
     "Interruptible": false,
@@ -1304,7 +1323,7 @@
     "AbilityId": "ABL_MOB_HOLLOW_CLEAVE",
     "ClassId": "MOB",
     "SlotKind": "MobAbility",
-    "AbilityClass": "/Script/ThistlewickVale.GA_TV_DirectDamage",
+    "AbilityClass": "/Script/ThistlewickVale.GA_TV_Cone",
     "AbilityTag": "TV.Ability.Mob.HollowCleave",
     "CastTime": 1.2,
     "ChannelTime": 0.0,
@@ -1314,7 +1333,7 @@
     "ComboResource": "None",
     "ComboDelta": 0,
     "RangeCm": 800.0,
-    "RadiusCm": 0.0,
+    "RadiusCm": 800.0,
     "RequiresTarget": true,
     "RequiresLOS": true,
     "Interruptible": false,
@@ -1337,7 +1356,7 @@
     "AbilityId": "ABL_MOB_HOLLOW_CLEAVE_FURY",
     "ClassId": "MOB",
     "SlotKind": "MobAbility",
-    "AbilityClass": "/Script/ThistlewickVale.GA_TV_DirectDamage",
+    "AbilityClass": "/Script/ThistlewickVale.GA_TV_Cone",
     "AbilityTag": "TV.Ability.Mob.HollowCleaveFury",
     "CastTime": 0.7,
     "ChannelTime": 0.0,
@@ -1347,7 +1366,7 @@
     "ComboResource": "None",
     "ComboDelta": 0,
     "RangeCm": 800.0,
-    "RadiusCm": 0.0,
+    "RadiusCm": 800.0,
     "RequiresTarget": true,
     "RequiresLOS": true,
     "Interruptible": false,
