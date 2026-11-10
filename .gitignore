@@ -18,3 +18,4 @@ __pycache__/
 *.pyc
 # Blender backups
 *.blend1
+.claude/worktrees/

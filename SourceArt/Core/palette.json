@@ -1,0 +1,190 @@
+{
+  "texture": "T_Palette_Atlas",
+  "size": 256,
+  "cell_px": 64,
+  "grid": 4,
+  "index_order": "row-major from top-left; UV origin top-left (v down)",
+  "emissive_cells": [
+    1,
+    11,
+    15
+  ],
+  "cells": [
+    {
+      "index": 0,
+      "name": "Hearth Red",
+      "hex": "#C8553D",
+      "row": 0,
+      "col": 0,
+      "uv_center": [
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "index": 1,
+      "name": "Ember Gold",
+      "hex": "#FFB347",
+      "row": 0,
+      "col": 1,
+      "uv_center": [
+        0.375,
+        0.125
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Wheat",
+      "hex": "#F2CC8F",
+      "row": 0,
+      "col": 2,
+      "uv_center": [
+        0.625,
+        0.125
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Clay",
+      "hex": "#B5835A",
+      "row": 0,
+      "col": 3,
+      "uv_center": [
+        0.875,
+        0.125
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Timber",
+      "hex": "#7F5539",
+      "row": 1,
+      "col": 0,
+      "uv_center": [
+        0.125,
+        0.375
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Dark Bark",
+      "hex": "#4A3428",
+      "row": 1,
+      "col": 1,
+      "uv_center": [
+        0.375,
+        0.375
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Sky Teal",
+      "hex": "#5FA8A0",
+      "row": 1,
+      "col": 2,
+      "uv_center": [
+        0.625,
+        0.375
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Dusk Blue",
+      "hex": "#3D5A80",
+      "row": 1,
+      "col": 3,
+      "uv_center": [
+        0.875,
+        0.375
+      ]
+    },
+    {
+      "index": 8,
+      "name": "Moss Green",
+      "hex": "#6A994E",
+      "row": 2,
+      "col": 0,
+      "uv_center": [
+        0.125,
+        0.625
+      ]
+    },
+    {
+      "index": 9,
+      "name": "Deep Pine",
+      "hex": "#386641",
+      "row": 2,
+      "col": 1,
+      "uv_center": [
+        0.375,
+        0.625
+      ]
+    },
+    {
+      "index": 10,
+      "name": "Meadow Lime",
+      "hex": "#A7C957",
+      "row": 2,
+      "col": 2,
+      "uv_center": [
+        0.625,
+        0.625
+      ]
+    },
+    {
+      "index": 11,
+      "name": "Moss Glow",
+      "hex": "#9CFF7A",
+      "row": 2,
+      "col": 3,
+      "uv_center": [
+        0.875,
+        0.625
+      ]
+    },
+    {
+      "index": 12,
+      "name": "Stone Grey",
+      "hex": "#8D99AE",
+      "row": 3,
+      "col": 0,
+      "uv_center": [
+        0.125,
+        0.875
+      ]
+    },
+    {
+      "index": 13,
+      "name": "Slate",
+      "hex": "#4A5568",
+      "row": 3,
+      "col": 1,
+      "uv_center": [
+        0.375,
+        0.875
+      ]
+    },
+    {
+      "index": 14,
+      "name": "Bone",
+      "hex": "#EDE6D6",
+      "row": 3,
+      "col": 2,
+      "uv_center": [
+        0.625,
+        0.875
+      ]
+    },
+    {
+      "index": 15,
+      "name": "Hollow Violet",
+      "hex": "#7A5CFF",
+      "row": 3,
+      "col": 3,
+      "uv_center": [
+        0.875,
+        0.875
+      ]
+    }
+  ]
+}
