@@ -170,6 +170,6 @@ Loaded items are re-validated with `ValidateItem`. Login is "name + class" on th
 - `Tools/ue/import_data.py` (Systems Engineer owns) imports every `Data/Source/DT_*.json` into `/Game/MMO/Data/` with the matching row struct and registers it in `Config/DefaultGame.ini`.
 
 ## 13. Engine facts checked on Matthew's PC (2026-11-10)
-- Installed engine: **5.8.3** launcher build at `C:\Program Files\Epic Games\UE_5.8` (not 5.8.4). Targets use `BuildSettingsVersion.V7` and `EngineIncludeOrderVersion.Unreal5_8` (copied from the 5.8 third-person template).
+- Installed engine: **5.8.4** launcher build at `C:\Program Files\Epic Games\UE_5.8` (it was 5.8.3 when the Phase 1 code was checked against its headers, and updated the same day). Targets use `BuildSettingsVersion.V7` and `EngineIncludeOrderVersion.Unreal5_8` (copied from the 5.8 third-person template).
 - A launcher build cannot compile a `Server` target. The dedicated server runs from the editor binary: `UnrealEditor.exe ThistlewickVale.uproject L_Thistlewick -server -log`, clients with `-game`. A real `ThistlewickValeServer.Target.cs` is included but only builds with a source engine.
 - Engine headers can be read from the PC for API checks; mark anything not checked with `// VERIFY-5.8:`.
