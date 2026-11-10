@@ -28,15 +28,10 @@ namespace
 		return (TVTags::Ability_Mount_Summon().IsValid() && Row.AbilityTag == TVTags::Ability_Mount_Summon()) || Row.ClassId == FName(TEXT("ALL"));
 	}
 
-	float CapsuleRadius(const AActor* Actor)
-	{
-		const ACharacter* Character = Cast<ACharacter>(Actor);
-		return (Character && Character->GetCapsuleComponent()) ? Character->GetCapsuleComponent()->GetScaledCapsuleRadius() : 0.f;
-	}
 
 	float RangeTo(const AActor* From, const AActor* To)
 	{
-		return FMath::Max(0.f, UTVCombatLibrary::DistanceBetween(From, To) - CapsuleRadius(From) - CapsuleRadius(To));
+		return FMath::Max(0.f, UTVCombatLibrary::DistanceBetween(From, To) - UTVCombatLibrary::GetCapsuleRadius(From) - UTVCombatLibrary::GetCapsuleRadius(To));
 	}
 
 	UTVMountComponent* GetMountComponent(const UTVAbilitySystemComponent* ASC)

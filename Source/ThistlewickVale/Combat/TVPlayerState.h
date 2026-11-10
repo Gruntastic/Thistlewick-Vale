@@ -49,7 +49,8 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "TV|Player") FName GetClassId() const { return ClassId; }
 	UFUNCTION(BlueprintPure, Category = "TV|Player") const FString& GetCharacterName() const { return CharacterName; }
-	UFUNCTION(BlueprintPure, Category = "TV|Player") int32 GetLevel() const { return Level; }
+	/** Not GetLevel(): that is AActor::GetLevel() (ULevel*), a UFUNCTION that UHT does not allow to be redeclared. */
+	UFUNCTION(BlueprintPure, Category = "TV|Player") int32 GetCharacterLevel() const { return Level; }
 	UFUNCTION(BlueprintPure, Category = "TV|Player") int32 GetXP() const { return XP; }
 	UFUNCTION(BlueprintPure, Category = "TV|Player") int32 GetGold() const { return Gold; }
 	UFUNCTION(BlueprintPure, Category = "TV|Player") int32 GetXPToNext() const;

@@ -57,15 +57,14 @@ namespace TVNet
 
 	TArray<FName> GetActionBar(const ATVPlayerState* PS)
 	{
-		// Lead: Combat adds `TArray<FName> ActionBar` (10 slots) to ATVPlayerState; assumed public.
-		return PS ? PS->ActionBar : TArray<FName>();
+		return PS ? PS->GetActionBar() : TArray<FName>();
 	}
 
 	void SetActionBar(ATVPlayerState* PS, const TArray<FName>& Bar)
 	{
 		if (PS)
 		{
-			PS->ActionBar = Bar;
+			PS->SetActionBar(Bar); // pads to 10 slots and broadcasts OnActionBarChanged
 			PS->ForceNetUpdate();
 		}
 	}

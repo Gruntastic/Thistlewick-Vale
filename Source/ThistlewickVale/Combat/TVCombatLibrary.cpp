@@ -20,6 +20,8 @@
 #include "EngineUtils.h"
 #include "CollisionQueryParams.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/Character.h"
+#include "Components/CapsuleComponent.h"
 
 namespace
 {
@@ -411,6 +413,12 @@ bool UTVCombatLibrary::IsInFrontOf(const AActor* Defender, const AActor* Attacke
 	}
 	const FVector Forward = Defender->GetActorForwardVector().GetSafeNormal2D();
 	return FVector::DotProduct(Forward, ToAttacker) >= FMath::Cos(FMath::DegreesToRadians(HalfAngleDeg));
+}
+
+float UTVCombatLibrary::GetCapsuleRadius(const AActor* Actor)
+{
+	const ACharacter* Character = Cast<ACharacter>(Actor);
+	return (Character && Character->GetCapsuleComponent()) ? Character->GetCapsuleComponent()->GetScaledCapsuleRadius() : 0.f;
 }
 
 float UTVCombatLibrary::DistanceBetween(const AActor* A, const AActor* B)

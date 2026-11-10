@@ -52,11 +52,6 @@ namespace
 		return Actor && Actor->IsA<ATVMobCharacter>();
 	}
 
-	float CapsuleRadius(const AActor* Actor)
-	{
-		const ACharacter* Character = Cast<ACharacter>(Actor);
-		return (Character && Character->GetCapsuleComponent()) ? Character->GetCapsuleComponent()->GetScaledCapsuleRadius() : 0.f;
-	}
 
 	/** Hit count while the Stag Volley buff is up (its Magnitude), else 1. */
 	int32 EmpoweredBuilderHits(const UAbilitySystemComponent* ASC)
@@ -104,7 +99,7 @@ void UGA_TV_DirectDamage::GatherTargets(TArray<AActor*>& OutTargets) const
 	if (Row.RadiusCm > 0.f && Row.TargetType == ETVTargetType::Enemy)
 	{
 		TArray<AActor*> Nearby;
-		UTVCombatLibrary::GetHostilesInRadius(Avatar, Avatar->GetActorLocation(), Row.RadiusCm + CapsuleRadius(Avatar), Nearby);
+		UTVCombatLibrary::GetHostilesInRadius(Avatar, Avatar->GetActorLocation(), Row.RadiusCm + UTVCombatLibrary::GetCapsuleRadius(Avatar), Nearby);
 		for (AActor* Other : Nearby)
 		{
 			if (UTVCombatLibrary::IsInFrontOf(Avatar, Other, TVCombatTuning::FrontalHalfAngleDeg))
@@ -392,7 +387,7 @@ void UGA_TV_Leap::ExecuteAbility()
 			return;
 		}
 		const FVector ToTarget = Target->GetActorLocation() - Character->GetActorLocation();
-		const float Distance = FMath::Max(0.f, ToTarget.Size2D() - CapsuleRadius(Character) - CapsuleRadius(Target) - 50.f);
+		const float Distance = FMath::Max(0.f, ToTarget.Size2D() - UTVCombatLibrary::GetCapsuleRadius(Character) - UTVCombatLibrary::GetCapsuleRadius(Target) - 50.f);
 		const float Speed = Distance / FMath::Max(0.1f, ChargeImpactDelay);
 		if (bShouldLaunch)
 		{
@@ -429,7 +424,7 @@ void UGA_TV_Leap::OnLeapLanded()
 			Move->StopMovementImmediately();
 		}
 		AActor* Target = GetLockedTarget();
-		const float Reach = 250.f + CapsuleRadius(Character) + CapsuleRadius(Target);
+		const float Reach = 250.f + UTVCombatLibrary::GetCapsuleRadius(Character) + UTVCombatLibrary::GetCapsuleRadius(Target);
 		if (UTVCombatLibrary::IsAlive(Target) && UTVCombatLibrary::DistanceBetween(Character, Target) <= Reach)
 		{
 			const float Magnitude = GetEffectiveMagnitude();
@@ -496,7 +491,7 @@ void UGA_TV_Cone::ExecuteAbility()
 		return;
 	}
 	TArray<AActor*> Nearby;
-	UTVCombatLibrary::GetHostilesInRadius(Avatar, Avatar->GetActorLocation(), Row.RangeCm + CapsuleRadius(Avatar), Nearby);
+	UTVCombatLibrary::GetHostilesInRadius(Avatar, Avatar->GetActorLocation(), Row.RangeCm + UTVCombatLibrary::GetCapsuleRadius(Avatar), Nearby);
 	TArray<AActor*> Targets;
 	for (AActor* Other : Nearby)
 	{

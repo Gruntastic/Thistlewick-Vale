@@ -29,16 +29,11 @@ namespace
 		return Max > 0.f ? ASC->GetNumericAttribute(UTVAttributeSet_Vitals::GetHealthAttribute()) / Max : 1.f;
 	}
 
-	float CapsuleRadius(const AActor* Actor)
-	{
-		const ACharacter* Character = Cast<ACharacter>(Actor);
-		return (Character && Character->GetCapsuleComponent()) ? Character->GetCapsuleComponent()->GetScaledCapsuleRadius() : 0.f;
-	}
 
 	/** Edge-to-edge distance between two characters. */
 	float EdgeDistance(const AActor* A, const AActor* B)
 	{
-		return FMath::Max(0.f, UTVCombatLibrary::DistanceBetween(A, B) - CapsuleRadius(A) - CapsuleRadius(B));
+		return FMath::Max(0.f, UTVCombatLibrary::DistanceBetween(A, B) - UTVCombatLibrary::GetCapsuleRadius(A) - UTVCombatLibrary::GetCapsuleRadius(B));
 	}
 
 	bool IsLeapRow(const FTVAbilityRow& Row)

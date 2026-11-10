@@ -81,6 +81,8 @@ public:
 	static void GetFriendliesInRadius(const AActor* Instigator, const FVector& Center, float Radius, TArray<AActor*>& OutActors);
 	static bool IsInFrontOf(const AActor* Defender, const AActor* Attacker, float HalfAngleDeg);
 	static float DistanceBetween(const AActor* A, const AActor* B);
+	/** Scaled capsule radius of a character, 0 for other actors. */
+	static float GetCapsuleRadius(const AActor* Actor);
 
 	// ---- Formulas --------------------------------------------------------------------------------------------------
 	UFUNCTION(BlueprintPure, Category = "TV|Combat") static float HastePercent(float HasteRating);
