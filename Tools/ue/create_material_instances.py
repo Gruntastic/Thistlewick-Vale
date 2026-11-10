@@ -69,16 +69,41 @@ def get_or_create_mi(path, parent):
     return mi
 
 
+def _require(names, wanted, kind, parent):
+    missing = [w for w in wanted if w not in [str(n) for n in names]]
+    if missing:
+        raise RuntimeError(f"{parent.get_name()} has no {kind} parameter(s) {missing}")
+
+
+def check_parent(parent):
+    """Fail early if the master is missing a parameter. The 5.8 setters cannot be trusted for this: the vector setter
+    always returns False (MaterialEditingLibrary.cpp never sets bResult) and an unknown name is silently ignored."""
+    _require(MEL.get_vector_parameter_names(parent), ("BaseTint", "SecondaryTint", "EmissiveColor"), "vector", parent)
+    _require(MEL.get_scalar_parameter_names(parent), ("EmissiveStrength", "EmissiveMaskFromAtlas", "Roughness"), "scalar", parent)
+    _require(MEL.get_static_switch_parameter_names(parent), ("FlatShaded",), "static switch", parent)
+
+
 def configure(mi, base, secondary, emissive=None, strength=0.0, mask_atlas=0.0, roughness=0.8):
-    MEL.set_material_instance_vector_parameter_value(mi, "BaseTint", color(base))
-    MEL.set_material_instance_vector_parameter_value(mi, "SecondaryTint", color(secondary))
-    MEL.set_material_instance_vector_parameter_value(mi, "EmissiveColor", color(emissive or [0, 0, 0]))
-    MEL.set_material_instance_scalar_parameter_value(mi, "EmissiveStrength", strength)
-    MEL.set_material_instance_scalar_parameter_value(mi, "EmissiveMaskFromAtlas", mask_atlas)
-    MEL.set_material_instance_scalar_parameter_value(mi, "Roughness", roughness)
-    # VERIFY-5.8: static switch setter signature (instance, name, value); defaults already match the parent
+    vectors = (("BaseTint", color(base)), ("SecondaryTint", color(secondary)), ("EmissiveColor", color(emissive or [0, 0, 0])))
+    scalars = (("EmissiveStrength", strength), ("EmissiveMaskFromAtlas", mask_atlas), ("Roughness", roughness))
+    for name, value in vectors:
+        MEL.set_material_instance_vector_parameter_value(mi, name, value)
+    for name, value in scalars:
+        MEL.set_material_instance_scalar_parameter_value(mi, name, value)
+    # Default already matches the parent; set explicitly so the MI documents it.
     MEL.set_material_instance_static_switch_parameter_value(mi, "FlatShaded", True)
     MEL.update_material_instance(mi)
+    # Read back: the setters' return values are not reliable in 5.8.
+    for name, value in vectors:
+        got = MEL.get_material_instance_vector_parameter_value(mi, name)
+        if not got.is_near_equal(value, 1e-4):
+            raise RuntimeError(f"{mi.get_name()}: {name} is {got}, expected {value}")
+    for name, value in scalars:
+        got = MEL.get_material_instance_scalar_parameter_value(mi, name)
+        if abs(got - value) > 1e-4:
+            raise RuntimeError(f"{mi.get_name()}: {name} is {got}, expected {value}")
+    if not MEL.get_material_instance_static_switch_parameter_value(mi, "FlatShaded"):
+        raise RuntimeError(f"{mi.get_name()}: FlatShaded is off")
     unreal.EditorAssetLibrary.save_loaded_asset(mi)
 
 
@@ -86,6 +111,7 @@ def main():
     parent = unreal.EditorAssetLibrary.load_asset(MASTER)
     if parent is None:
         raise RuntimeError("M_Master_LowPoly missing: run Tools/ue/create_master_material.py first")
+    check_parent(parent)
 
     for path, base, sec in CLASS_MIS:
         mi = get_or_create_mi(path, parent)
