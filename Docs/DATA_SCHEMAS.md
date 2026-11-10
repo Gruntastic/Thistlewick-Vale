@@ -162,3 +162,14 @@ Loaded items are re-validated with `ValidateItem`. Login is "name + class" on th
 | `SourceArt/**`, `Tools/blender/**` | Art agents per category |
 | `SourceAudio/**` | Audio |
 | `Tests/**`, `Tools/validate_*.py` | QA |
+
+## 12. Table registry and data file format (added in Phase 1)
+- Row structs: shared enums, `FTVItemInstance`, `FTVRolledStat` and `FTVAssetManifestRow` are in `Source/ThistlewickVale/Core/TVTypes.h` (lead). Every other row struct is written by the engineer who owns that domain, **with field names exactly as in this document**: Combat owns `FTVClassRow`, `FTVClassLevelStatsRow`, `FTVXPCurveRow`, `FTVAbilityRow`, `FTVMobRow`, `UTVBossDataAsset`; Systems owns `FTVItemDefRow`, `FTVStatPoolRow`, `FTVLootTableRow`, `UTVSetBonusDataAsset`, `FTVQuestRow`, `FTVNpcRow`, `FTVDialogueRow`, `UTVMountDataAsset`.
+- Code finds tables through `UTVProjectSettings::Get()->LoadTable(Key)`. Keys: `Classes`, `ClassBaseStats`, `XPCurve`, `Abilities`, `Mobs`, `ItemDefs`, `StatPools`, `LootTables`, `Quests`, `Npcs`, `Dialogue`. Asset path convention: `/Game/MMO/Data/DT_<Key>`.
+- Source data is **JSON in UE DataTable import format**: `Data/Source/DT_<Key>.json`, an array of objects whose `"Name"` is the row name (the ID) and whose other keys are the field names in this document. Enums are written as their name strings (`"Tank"`, `"T2_ValeGuard"`). Soft class/object fields are path strings. Data assets (bosses, set bonuses, mount) are authored as `Data/Source/DA_<Name>.json` with the same field names and created by `Tools/ue/import_data.py`.
+- `Tools/ue/import_data.py` (Systems Engineer owns) imports every `Data/Source/DT_*.json` into `/Game/MMO/Data/` with the matching row struct and registers it in `Config/DefaultGame.ini`.
+
+## 13. Engine facts checked on Matthew's PC (2026-11-10)
+- Installed engine: **5.8.3** launcher build at `C:\Program Files\Epic Games\UE_5.8` (not 5.8.4). Targets use `BuildSettingsVersion.V7` and `EngineIncludeOrderVersion.Unreal5_8` (copied from the 5.8 third-person template).
+- A launcher build cannot compile a `Server` target. The dedicated server runs from the editor binary: `UnrealEditor.exe ThistlewickVale.uproject L_Thistlewick -server -log`, clients with `-game`. A real `ThistlewickValeServer.Target.cs` is included but only builds with a source engine.
+- Engine headers can be read from the PC for API checks; mark anything not checked with `// VERIFY-5.8:`.
