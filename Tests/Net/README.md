@@ -2,7 +2,7 @@
 
 Checks login, spawning, replication between clients, say/party chat, party invite and accept, the party frame data,
 dungeon instancing (enter, scaling, leave, unload) and release after death. It runs on the PC with the launcher
-engine (5.8.3), so the server runs from the editor binary with `-server`.
+engine (5.8.4), so the server runs from the editor binary with `-server`.
 
 Every Net log line starts with `[TVNet]` (category `LogTV`). Logs are in `Saved/Logs/`:
 `TV_Server.log`, `TV_Client_Ash.log`, `TV_Client_Bryn.log`.
