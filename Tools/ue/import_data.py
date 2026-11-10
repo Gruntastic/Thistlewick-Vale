@@ -204,13 +204,11 @@ def import_data_asset(name, json_path, dry_run):
         return False
 
     # Python cannot fill nested struct arrays generically, so the C++ helper runs FJsonObjectConverter on the object.
+    # UE Python maps "bool f(..., FString& OutError)" to: the out value ('' here) on true, None on false. The reason is
+    # logged by the C++ helper (LogTV), since Python does not receive OutError on failure.
     result = unreal.TVDataImportLibrary.fill_object_from_json_string(asset, text)
-    if isinstance(result, tuple):
-        ok, message = result[0], (result[1] if len(result) > 1 else "")
-    else:
-        ok, message = bool(result), ""
-    if not ok:
-        error("{}: {}".format(name, message))
+    if result is None:
+        error("{}: JSON did not apply (see the LogTV error above)".format(name))
         return False
     unreal.EditorAssetLibrary.save_loaded_asset(asset)
     log("{}: created as U{}".format(name, class_name))
@@ -223,7 +221,7 @@ def write_ini_fallback(manifest_path, tables):
     with open(ini_path, "r", encoding="utf-8") as handle:
         lines = handle.read().splitlines()
 
-    # VERIFY-5.8: TMap config text format ((Key, Value),...) as written by FMapProperty::ExportText.
+    # Same text as 5.8 TryUpdateDefaultConfigFile writes for the TMap: Tables=(("Key", "Value"),...) (checked 2026-11-10).
     entries = ",".join('("{}", "{}")'.format(k, v) for k, v in sorted(tables.items()))
     new_block = [SETTINGS_SECTION]
     if manifest_path:

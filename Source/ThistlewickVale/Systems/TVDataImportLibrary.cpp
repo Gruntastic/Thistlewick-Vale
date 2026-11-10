@@ -29,6 +29,8 @@ bool UTVDataImportLibrary::FillObjectFromJsonString(UObject* Target, const FStri
 	if (!bOk)
 	{
 		OutError = FailReason.ToString();
+		// Python only gets None on failure (not OutError), so log the reason for import_data.py.
+		UE_LOG(LogTV, Error, TEXT("FillObjectFromJsonString(%s): %s"), *Target->GetPathName(), *OutError);
 		return false;
 	}
 	Target->MarkPackageDirty();
