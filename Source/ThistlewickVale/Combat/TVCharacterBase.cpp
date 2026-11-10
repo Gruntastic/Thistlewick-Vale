@@ -317,16 +317,8 @@ void ATVCharacterBase::ApplyVisualsFromManifest(FName MeshId, FName AnimBlueprin
 	}
 	if (!AnimBlueprintId.IsNone())
 	{
-		UObject* AnimAsset = Registry->LoadSync(AnimBlueprintId);
-		UClass* AnimClass = Cast<UClass>(AnimAsset);
-		if (!AnimClass)
-		{
-			if (const UBlueprint* Blueprint = Cast<UBlueprint>(AnimAsset))
-			{
-				AnimClass = Blueprint->GeneratedClass;
-			}
-		}
-		if (AnimClass)
+		// Loads the generated _C class, so this also works in a packaged build (the UAnimBlueprint asset is editor-only).
+		if (UClass* AnimClass = Registry->LoadAnimClass(AnimBlueprintId))
 		{
 			GetMesh()->SetAnimInstanceClass(AnimClass);
 		}

@@ -5,6 +5,7 @@
 #include "Engine/GameInstance.h"
 #include "Engine/World.h"
 #include "Engine/Engine.h"
+#include "Animation/AnimInstance.h"
 
 void UTVAssetRegistrySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -53,4 +54,49 @@ TSoftObjectPtr<UObject> UTVAssetRegistrySubsystem::Resolve(FName ManifestId) con
 UObject* UTVAssetRegistrySubsystem::LoadSync(FName ManifestId) const
 {
 	return Resolve(ManifestId).LoadSynchronous();
+}
+
+FSoftObjectPath UTVAssetRegistrySubsystem::ToGeneratedClassPath(const FSoftObjectPath& AssetPath)
+{
+	if (AssetPath.IsNull())
+	{
+		return AssetPath;
+	}
+	// Blueprint generated classes live in the blueprint's package as <AssetName>_C.
+	const FString AssetName = AssetPath.GetAssetName();
+	if (AssetName.EndsWith(TEXT("_C")))
+	{
+		return AssetPath;
+	}
+	return FSoftObjectPath(FString::Printf(TEXT("%s.%s_C"), *AssetPath.GetLongPackageName(), *AssetName));
+}
+
+UClass* UTVAssetRegistrySubsystem::LoadAnimClass(FName ManifestId) const
+{
+	if (ManifestId.IsNone())
+	{
+		return nullptr;
+	}
+	const FTVAssetManifestRow* Row = FindRow(ManifestId);
+	if (!Row)
+	{
+		Resolve(ManifestId); // logs the unknown-ID warning once
+		return nullptr;
+	}
+	const FSoftObjectPath ClassPath = ToGeneratedClassPath(Row->Asset.ToSoftObjectPath());
+	if (ClassPath.IsNull())
+	{
+		return nullptr; // planned entry without an asset yet
+	}
+	UClass* Class = TSoftClassPtr<UObject>(ClassPath).LoadSynchronous();
+	if (!Class || !Class->IsChildOf(UAnimInstance::StaticClass()))
+	{
+		if (!WarnedIds.Contains(ManifestId))
+		{
+			WarnedIds.Add(ManifestId);
+			UE_LOG(LogTV, Warning, TEXT("Manifest ID '%s' (%s) is not an animation blueprint class"), *ManifestId.ToString(), *ClassPath.ToString());
+		}
+		return nullptr;
+	}
+	return Class;
 }

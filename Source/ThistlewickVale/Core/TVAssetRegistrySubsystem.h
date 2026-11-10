@@ -31,6 +31,18 @@ public:
 
 	const FTVAssetManifestRow* FindRow(FName ManifestId) const;
 
+	/**
+	 * Animation blueprint entry -> its generated anim instance class, loaded synchronously. The manifest may point at the
+	 * UAnimBlueprint asset ("/Game/X/ABP_Y.ABP_Y") or at the class ("/Game/X/ABP_Y.ABP_Y_C"); either way the class is
+	 * loaded by its _C path and the blueprint asset itself is never loaded, because it is editor-only and is not in a
+	 * packaged build. Null (warning once per ID) if the ID is unknown or does not name an anim instance class.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "TV|Manifest")
+	UClass* LoadAnimClass(FName ManifestId) const;
+
+	/** "/Game/X/ABP_Y.ABP_Y" -> "/Game/X/ABP_Y.ABP_Y_C"; paths already ending in _C are returned unchanged. */
+	static FSoftObjectPath ToGeneratedClassPath(const FSoftObjectPath& AssetPath);
+
 private:
 	UPROPERTY(Transient) TObjectPtr<UDataTable> ManifestTable;
 	mutable TSet<FName> WarnedIds;

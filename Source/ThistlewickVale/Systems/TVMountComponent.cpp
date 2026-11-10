@@ -322,21 +322,10 @@ void UTVMountComponent::SpawnMountVisual()
 	{
 		USkeletalMeshComponent* Comp = NewObject<USkeletalMeshComponent>(Character, CompName);
 		Comp->SetSkeletalMeshAsset(SkelMesh);
-		if (UObject* AnimAsset = Manifest->LoadSync(Data->AnimBlueprintId))
+		// The registry loads the generated _C class directly, so this also works in a packaged build.
+		if (UClass* AnimClass = Manifest->LoadAnimClass(Data->AnimBlueprintId))
 		{
-			UClass* AnimClass = Cast<UClass>(AnimAsset);
-			if (!AnimClass)
-			{
-				// Manifest points at the ABP asset; the runtime class is the generated "_C" class.
-				// Generated classes are named <Asset>_C in the same package ("/Game/X/ABP.ABP_C"). In a cooked build the
-				// UAnimBlueprint itself is editor-only and does not load, so the manifest should point at the _C class there.
-				const FString ClassPath = AnimAsset->GetPathName() + TEXT("_C");
-				AnimClass = LoadObject<UClass>(nullptr, *ClassPath);
-			}
-			if (AnimClass && AnimClass->IsChildOf(UAnimInstance::StaticClass()))
-			{
-				Comp->SetAnimInstanceClass(AnimClass);
-			}
+			Comp->SetAnimInstanceClass(AnimClass);
 		}
 		MountMesh = Comp;
 	}
