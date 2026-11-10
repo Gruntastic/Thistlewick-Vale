@@ -36,9 +36,9 @@ UTVEquipmentComponent::UTVEquipmentComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 	SetIsReplicatedByDefault(true);
 
-	SetBonusAssets.Add(ETVSetTier::T1_Wanderers, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T1_Wanderers")));
-	SetBonusAssets.Add(ETVSetTier::T2_ValeGuard, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T2_ValeGuard")));
-	SetBonusAssets.Add(ETVSetTier::T3_HollowCrown, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T3_HollowCrown")));
+	SetBonusAssets.Add(ETVSetTier::T1_Wanderers, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T1")));
+	SetBonusAssets.Add(ETVSetTier::T2_ValeGuard, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T2")));
+	SetBonusAssets.Add(ETVSetTier::T3_HollowCrown, TVEquip::DefaultSetAsset(TEXT("DA_SetBonus_T3")));
 }
 
 void UTVEquipmentComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -95,7 +95,7 @@ int32 UTVEquipmentComponent::GetSetPieceCount(ETVSetTier Tier) const
 	int32 Count = 0;
 	for (const FTVItemInstance& Item : EquippedItems)
 	{
-		// Weapons count toward the set only if they carry the tier; the 2/4-piece design assumes the four armor slots.
+		// Every equipped piece of the tier counts, weapon included (max 5), per Docs/BALANCE.md section 1.
 		if (Item.SetTier == Tier)
 		{
 			++Count;

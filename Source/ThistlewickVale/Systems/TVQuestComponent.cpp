@@ -184,9 +184,10 @@ void UTVQuestComponent::ServerTurnInQuest_Implementation(FName QuestId)
 	}
 	ATVPlayerState* PS = GetTVPlayerState();
 	UTVInventoryComponent* Inventory = PS ? PS->GetInventory() : nullptr;
-	if (!Inventory || Inventory->GetFreeSlots() < Row.RewardItems.Num())
+	const int32 ItemCount = PS ? CountRewardItemsFor(Row, PS->ClassId) : 0;
+	if (!Inventory || Inventory->GetFreeSlots() < ItemCount)
 	{
-		UE_LOG(LogTV, Verbose, TEXT("Turn-in '%s' refused: bag needs %d free slots."), *QuestId.ToString(), Row.RewardItems.Num());
+		UE_LOG(LogTV, Verbose, TEXT("Turn-in '%s' refused: bag needs %d free slots."), *QuestId.ToString(), ItemCount);
 		return;
 	}
 	Progress->State = ETVQuestState::Completed;
@@ -227,6 +228,20 @@ ETVRarity UTVQuestComponent::ResolveRewardRarity(FName RarityName) const
 	return Rolled == ETVRarity::None ? ETVRarity::Uncommon : Rolled;
 }
 
+int32 UTVQuestComponent::CountRewardItemsFor(const FTVQuestRow& Row, FName ClassId)
+{
+	int32 Count = 0;
+	for (const FTVQuestRewardItem& Reward : Row.RewardItems)
+	{
+		FTVItemDefRow Def;
+		if (UTVLootLibrary::GetItemDef(Reward.ItemDefId, Def) && Def.IsUsableByClass(ClassId))
+		{
+			++Count;
+		}
+	}
+	return Count;
+}
+
 void UTVQuestComponent::GrantRewards(const FTVQuestRow& Row)
 {
 	ATVPlayerState* PS = GetTVPlayerState();
@@ -250,6 +265,11 @@ void UTVQuestComponent::GrantRewards(const FTVQuestRow& Row)
 			if (!UTVLootLibrary::GetItemDef(Reward.ItemDefId, Def))
 			{
 				UE_LOG(LogTV, Warning, TEXT("Quest '%s' rewards unknown item '%s'."), *Row.QuestId.ToString(), *Reward.ItemDefId.ToString());
+				continue;
+			}
+			// Rewards list one item per armor family / class weapon; only the ones this class can use are granted.
+			if (!Def.IsUsableByClass(PS->ClassId))
+			{
 				continue;
 			}
 			const ETVRarity Rarity = ResolveRewardRarity(Reward.Rarity);

@@ -52,6 +52,8 @@ struct THISTLEWICKVALE_API FTVStatPoolRow : public FTableRowBase
 {
 	GENERATED_BODY()
 
+	/** Same as the row name (present in Data/Source/DT_StatPools.json). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "TV|Item") FName StatPoolId;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "TV|Item") ETVEquipSlot Slot = ETVEquipSlot::None;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "TV|Item") ETVArmorFamily ArmorFamily = ETVArmorFamily::None;
 	/** The schema leaves this array unnamed; it is called Stats. */

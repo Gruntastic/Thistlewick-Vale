@@ -75,7 +75,7 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "TV|Equipment")
 	FTVOnEquipmentChanged OnEquipmentChanged;
 
-	/** Set bonus assets per tier. Defaults follow the import script's naming (/Game/MMO/Data/DA_SetBonus_<Tier>). */
+	/** Set bonus assets per tier. Defaults follow the import script's naming (/Game/MMO/Data/DA_SetBonus_T1 / _T2 / _T3). */
 	UPROPERTY(EditDefaultsOnly, Category = "TV|Equipment")
 	TMap<ETVSetTier, TSoftObjectPtr<UTVSetBonusDataAsset>> SetBonusAssets;
 

@@ -84,6 +84,8 @@ public:
 	float NpcRangeCm = 800.f;
 
 	static bool GetQuestRow(FName QuestId, FTVQuestRow& OutRow);
+	/** Reward items the class can use (the only ones granted). */
+	static int32 CountRewardItemsFor(const FTVQuestRow& Row, FName ClassId);
 
 protected:
 	UFUNCTION() void OnRep_Quests();
