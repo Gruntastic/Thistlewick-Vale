@@ -204,6 +204,10 @@ void ATVPlayerController::ClientLoginResult_Implementation(bool bSuccess, const 
 	UE_LOG(LogTV, Log, TEXT("%s Client login result: %s (%s)"), TV_NET_LOG_PREFIX, bSuccess ? TEXT("OK") : TEXT("FAILED"), *Message);
 	OnLoginResult.Broadcast(bSuccess, Message);
 	OnChatMessage.Broadcast(ETVChatChannel::System, FString(), Message);
+	if (bSuccess)
+	{
+		StartDevExecQueue(); // -TVExec / -TVExecFile (not in Shipping)
+	}
 }
 
 void ATVPlayerController::ConnectToServer(const FString& Address, const FString& CharacterName, FName ClassId, const FString& Account)

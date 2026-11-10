@@ -160,11 +160,39 @@ public:
 	UFUNCTION(Exec) void TVEnterDungeon();
 	UFUNCTION(Exec) void TVSetSlot(int32 SlotNumber, const FString& AbilityId);
 	UFUNCTION(Exec) void TVSlot(int32 SlotNumber);
+	// The same requests the UI and keys send (Net/TVDevCommands.cpp), so scripts can drive a client without a UI.
+	UFUNCTION(Exec) void TVInteract();
+	UFUNCTION(Exec) void TVAcceptQuest(const FString& QuestId);
+	UFUNCTION(Exec) void TVTurnInQuest(const FString& QuestId);
+	UFUNCTION(Exec) void TVTabTarget();
+	UFUNCTION(Exec) void TVMount();
+
+	// ---------------------------------------------------------------- Dev cheats (server-checked; refused in Shipping)
+	// Documented in Tests/Net/README.md. Each sends ServerDevCommand; the server logs "[TVNet] [Dev] ...".
+	UFUNCTION(Exec) void TVDamageSelf(float Amount);
+	UFUNCTION(Exec) void TVKillTarget();
+	UFUNCTION(Exec) void TVSetLevel(int32 NewLevel);
+	UFUNCTION(Exec) void TVGrantItem(const FString& ItemDefId, const FString& Rarity, int32 ItemLevel);
+	UFUNCTION(Exec) void TVGrantMount(const FString& MountId = TEXT("MNT_DAWNSTAG"));
+	UFUNCTION(Exec) void TVCompleteQuest(const FString& QuestId);
+	UFUNCTION(Exec) void TVTeleport(float X, float Y, float Z);
+	/** Targets the nearest living mob with this MobId (or any mob for "any"). */
+	UFUNCTION(Exec) void TVTargetMob(const FString& MobId);
+	/** Server logs level, XP, gold, health, dead/mounted/dungeon state, quest progress and item count. */
+	UFUNCTION(Exec) void TVStatus();
+	/** Server logs every bag and equipped item with its ValidateItem result. */
+	UFUNCTION(Exec) void TVListItems();
+	/** Client logs the players and mobs this client can see (instance isolation checks). */
+	UFUNCTION(Exec) void TVVisible();
 
 protected:
 	/** Development shortcut for the smoke test: enter the dungeon without walking to the portal. Disabled in Shipping. */
 	UFUNCTION(Server, Reliable)
 	void ServerDebugEnterDungeon();
+
+	/** Dev cheat dispatcher (Net/TVDevCommands.cpp). Refused when the server is a Shipping build. */
+	UFUNCTION(Server, Reliable)
+	void ServerDevCommand(const FString& Command);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Targeting")
 	TObjectPtr<UTVTargetingComponent> Targeting;
@@ -226,6 +254,15 @@ private:
 	void ApplyMappingContexts();
 	void UpdateMountedContext();
 	void TryAutoLoginFromCommandLine();
+
+	// -TVExec="cmd;wait 5;cmd" / -TVExecFile=<path>: console commands queued on the client after login (not in Shipping).
+	void StartDevExecQueue();
+	void RunNextDevExec();
+	void HandleDevCommand(const FString& Command); // server side of ServerDevCommand
+	void DevLog(const FString& Message) const;
+	TArray<FString> DevExecQueue;
+	FTimerHandle DevExecTimer;
+	bool bDevExecStarted = false;
 	AActor* FindInteractCandidate() const;
 	void ExecuteChatCommand(const FString& Line);
 	void BroadcastSay(const FString& Message);
