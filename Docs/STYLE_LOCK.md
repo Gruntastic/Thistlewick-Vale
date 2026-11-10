@@ -48,3 +48,17 @@ WORLD MOOD: warm sunlit meadow, cozy village of timber cottages, moss-covered ru
 - Flat shading is derived from DDX/DDY of world position (material outputs a world-space normal); `FlatShaded` off falls back to the vertex normal.
 - `DissolveAmount` is a true dissolve on `M_Master_LowPoly_Masked`; on the opaque master it only darkens, so dying mobs swap to a Masked MI.
 - Engine API names in those scripts are unverified against 5.8 headers (see `# VERIFY-5.8:` comments); first in-editor run is the check.
+
+## Concept images generated (2026-11-10, ForgeGUI, style v1)
+The cloud session cannot download from the ForgeGUI image host, so these have not been reviewed by the lead or saved into the repo yet. Save them under `SourceArt/Concepts/` from a machine that can reach the host.
+
+| ID | Subject | ForgeGUI job | artifact_ref |
+|---|---|---|---|
+| C1 | Warrior, Wanderer's tier | 6bb496f1-84b6-4426-8d02-ff51f143a81d | mcp-artifact:6bb496f1-84b6-4426-8d02-ff51f143a81d:0 |
+| M1 | Mossback Scrapper | 024a13bb-682f-4dd4-9ec7-236918363e11 | mcp-artifact:024a13bb-682f-4dd4-9ec7-236918363e11:0 |
+| B4 | Maldrek, the Hollow King | a475bf30-f884-4190-b012-5a8f4dc1022e | mcp-artifact:a475bf30-f884-4190-b012-5a8f4dc1022e:0 |
+| G1 | Plate armor tier sheet | 35348215-1b34-42bc-ad27-b06ca4787f84 | mcp-artifact:35348215-1b34-42bc-ad27-b06ca4787f84:0 |
+| E1 | Lanternrest village | a121f99c-a4a1-4a19-82b3-7fd9931579f2 | mcp-artifact:a121f99c-a4a1-4a19-82b3-7fd9931579f2:0 |
+
+Image URL pattern: `https://azyjlkhpdgafuobyxoax.supabase.co/storage/v1/object/public/asset-images/8db8f723-b6e0-4ac0-9d39-2687db496db1/mcp/<job>/u1-e1-0.png`.
+MT1 (Dawnstag) was refused: the account ran out of credits (1,600 per image, 1,181 left). No further paid calls until credits are added.
