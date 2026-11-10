@@ -15,7 +15,6 @@
 #include "Net/TVPlayerController.h"
 #include "Net/TVDungeonManager.h"
 #include "Net/TVPartySubsystem.h"
-#include "Net/TVCharacterFilePeek.h"
 #include "Net/TVNetPlayerAccess.h"
 #include "Net/TVNetTypes.h"
 
@@ -174,21 +173,23 @@ bool ATVGameMode::LoginPlayer(ATVPlayerController* PC, const FString& InAccount,
 	if (!bExisting)
 	{
 		PS->InitCharacter(ClassId, 1, 0);
+		if (Save)
+		{
+			Save->RegisterAccount(PS, Account); // so SaveCharacter knows the file name
+		}
 	}
 	TVNet::SetCharacterName(PS, Name);
+	PC->HandleLoginComplete(Account, Name, bExisting ? TVNet::GetClassId(PS) : ClassId, bExisting);
 
-	const FTVCharacterFilePeek Peek = bExisting ? FTVCharacterFilePeek::Read(Account, Name) : FTVCharacterFilePeek();
-	PC->HandleLoginComplete(Account, Name, bExisting ? TVNet::GetClassId(PS) : ClassId, bExisting, Peek);
-
-	// Spawn: saved overworld location, else the Lanternrest bind stone.
+	// Spawn: saved location (UTVSaveSubsystem::GetSavedSpawn only answers when the save's map is this map),
+	// unless it is inside dungeon instance space; else the Lanternrest bind stone.
 	FTransform SpawnTransform = GetBindStoneTransform();
+	FTransform Saved;
 	const ATVDungeonManager* Dungeons = ATVDungeonManager::Get(this);
-	const bool bSavedLocationUsable = Peek.bHasLocation
-		&& (Peek.MapName.IsEmpty() || Peek.MapName == OverworldMapName())
-		&& !(Dungeons && Dungeons->IsLocationInInstanceSpace(Peek.Location));
-	if (bSavedLocationUsable)
+	if (bExisting && Save && Save->GetSavedSpawn(PS, Saved)
+		&& !(Dungeons && Dungeons->IsLocationInInstanceSpace(Saved.GetLocation())))
 	{
-		SpawnTransform = FTransform(FRotator(0.f, Peek.Yaw, 0.f), Peek.Location + FVector(0.0, 0.0, 50.0));
+		SpawnTransform = FTransform(FRotator(0.f, Saved.Rotator().Yaw, 0.f), Saved.GetLocation() + FVector(0.0, 0.0, 50.0));
 	}
 	RestartPlayerAtTransform(PC, SpawnTransform);
 

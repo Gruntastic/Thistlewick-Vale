@@ -33,7 +33,6 @@
 #include "Net/TVPartyInfo.h"
 #include "Net/TVDungeonManager.h"
 #include "Net/TVDungeonPortal.h"
-#include "Net/TVCharacterFilePeek.h"
 #include "Net/TVNetPlayerAccess.h"
 
 namespace
@@ -41,74 +40,31 @@ namespace
 	const FName MountSummonAbilityId(TEXT("ABL_MOUNT_SUMMON"));
 	const FName DefaultClassId(TEXT("CLS_WARRIOR"));
 
-	bool IsInteractable(const AActor* Actor)
+	/** Interactable for the F key: a dungeon portal, or an ITVInteractable that accepts this player (Systems' CanInteract). */
+	bool IsInteractable(AActor* Actor, const ATVPlayerState* Player)
 	{
-		return Actor && (Actor->IsA<ATVDungeonPortal>() || Actor->GetClass()->ImplementsInterface(UTVInteractable::StaticClass()));
-	}
-
-	/**
-	 * INTERFACE-REQUEST (Systems, ITVInteractable): INTERFACES.md names the interface but not its function. This calls
-	 * the first UFUNCTION named Interact / OnInteract / ExecuteInteract by reflection and fills every object parameter
-	 * with the controller, pawn or player state, whichever matches the parameter class. Please confirm the signature
-	 * (suggested: UFUNCTION(BlueprintNativeEvent) void Interact(ATVPlayerController* Instigator)) and this can become
-	 * a direct ITVInteractable::Execute_Interact call.
-	 */
-	bool CallInteractByReflection(AActor* Target, ATVPlayerController* PC)
-	{
-		static const FName Names[] = { TEXT("Interact"), TEXT("OnInteract"), TEXT("ExecuteInteract") };
-		for (const FName& Name : Names)
+		if (!Actor)
 		{
-			UFunction* Function = Target->FindFunction(Name);
-			if (!Function)
-			{
-				continue;
-			}
-			TArray<uint8, TInlineAllocator<64>> Buffer;
-			Buffer.SetNumZeroed(FMath::Max<int32>(Function->ParmsSize, 1));
-			uint8* Params = Buffer.GetData();
-			for (TFieldIterator<FProperty> It(Function); It && It->HasAnyPropertyFlags(CPF_Parm); ++It)
-			{
-				It->InitializeValue_InContainer(Params);
-			}
-			UObject* Candidates[] = { PC, PC->GetPawn(), PC->PlayerState.Get() };
-			for (TFieldIterator<FProperty> It(Function); It && It->HasAnyPropertyFlags(CPF_Parm); ++It)
-			{
-				FObjectPropertyBase* ObjectProperty = CastField<FObjectPropertyBase>(*It);
-				if (!ObjectProperty || It->HasAnyPropertyFlags(CPF_ReturnParm))
-				{
-					continue;
-				}
-				for (UObject* Candidate : Candidates)
-				{
-					if (Candidate && Candidate->IsA(ObjectProperty->PropertyClass))
-					{
-						ObjectProperty->SetObjectPropertyValue_InContainer(Params, Candidate);
-						break;
-					}
-				}
-			}
-			Target->ProcessEvent(Function, Params);
-			for (TFieldIterator<FProperty> It(Function); It && It->HasAnyPropertyFlags(CPF_Parm); ++It)
-			{
-				It->DestroyValue_InContainer(Params);
-			}
+			return false;
+		}
+		if (Actor->IsA<ATVDungeonPortal>())
+		{
 			return true;
 		}
-		return false;
+		const ITVInteractable* Interactable = Cast<ITVInteractable>(Actor);
+		return Interactable && Player && Interactable->CanInteract(Player);
 	}
 }
 
 ATVPlayerController::ATVPlayerController()
 {
 	Targeting = CreateDefaultSubobject<UTVTargetingComponent>(TEXT("Targeting"));
-	ActionBar.Init(NAME_None, NumActionSlots);
 	bShowMouseCursor = true;
 }
 
 void ATVPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-	DOREPLIFETIME_CONDITION(ATVPlayerController, ActionBar, COND_OwnerOnly);
 	DOREPLIFETIME_CONDITION(ATVPlayerController, Party, COND_OwnerOnly);
 	DOREPLIFETIME_CONDITION(ATVPlayerController, bLoggedIn, COND_OwnerOnly);
 }
@@ -277,20 +233,30 @@ bool ATVPlayerController::GetPendingUrlLogin(FString& OutAccount, FString& OutNa
 	return true;
 }
 
-void ATVPlayerController::HandleLoginComplete(const FString& Account, const FString& CharacterName, FName ClassId, bool bExistingCharacter, const FTVCharacterFilePeek& Peek)
+void ATVPlayerController::HandleLoginComplete(const FString& Account, const FString& CharacterName, FName ClassId, bool bExistingCharacter)
 {
 	AccountName = Account;
 	bLoggedIn = true;
 
-	if (Peek.ActionBar.Num() == NumActionSlots)
+	// Action bar: the saved layout (UTVSaveSubsystem keeps it per player) or the class defaults from DT_Classes.
+	ATVPlayerState* PS = GetTVPlayerState();
+	UTVSaveSubsystem* Save = GetGameInstance() ? GetGameInstance()->GetSubsystem<UTVSaveSubsystem>() : nullptr;
+	TArray<FName> Bar;
+	if (bExistingCharacter && Save)
 	{
-		ActionBar = Peek.ActionBar;
+		Bar = Save->GetActionBar(PS);
 	}
-	else
+	if (!Bar.ContainsByPredicate([](const FName& Id) { return !Id.IsNone(); }))
 	{
-		BuildDefaultActionBar(ClassId);
+		Bar = BuildDefaultActionBar(ClassId);
 	}
-	OnRep_ActionBar();
+	Bar.SetNum(NumActionSlots);
+	TVNet::SetActionBar(PS, Bar);
+	if (Save)
+	{
+		Save->SetActionBar(PS, Bar);
+	}
+	OnActionBarChanged.Broadcast();
 	OnRep_LoggedIn();
 	ForceNetUpdate();
 
@@ -319,16 +285,16 @@ void ATVPlayerController::SaveCharacterNow(const TCHAR* Reason)
 		UE_LOG(LogTV, Warning, TEXT("%s Save skipped (%s): no player state or save subsystem"), TV_NET_LOG_PREFIX, Reason);
 		return;
 	}
-	// INTERFACE-REQUEST (Systems, UTVSaveSubsystem): write "actionBar" from
-	// Cast<ATVPlayerController>(PS->GetPlayerController())->GetActionBar() (10 entries, null for empty).
+	Save->SetActionBar(PS, TVNet::GetActionBar(PS)); // keep the saved layout in sync with ATVPlayerState::ActionBar
 	const bool bSaved = Save->SaveCharacter(PS);
 	UE_LOG(LogTV, Log, TEXT("%s Saved %s (%s): %s"), TV_NET_LOG_PREFIX, *TVNet::GetCharacterName(PS), Reason, bSaved ? TEXT("ok") : TEXT("FAILED"));
 }
 
 // ================================================================================================ action bar
 
-void ATVPlayerController::BuildDefaultActionBar(FName ClassId)
+TArray<FName> ATVPlayerController::BuildDefaultActionBar(FName ClassId)
 {
+	TArray<FName> ActionBar;
 	ActionBar.Init(NAME_None, NumActionSlots);
 
 	// DT_Classes.StartingAbilities [{AbilityId, UnlockLevel, DefaultSlot}] read by reflection so Net does not depend on
@@ -340,19 +306,19 @@ void ATVPlayerController::BuildDefaultActionBar(FName ClassId)
 	const UScriptStruct* RowStruct = Classes ? Classes->GetRowStruct() : nullptr;
 	if (!Row || !RowStruct)
 	{
-		return;
+		return ActionBar;
 	}
 	const FArrayProperty* ArrayProperty = CastField<FArrayProperty>(RowStruct->FindPropertyByName(TEXT("StartingAbilities")));
 	const FStructProperty* Inner = ArrayProperty ? CastField<FStructProperty>(ArrayProperty->Inner) : nullptr;
 	if (!Inner)
 	{
-		return;
+		return ActionBar;
 	}
 	const FNameProperty* IdProperty = CastField<FNameProperty>(Inner->Struct->FindPropertyByName(TEXT("AbilityId")));
 	const FIntProperty* SlotProperty = CastField<FIntProperty>(Inner->Struct->FindPropertyByName(TEXT("DefaultSlot")));
 	if (!IdProperty)
 	{
-		return;
+		return ActionBar;
 	}
 	FScriptArrayHelper Helper(ArrayProperty, ArrayProperty->ContainerPtrToValuePtr<void>(Row));
 	TArray<FName> Unplaced;
@@ -378,31 +344,43 @@ void ATVPlayerController::BuildDefaultActionBar(FName ClassId)
 			ActionBar[Free] = AbilityId;
 		}
 	}
+	return ActionBar;
 }
 
 void ATVPlayerController::ServerSetActionSlot_Implementation(int32 SlotIndex, FName AbilityId)
 {
-	if (!ActionBar.IsValidIndex(SlotIndex))
+	ATVPlayerState* PS = GetTVPlayerState();
+	TArray<FName> Bar = TVNet::GetActionBar(PS);
+	Bar.SetNum(NumActionSlots);
+	if (!PS || !Bar.IsValidIndex(SlotIndex))
 	{
 		return;
 	}
-	ActionBar[SlotIndex] = AbilityId;
-	OnRep_ActionBar();
+	Bar[SlotIndex] = AbilityId;
+	TVNet::SetActionBar(PS, Bar);
+	if (UTVSaveSubsystem* Save = GetGameInstance() ? GetGameInstance()->GetSubsystem<UTVSaveSubsystem>() : nullptr)
+	{
+		Save->SetActionBar(PS, Bar);
+	}
+	OnActionBarChanged.Broadcast();
+}
+
+TArray<FName> ATVPlayerController::GetActionBar() const
+{
+	return TVNet::GetActionBar(GetTVPlayerState());
 }
 
 bool ATVPlayerController::ActivateActionSlot(int32 SlotIndex)
 {
-	if (!ActionBar.IsValidIndex(SlotIndex) || ActionBar[SlotIndex].IsNone())
+	// Action slot keys read ATVPlayerState::ActionBar[i] (replicated by Combat).
+	const ATVPlayerState* PS = GetTVPlayerState();
+	const TArray<FName> Bar = TVNet::GetActionBar(PS);
+	if (!Bar.IsValidIndex(SlotIndex) || Bar[SlotIndex].IsNone())
 	{
 		return false;
 	}
-	UTVAbilitySystemComponent* ASC = TVNet::GetTVAbilitySystem(GetTVPlayerState());
-	return ASC && ASC->TryActivateAbilityById(ActionBar[SlotIndex]);
-}
-
-void ATVPlayerController::OnRep_ActionBar()
-{
-	OnActionBarChanged.Broadcast();
+	UTVAbilitySystemComponent* ASC = TVNet::GetTVAbilitySystem(PS);
+	return ASC && ASC->TryActivateAbilityById(Bar[SlotIndex]);
 }
 
 // ================================================================================================ interaction / death
@@ -425,11 +403,12 @@ void ATVPlayerController::ServerInteract_Implementation(AActor* Target)
 		Portal->Use(PS);
 		return;
 	}
-	if (Target->GetClass()->ImplementsInterface(UTVInteractable::StaticClass()))
+	// Systems contract (Systems/TVInteractable.h): CanInteract (range + quest state) then Interact, server only.
+	if (ITVInteractable* Interactable = Cast<ITVInteractable>(Target))
 	{
-		if (!CallInteractByReflection(Target, this))
+		if (Interactable->CanInteract(PS))
 		{
-			UE_LOG(LogTV, Warning, TEXT("%s %s implements ITVInteractable but no Interact UFUNCTION was found"), TV_NET_LOG_PREFIX, *GetNameSafe(Target));
+			Interactable->Interact(PS);
 		}
 	}
 }
@@ -453,7 +432,7 @@ AActor* ATVPlayerController::FindInteractCandidate() const
 	if (Targeting)
 	{
 		AActor* Target = Targeting->GetCurrentTarget();
-		if (IsInteractable(Target) && FVector::Dist(Origin, Target->GetActorLocation()) <= InteractRange)
+		if (IsInteractable(Target, GetTVPlayerState()) && FVector::Dist(Origin, Target->GetActorLocation()) <= InteractRange)
 		{
 			return Target;
 		}
@@ -468,7 +447,7 @@ AActor* ATVPlayerController::FindInteractCandidate() const
 	for (const FOverlapResult& Overlap : Overlaps)
 	{
 		AActor* Actor = Overlap.GetActor();
-		if (!IsInteractable(Actor))
+		if (!IsInteractable(Actor, GetTVPlayerState()))
 		{
 			continue;
 		}
@@ -717,23 +696,15 @@ void ATVPlayerController::HandleInteract()
 void ATVPlayerController::HandleMountKey()
 {
 	ATVPlayerState* PS = GetTVPlayerState();
-	const UTVMountComponent* Mount = TVNet::GetMount(PS);
+	UTVMountComponent* Mount = TVNet::GetMount(PS);
 	if (Mount && Mount->IsMounted())
 	{
-		ServerDismount();
+		Mount->ServerRequestDismount(); // Systems' server RPC on the PlayerState component
 		return;
 	}
 	if (UTVAbilitySystemComponent* ASC = TVNet::GetTVAbilitySystem(PS))
 	{
 		ASC->TryActivateAbilityById(MountSummonAbilityId);
-	}
-}
-
-void ATVPlayerController::ServerDismount_Implementation()
-{
-	if (UTVMountComponent* Mount = TVNet::GetMount(GetTVPlayerState()))
-	{
-		Mount->ServerSetMounted(false);
 	}
 }
 

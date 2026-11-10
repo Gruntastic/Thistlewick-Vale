@@ -13,7 +13,6 @@ class UTVInputConfig;
 class ATVPartyInfo;
 class ATVPlayerState;
 class ULevelStreamingDynamic;
-struct FTVCharacterFilePeek;
 
 UCLASS()
 class THISTLEWICKVALE_API ATVPlayerController : public APlayerController
@@ -56,7 +55,7 @@ public:
 	/** Server-side bookkeeping, called by ATVGameMode. */
 	void SetPendingUrlLogin(const FString& Account, const FString& CharacterName, FName ClassId);
 	bool GetPendingUrlLogin(FString& OutAccount, FString& OutName, FName& OutClass) const;
-	void HandleLoginComplete(const FString& Account, const FString& CharacterName, FName ClassId, bool bExistingCharacter, const FTVCharacterFilePeek& Peek);
+	void HandleLoginComplete(const FString& Account, const FString& CharacterName, FName ClassId, bool bExistingCharacter);
 	const FString& GetAccountName() const { return AccountName; }
 
 	/** Server. Saves through UTVSaveSubsystem. Called every AutosaveInterval seconds and on logout. */
@@ -70,9 +69,9 @@ public:
 	void ServerReleaseSpirit();
 
 	// ---------------------------------------------------------------- Action bar
-	/** Replicated to the owner. 10 entries; NAME_None for empty. Saved through UTVSaveSubsystem (see INTERFACE-REQUEST in .cpp). */
+	/** The action bar lives on ATVPlayerState::ActionBar (10 slots, Combat). This returns a copy for UI convenience. */
 	UFUNCTION(BlueprintPure, Category = "ActionBar")
-	const TArray<FName>& GetActionBar() const { return ActionBar; }
+	TArray<FName> GetActionBar() const;
 
 	UFUNCTION(Server, Reliable, BlueprintCallable, Category = "ActionBar")
 	void ServerSetActionSlot(int32 SlotIndex, FName AbilityId);
@@ -167,17 +166,11 @@ protected:
 	UFUNCTION(Server, Reliable)
 	void ServerDebugEnterDungeon();
 
-	UFUNCTION(Server, Reliable)
-	void ServerDismount();
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Targeting")
 	TObjectPtr<UTVTargetingComponent> Targeting;
 
 	UPROPERTY(Transient)
 	TObjectPtr<UTVInputConfig> InputConfig;
-
-	UPROPERTY(ReplicatedUsing = OnRep_ActionBar)
-	TArray<FName> ActionBar;
 
 	UPROPERTY(ReplicatedUsing = OnRep_Party)
 	TObjectPtr<ATVPartyInfo> Party;
@@ -185,7 +178,6 @@ protected:
 	UPROPERTY(ReplicatedUsing = OnRep_LoggedIn)
 	bool bLoggedIn = false;
 
-	UFUNCTION() void OnRep_ActionBar();
 	UFUNCTION() void OnRep_Party();
 	UFUNCTION() void OnRep_LoggedIn();
 
@@ -235,7 +227,7 @@ private:
 	void UpdateMountedContext();
 	void TryAutoLoginFromCommandLine();
 	AActor* FindInteractCandidate() const;
-	void BuildDefaultActionBar(FName ClassId);
+	TArray<FName> BuildDefaultActionBar(FName ClassId);
 	void ExecuteChatCommand(const FString& Line);
 	void BroadcastSay(const FString& Message);
 	void BroadcastParty(const FString& Message);
