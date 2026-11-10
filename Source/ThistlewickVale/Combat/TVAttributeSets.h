@@ -81,7 +81,12 @@ public:
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MoveSpeedMultiplier, Category = "TV|Stats") FGameplayAttributeData MoveSpeedMultiplier;
 	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Stats, MoveSpeedMultiplier)
 
+	/** Weapon damage from the equipped weapon's BaseWeaponDamage (tooltip/character sheet in v1; set by SetWeaponDamage). */
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_WeaponDamage, Category = "TV|Stats") FGameplayAttributeData WeaponDamage;
+	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Stats, WeaponDamage)
+
 protected:
+	UFUNCTION() void OnRep_WeaponDamage(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_Stamina(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_Strength(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_Agility(const FGameplayAttributeData& OldValue);

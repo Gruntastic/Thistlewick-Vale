@@ -112,6 +112,7 @@ UTVAttributeSet_Stats::UTVAttributeSet_Stats()
 	InitHaste(0.f);
 	InitArmor(0.f);
 	InitMoveSpeedMultiplier(1.f);
+	InitWeaponDamage(0.f);
 }
 
 void UTVAttributeSet_Stats::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -127,6 +128,7 @@ void UTVAttributeSet_Stats::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Stats, Haste, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Stats, Armor, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Stats, MoveSpeedMultiplier, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Stats, WeaponDamage, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 void UTVAttributeSet_Stats::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
@@ -142,6 +144,7 @@ void UTVAttributeSet_Stats::PreAttributeChange(const FGameplayAttribute& Attribu
 	}
 }
 
+void UTVAttributeSet_Stats::OnRep_WeaponDamage(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Stats, WeaponDamage, OldValue); }
 void UTVAttributeSet_Stats::OnRep_Stamina(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Stats, Stamina, OldValue); }
 void UTVAttributeSet_Stats::OnRep_Strength(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Stats, Strength, OldValue); }
 void UTVAttributeSet_Stats::OnRep_Agility(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Stats, Agility, OldValue); }
