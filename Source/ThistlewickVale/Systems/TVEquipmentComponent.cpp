@@ -4,6 +4,7 @@
 #include "Systems/TVSetBonusDataAsset.h"
 #include "Combat/TVPlayerState.h"
 #include "Combat/TVAbilitySystemComponent.h"
+#include "AbilitySystemComponent.h"
 #include "Core/TVAssetRegistrySubsystem.h"
 #include "ThistlewickVale.h"
 #include "Net/UnrealNetwork.h"

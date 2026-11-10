@@ -2,6 +2,7 @@
 #include "Systems/TVMountDataAsset.h"
 #include "Combat/TVPlayerState.h"
 #include "Combat/TVAbilitySystemComponent.h"
+#include "AbilitySystemComponent.h"
 #include "Combat/TVAttributeSets.h"
 #include "Combat/TVCombatEventsSubsystem.h"
 #include "Core/TVAssetRegistrySubsystem.h"

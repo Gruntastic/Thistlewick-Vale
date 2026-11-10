@@ -52,7 +52,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "TV|Mount")
 	bool IsMounted() const { return bMounted; }
 
-	/** Server: the player entered the dungeon instance. Dismounts and blocks mounting until NotifyLeftDungeon. */
+	/** Server: the player entered the dungeon instance. Dismounts and blocks mounting until NotifyLeftDungeon.
+	 *  INTERFACE-REQUEST: ATVDungeonManager::EnterDungeon / LeaveDungeon call these for each member (no dungeon delegate in the ledger). */
 	void NotifyEnteredDungeon();
 	void NotifyLeftDungeon();
 	bool IsInDungeon() const { return bInDungeon; }
