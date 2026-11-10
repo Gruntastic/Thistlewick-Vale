@@ -572,6 +572,7 @@ void ATVMobCharacter::ApplyScaling(float HealthScale, float DamageScale)
 	}
 	HealthScaleApplied = FMath::Max(0.01f, HealthScale);
 	DamageScaleApplied = FMath::Max(0.f, DamageScale);
+	bScaledExternally = !FMath::IsNearlyEqual(HealthScale, 1.f) || !FMath::IsNearlyEqual(DamageScale, 1.f);
 	HitDamage = Row->BaseDamage * (1.f + TVCombatTuning::MobDamagePerLevel * FMath::Max(0, MobLevel - Row->LevelMin)) * DamageScaleApplied;
 	const float MaxHealth = FMath::Max(1.f, (Row->BaseHealth + Row->HealthPerLevel * FMath::Max(0, MobLevel - Row->LevelMin)) * HealthScaleApplied);
 	// Health fraction is kept by UTVAbilitySystemComponent's MaxHealth callback.
@@ -598,6 +599,7 @@ void ATVMobCharacter::ApplyPullScaling(AActor* Puller)
 	const float Damage = FMath::Min(1.f, 0.5f + 0.1f * PartySize);
 	bPullScaled = true;
 	ApplyScaling(Health, Damage);
+	bScaledExternally = false;
 }
 
 void ATVMobCharacter::ResetPullScaling()
@@ -606,6 +608,7 @@ void ATVMobCharacter::ResetPullScaling()
 	{
 		bPullScaled = false;
 		ApplyScaling(1.f, 1.f);
+		bScaledExternally = false;
 	}
 }
 

@@ -74,4 +74,7 @@ protected:
 	bool bUsedFleeCall = false;
 	bool bUsedOpener = false;
 	TMap<FName, double> NextAbilityTime;
+	/** Mob id the profile was read for (the pawn is possessed before InitFromMobRow runs). */
+	FName ResolvedProfileMobId;
+	double EvadeStartTime = 0.0;
 };
