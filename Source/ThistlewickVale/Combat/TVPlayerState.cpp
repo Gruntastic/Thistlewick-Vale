@@ -144,17 +144,23 @@ void ATVPlayerState::SetActionBar(const TArray<FName>& InActionBar)
 
 void ATVPlayerState::ServerSetActionBarSlot_Implementation(int32 SlotIndex, FName AbilityId)
 {
-	if (!ActionBar.IsValidIndex(SlotIndex))
+	SetActionBarSlot(SlotIndex, AbilityId);
+}
+
+bool ATVPlayerState::SetActionBarSlot(int32 SlotIndex, FName AbilityId)
+{
+	if (!HasAuthority() || !ActionBar.IsValidIndex(SlotIndex))
 	{
-		return;
+		return false;
 	}
 	// Only abilities the player actually has.
 	if (!AbilityId.IsNone() && !AbilitySystem->FindHandleForAbilityId(AbilityId).IsValid())
 	{
-		return;
+		return false;
 	}
 	ActionBar[SlotIndex] = AbilityId;
 	OnActionBarChanged.Broadcast();
+	return true;
 }
 
 void ATVPlayerState::FillDefaultActionBar()

@@ -227,7 +227,6 @@ private:
 	void UpdateMountedContext();
 	void TryAutoLoginFromCommandLine();
 	AActor* FindInteractCandidate() const;
-	TArray<FName> BuildDefaultActionBar(FName ClassId, int32 CharacterLevel);
 	void ExecuteChatCommand(const FString& Line);
 	void BroadcastSay(const FString& Message);
 	void BroadcastParty(const FString& Message);

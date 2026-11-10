@@ -477,27 +477,6 @@ void UTVSaveSubsystem::RegisterAccount(ATVPlayerState* Player, const FString& Ac
 	}
 }
 
-void UTVSaveSubsystem::SetActionBar(ATVPlayerState* Player, const TArray<FName>& AbilityIds)
-{
-	if (Player)
-	{
-		TArray<FName> Bar = AbilityIds;
-		Bar.SetNum(FTVCharacterSaveData::ActionBarSlots);
-		ActionBars.Add(Player, Bar);
-	}
-}
-
-TArray<FName> UTVSaveSubsystem::GetActionBar(const ATVPlayerState* Player) const
-{
-	if (const TArray<FName>* Bar = ActionBars.Find(const_cast<ATVPlayerState*>(Player)))
-	{
-		return *Bar;
-	}
-	TArray<FName> Empty;
-	Empty.SetNum(FTVCharacterSaveData::ActionBarSlots);
-	return Empty;
-}
-
 bool UTVSaveSubsystem::GetSavedSpawn(const ATVPlayerState* Player, FTransform& OutTransform) const
 {
 	const TPair<FString, FTransform>* Spawn = SavedSpawns.Find(const_cast<ATVPlayerState*>(Player));
@@ -554,7 +533,9 @@ FTVCharacterSaveData UTVSaveSubsystem::Gather(ATVPlayerState* Player, const FStr
 	{
 		Data.Mounts = Mount->GetOwnedMounts();
 	}
-	Data.ActionBar = GetActionBar(Player);
+	// ATVPlayerState owns the action bar; the save only carries it.
+	Data.ActionBar = Player->GetActionBar();
+	Data.ActionBar.SetNum(FTVCharacterSaveData::ActionBarSlots);
 	return Data;
 }
 
@@ -597,7 +578,11 @@ void UTVSaveSubsystem::Apply(ATVPlayerState* Player, const FTVCharacterSaveData&
 			Mount->GrantMount(MountId);
 		}
 	}
-	SetActionBar(Player, Data.ActionBar);
+	// InitCharacter above filled the level-gated class default; a saved layout (any slot set) replaces it.
+	if (Data.ActionBar.ContainsByPredicate([](const FName& Id) { return !Id.IsNone(); }))
+	{
+		Player->SetActionBar(Data.ActionBar);
+	}
 
 	const FTransform Spawn(FRotator(0.f, Data.Yaw, 0.f), Data.Location);
 	SavedSpawns.Add(Player, TPair<FString, FTransform>(Data.Map, Spawn));

@@ -240,24 +240,7 @@ void ATVPlayerController::HandleLoginComplete(const FString& Account, const FStr
 	AccountName = Account;
 	bLoggedIn = true;
 
-	// Action bar: the saved layout (UTVSaveSubsystem keeps it per player) or the class defaults from DT_Classes.
-	ATVPlayerState* PS = GetTVPlayerState();
-	UTVSaveSubsystem* Save = GetGameInstance() ? GetGameInstance()->GetSubsystem<UTVSaveSubsystem>() : nullptr;
-	TArray<FName> Bar;
-	if (bExistingCharacter && Save)
-	{
-		Bar = Save->GetActionBar(PS);
-	}
-	if (!Bar.ContainsByPredicate([](const FName& Id) { return !Id.IsNone(); }))
-	{
-		Bar = BuildDefaultActionBar(ClassId, PS ? PS->GetCharacterLevel() : 1);
-	}
-	Bar.SetNum(NumActionSlots);
-	TVNet::SetActionBar(PS, Bar);
-	if (Save)
-	{
-		Save->SetActionBar(PS, Bar);
-	}
+	// The action bar is owned by ATVPlayerState: InitCharacter filled the class default, LoadCharacter the saved layout.
 	OnActionBarChanged.Broadcast();
 	OnRep_LoggedIn();
 	ForceNetUpdate();
@@ -287,69 +270,20 @@ void ATVPlayerController::SaveCharacterNow(const TCHAR* Reason)
 		UE_LOG(LogTV, Warning, TEXT("%s Save skipped (%s): no player state or save subsystem"), TV_NET_LOG_PREFIX, Reason);
 		return;
 	}
-	Save->SetActionBar(PS, TVNet::GetActionBar(PS)); // keep the saved layout in sync with ATVPlayerState::ActionBar
 	const bool bSaved = Save->SaveCharacter(PS);
 	UE_LOG(LogTV, Log, TEXT("%s Saved %s (%s): %s"), TV_NET_LOG_PREFIX, *TVNet::GetCharacterName(PS), Reason, bSaved ? TEXT("ok") : TEXT("FAILED"));
 }
 
 // ================================================================================================ action bar
 
-TArray<FName> ATVPlayerController::BuildDefaultActionBar(FName ClassId, int32 CharacterLevel)
-{
-	TArray<FName> ActionBar;
-	ActionBar.Init(NAME_None, NumActionSlots);
-
-	// DT_Classes.StartingAbilities (FTVAbilityUnlock in Combat/TVCombatRows.h): DefaultSlot is 0-9 and -1 = no slot.
-	// Abilities above the character's level are left off, as in ATVPlayerState::FillDefaultActionBar; abilities
-	// without a free or valid slot go to the first free slot.
-	const FTVClassRow* Row = UTVCombatLibrary::FindClassRow(ClassId);
-	if (!Row)
-	{
-		return ActionBar;
-	}
-	TArray<FName> Unplaced;
-	for (const FTVAbilityUnlock& Unlock : Row->StartingAbilities)
-	{
-		if (Unlock.AbilityId.IsNone() || Unlock.UnlockLevel > CharacterLevel)
-		{
-			continue;
-		}
-		if (ActionBar.IsValidIndex(Unlock.DefaultSlot) && ActionBar[Unlock.DefaultSlot].IsNone())
-		{
-			ActionBar[Unlock.DefaultSlot] = Unlock.AbilityId;
-		}
-		else
-		{
-			Unplaced.Add(Unlock.AbilityId);
-		}
-	}
-	for (const FName& AbilityId : Unplaced)
-	{
-		const int32 Free = ActionBar.IndexOfByKey(NAME_None);
-		if (Free != INDEX_NONE)
-		{
-			ActionBar[Free] = AbilityId;
-		}
-	}
-	return ActionBar;
-}
-
 void ATVPlayerController::ServerSetActionSlot_Implementation(int32 SlotIndex, FName AbilityId)
 {
+	// ATVPlayerState validates (granted abilities only) and replicates the bar.
 	ATVPlayerState* PS = GetTVPlayerState();
-	TArray<FName> Bar = TVNet::GetActionBar(PS);
-	Bar.SetNum(NumActionSlots);
-	if (!PS || !Bar.IsValidIndex(SlotIndex))
+	if (PS && PS->SetActionBarSlot(SlotIndex, AbilityId))
 	{
-		return;
+		OnActionBarChanged.Broadcast();
 	}
-	Bar[SlotIndex] = AbilityId;
-	TVNet::SetActionBar(PS, Bar);
-	if (UTVSaveSubsystem* Save = GetGameInstance() ? GetGameInstance()->GetSubsystem<UTVSaveSubsystem>() : nullptr)
-	{
-		Save->SetActionBar(PS, Bar);
-	}
-	OnActionBarChanged.Broadcast();
 }
 
 TArray<FName> ATVPlayerController::GetActionBar() const

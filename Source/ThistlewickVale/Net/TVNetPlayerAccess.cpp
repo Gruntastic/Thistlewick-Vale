@@ -60,15 +60,6 @@ namespace TVNet
 		return PS ? PS->GetActionBar() : TArray<FName>();
 	}
 
-	void SetActionBar(ATVPlayerState* PS, const TArray<FName>& Bar)
-	{
-		if (PS)
-		{
-			PS->SetActionBar(Bar); // pads to 10 slots and broadcasts OnActionBarChanged
-			PS->ForceNetUpdate();
-		}
-	}
-
 	static float GetRatio(const ATVPlayerState* PS, const FGameplayAttribute& Current, const FGameplayAttribute& Max)
 	{
 		const UAbilitySystemComponent* ASC = PS ? const_cast<ATVPlayerState*>(PS)->GetAbilitySystemComponent() : nullptr;

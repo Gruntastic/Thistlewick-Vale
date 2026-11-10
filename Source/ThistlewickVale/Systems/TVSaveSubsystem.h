@@ -53,10 +53,6 @@ public:
 	/** For new characters: remember the account name so SaveCharacter can build the file name. */
 	void RegisterAccount(ATVPlayerState* Player, const FString& Account);
 
-	/** Action bar layout (the ledger gives it no owner yet; UI/Combat set and read it here). INTERFACE-REQUEST. */
-	void SetActionBar(ATVPlayerState* Player, const TArray<FName>& AbilityIds);
-	TArray<FName> GetActionBar(const ATVPlayerState* Player) const;
-
 	/** Saved position for the game mode to spawn at, if the save's map matches the current map. */
 	bool GetSavedSpawn(const ATVPlayerState* Player, FTransform& OutTransform) const;
 
@@ -81,6 +77,5 @@ private:
 	void Apply(ATVPlayerState* Player, const FTVCharacterSaveData& Data);
 
 	TMap<TWeakObjectPtr<ATVPlayerState>, FString> Accounts;
-	TMap<TWeakObjectPtr<ATVPlayerState>, TArray<FName>> ActionBars;
 	TMap<TWeakObjectPtr<ATVPlayerState>, TPair<FString, FTransform>> SavedSpawns;
 };

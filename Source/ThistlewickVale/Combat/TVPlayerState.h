@@ -60,6 +60,8 @@ public:
 	/** Server (save loader) or via ServerSetActionBarSlot from the owning client. */
 	void SetActionBar(const TArray<FName>& InActionBar);
 	UFUNCTION(Server, Reliable, BlueprintCallable, Category = "TV|Player") void ServerSetActionBarSlot(int32 SlotIndex, FName AbilityId);
+	/** Server. Sets one slot (NAME_None clears it); only abilities the player has been granted. False if refused. */
+	bool SetActionBarSlot(int32 SlotIndex, FName AbilityId);
 
 	/** Server: health/resource refilled (rage 0), death and combat state cleared, combo stacks reset. Pawn untouched. */
 	void ReviveAtFullHealth();
