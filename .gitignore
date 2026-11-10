@@ -19,3 +19,6 @@ __pycache__/
 # Blender backups
 *.blend1
 .claude/worktrees/
+
+# Per-machine import stamps (absolute paths)
+SourceArt/.import_stamp.json

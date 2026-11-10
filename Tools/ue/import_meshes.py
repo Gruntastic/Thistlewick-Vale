@@ -8,8 +8,8 @@ Rules
   * A final kit piece (SourceArt/Env or SourceArt/Props) replaces a placeholder of the same ID.
   * Skeletal rows are imported as STATIC meshes for now (the placeholders are static); the manifest
     path keeps its SK_ name so code resolves the same soft path later when the real skeletal mesh lands.
-    # VERIFY-5.8: a StaticMesh asset named SK_* is accepted by the asset registry; if the later
-    # skeletal import must reuse the name, delete the placeholder first (replace_existing handles it).
+    A StaticMesh asset named SK_* imports and resolves fine in 5.8 (checked 2026-11-10). When the real skeletal mesh
+    lands under the same name, delete the placeholder first (replace_existing handles it).
   * Assigns /Game/MMO/Core/Materials/MI_<AssetName> or M_Master_LowPoly if it exists.
   * Idempotent: re-running reimports with replace_existing, and skips files whose size+mtime match
     the stamp stored in /Game/MMO/Data (none needed: Unreal reimport is cheap) -- use --force semantics
@@ -63,13 +63,13 @@ def build_task(fbx, dest_dir, dest_name):
     opts.set_editor_property("import_textures", False)
     opts.set_editor_property("import_animations", False)
     opts.set_editor_property("automated_import_should_detect_type", False)
-    opts.set_editor_property("mesh_type_to_import", unreal.FBXImportType.FBXIT_STATIC_MESH)  # VERIFY-5.8
+    opts.set_editor_property("mesh_type_to_import", unreal.FBXImportType.FBXIT_STATIC_MESH)
     sm = opts.static_mesh_import_data
     sm.set_editor_property("combine_meshes", True)
     sm.set_editor_property("auto_generate_collision", True)
     sm.set_editor_property("generate_lightmap_u_vs", True)
-    sm.set_editor_property("normal_import_method", unreal.FBXNormalImportMethod.FBXNIM_IMPORT_NORMALS)  # VERIFY-5.8
-    sm.set_editor_property("build_nanite", False)  # VERIFY-5.8: contract section 7, Nanite off
+    sm.set_editor_property("normal_import_method", unreal.FBXNormalImportMethod.FBXNIM_IMPORT_NORMALS)
+    sm.set_editor_property("build_nanite", False)  # contract section 7, Nanite off
     task.set_editor_property("options", opts)
     return task
 
@@ -83,7 +83,7 @@ def assign_material(asset_path, asset_name):
             mat = unreal.EditorAssetLibrary.load_asset(cand)
             n = len(mesh.static_materials)
             for i in range(n):
-                mesh.set_material(i, mat)  # VERIFY-5.8: StaticMesh.set_material(index, material)
+                mesh.set_material(i, mat)
             unreal.EditorAssetLibrary.save_loaded_asset(mesh)
             return True
     return False
