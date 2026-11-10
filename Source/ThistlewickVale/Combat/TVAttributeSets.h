@@ -121,9 +121,12 @@ public:
 	/** Remaining absorb shield points (Glimmer Ward). Base value is consumed by damage. */
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_AbsorbShield, Category = "TV|Combat") FGameplayAttributeData AbsorbShield;
 	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, AbsorbShield)
-	/** 0-1 share of incoming healing that is absorbed (Grave Brand 0.3). */
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HealAbsorbFraction, Category = "TV|Combat") FGameplayAttributeData HealAbsorbFraction;
-	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, HealAbsorbFraction)
+	/** 1.0 normal. Grave Brand -0.3 (healing absorbed). */
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HealingReceivedMultiplier, Category = "TV|Combat") FGameplayAttributeData HealingReceivedMultiplier;
+	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, HealingReceivedMultiplier)
+	/** Damage from attackers in front of this actor x (1 + this). Footman shield block -0.5. */
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_FrontalDamageTakenMod, Category = "TV|Combat") FGameplayAttributeData FrontalDamageTakenMod;
+	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, FrontalDamageTakenMod)
 	/** 0-1 chance to dodge a direct hit (Fade Step 0.5). */
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_DodgeChance, Category = "TV|Combat") FGameplayAttributeData DodgeChance;
 	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, DodgeChance)
@@ -136,6 +139,9 @@ public:
 	/** Multiplies Ultimate-slot damage/heal (T3 4-piece 1.2). */
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_UltimatePowerMultiplier, Category = "TV|Combat") FGameplayAttributeData UltimatePowerMultiplier;
 	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, UltimatePowerMultiplier)
+	/** Effective armor = Armor x (1 + this). Sundering Blows stacks -0.1 each. */
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPctModifier, Category = "TV|Combat") FGameplayAttributeData ArmorPctModifier;
+	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, ArmorPctModifier)
 	/** Added to MoveSpeedMultiplier while out of combat (T1 2-piece 0.05). */
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_OutOfCombatMoveSpeedBonus, Category = "TV|Combat") FGameplayAttributeData OutOfCombatMoveSpeedBonus;
 	TV_ATTRIBUTE_ACCESSORS(UTVAttributeSet_Combat, OutOfCombatMoveSpeedBonus)
@@ -146,10 +152,12 @@ protected:
 	UFUNCTION() void OnRep_HealingDoneMultiplier(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_ThreatMultiplier(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_AbsorbShield(const FGameplayAttributeData& OldValue);
-	UFUNCTION() void OnRep_HealAbsorbFraction(const FGameplayAttributeData& OldValue);
+	UFUNCTION() void OnRep_HealingReceivedMultiplier(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_DodgeChance(const FGameplayAttributeData& OldValue);
+	UFUNCTION() void OnRep_FrontalDamageTakenMod(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_CritChanceBonus(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_DefensiveCooldownMultiplier(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_UltimatePowerMultiplier(const FGameplayAttributeData& OldValue);
+	UFUNCTION() void OnRep_ArmorPctModifier(const FGameplayAttributeData& OldValue);
 	UFUNCTION() void OnRep_OutOfCombatMoveSpeedBonus(const FGameplayAttributeData& OldValue);
 };

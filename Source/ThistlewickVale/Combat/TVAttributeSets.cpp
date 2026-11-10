@@ -163,12 +163,14 @@ UTVAttributeSet_Combat::UTVAttributeSet_Combat()
 	InitHealingDoneMultiplier(1.f);
 	InitThreatMultiplier(1.f);
 	InitAbsorbShield(0.f);
-	InitHealAbsorbFraction(0.f);
+	InitHealingReceivedMultiplier(1.f);
+	InitFrontalDamageTakenMod(0.f);
 	InitDodgeChance(0.f);
 	InitCritChanceBonus(0.f);
 	InitDefensiveCooldownMultiplier(1.f);
 	InitUltimatePowerMultiplier(1.f);
 	InitOutOfCombatMoveSpeedBonus(0.f);
+	InitArmorPctModifier(0.f);
 }
 
 void UTVAttributeSet_Combat::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -180,12 +182,14 @@ void UTVAttributeSet_Combat::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, ThreatMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 	// Shields are shown on everyone's health bars.
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, AbsorbShield, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, HealAbsorbFraction, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, HealingReceivedMultiplier, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, DodgeChance, COND_OwnerOnly, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, FrontalDamageTakenMod, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, CritChanceBonus, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, DefensiveCooldownMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, UltimatePowerMultiplier, COND_OwnerOnly, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, OutOfCombatMoveSpeedBonus, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UTVAttributeSet_Combat, ArmorPctModifier, COND_OwnerOnly, REPNOTIFY_Always);
 }
 
 void UTVAttributeSet_Combat::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
@@ -195,17 +199,25 @@ void UTVAttributeSet_Combat::PreAttributeChange(const FGameplayAttribute& Attrib
 	{
 		NewValue = FMath::Clamp(NewValue, 0.1f, 5.f);
 	}
-	else if (Attribute == GetHealAbsorbFractionAttribute() || Attribute == GetDodgeChanceAttribute())
+	else if (Attribute == GetDodgeChanceAttribute())
 	{
 		NewValue = FMath::Clamp(NewValue, 0.f, 0.95f);
+	}
+	else if (Attribute == GetHealingReceivedMultiplierAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.f, 5.f);
+	}
+	else if (Attribute == GetFrontalDamageTakenModAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, -0.9f, 5.f);
 	}
 	else if (Attribute == GetDefensiveCooldownMultiplierAttribute())
 	{
 		NewValue = FMath::Clamp(NewValue, 0.25f, 2.f);
 	}
-	else if (Attribute == GetAbsorbShieldAttribute())
+	else if (Attribute == GetArmorPctModifierAttribute())
 	{
-		NewValue = FMath::Max(0.f, NewValue);
+		NewValue = FMath::Clamp(NewValue, -1.f, 5.f);
 	}
 	else
 	{
@@ -218,9 +230,11 @@ void UTVAttributeSet_Combat::OnRep_DamageDoneMultiplier(const FGameplayAttribute
 void UTVAttributeSet_Combat::OnRep_HealingDoneMultiplier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, HealingDoneMultiplier, OldValue); }
 void UTVAttributeSet_Combat::OnRep_ThreatMultiplier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, ThreatMultiplier, OldValue); }
 void UTVAttributeSet_Combat::OnRep_AbsorbShield(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, AbsorbShield, OldValue); }
-void UTVAttributeSet_Combat::OnRep_HealAbsorbFraction(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, HealAbsorbFraction, OldValue); }
+void UTVAttributeSet_Combat::OnRep_HealingReceivedMultiplier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, HealingReceivedMultiplier, OldValue); }
 void UTVAttributeSet_Combat::OnRep_DodgeChance(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, DodgeChance, OldValue); }
 void UTVAttributeSet_Combat::OnRep_CritChanceBonus(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, CritChanceBonus, OldValue); }
 void UTVAttributeSet_Combat::OnRep_DefensiveCooldownMultiplier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, DefensiveCooldownMultiplier, OldValue); }
 void UTVAttributeSet_Combat::OnRep_UltimatePowerMultiplier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, UltimatePowerMultiplier, OldValue); }
 void UTVAttributeSet_Combat::OnRep_OutOfCombatMoveSpeedBonus(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, OutOfCombatMoveSpeedBonus, OldValue); }
+void UTVAttributeSet_Combat::OnRep_ArmorPctModifier(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, ArmorPctModifier, OldValue); }
+void UTVAttributeSet_Combat::OnRep_FrontalDamageTakenMod(const FGameplayAttributeData& OldValue) { GAMEPLAYATTRIBUTE_REPNOTIFY(UTVAttributeSet_Combat, FrontalDamageTakenMod, OldValue); }
