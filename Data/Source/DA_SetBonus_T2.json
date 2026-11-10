@@ -1,0 +1,18 @@
+{
+  "Name": "DA_SetBonus_T2",
+  "SetTier": "T2_ValeGuard",
+  "Bonuses": [
+    {
+      "PiecesRequired": 2,
+      "DisplayText": "+5% maximum health.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_MaxHealthPct",
+      "Magnitude": 0.05
+    },
+    {
+      "PiecesRequired": 4,
+      "DisplayText": "Defensive ability cooldown reduced by 15%.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_DefensiveCooldownReduction",
+      "Magnitude": 0.15
+    }
+  ]
+}

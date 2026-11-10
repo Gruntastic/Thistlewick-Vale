@@ -1,0 +1,18 @@
+{
+  "Name": "DA_SetBonus_T1",
+  "SetTier": "T1_Wanderers",
+  "Bonuses": [
+    {
+      "PiecesRequired": 2,
+      "DisplayText": "+5% movement speed while out of combat.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_MoveSpeedOutOfCombat",
+      "Magnitude": 0.05
+    },
+    {
+      "PiecesRequired": 4,
+      "DisplayText": "+3% to all primary stats.",
+      "GameplayEffect": "/Script/ThistlewickVale.GE_TV_Set_PrimaryStatPct",
+      "Magnitude": 0.03
+    }
+  ]
+}

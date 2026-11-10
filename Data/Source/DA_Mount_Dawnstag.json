@@ -1,0 +1,17 @@
+{
+  "Name": "DA_Mount_Dawnstag",
+  "MountId": "MNT_DAWNSTAG",
+  "DisplayName": "The Dawnstag",
+  "MeshId": "MNT_DAWNSTAG",
+  "AnimBlueprintId": "MNT_DAWNSTAG_ABP",
+  "SummonCastTime": 1.5,
+  "SpeedMultiplier": 1.6,
+  "DismountOnDamage": true,
+  "BlockAbilities": true,
+  "SeatSocket": "mount_seat",
+  "RiderPoseAnimId": "ANIM_HUM_MOUNTED_IDLE",
+  "SummonVfxId": "VFX_MOUNT_SUMMON",
+  "SummonSfxId": "AUD_MOUNT_SUMMON",
+  "IconId": "",
+  "RequiredQuestId": "Q06_DAWNSTAG_TRUST"
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "Name": "NPC_ELDER_WREN",
+    "NpcId": "NPC_ELDER_WREN",
+    "DisplayName": "Elder Wren Lamplight",
+    "MeshId": "CHR_NPC_ELDERWREN",
+    "Greeting": "Come in out of the dark, friend. Lanternrest is small, but there is always room by the fire.",
+    "QuestIds": [
+      "Q01_FADING_GLOW",
+      "Q03_FIRST_SHARD",
+      "Q09_RELIGHT_EMBER_CROWN"
+    ],
+    "IsVendor": false,
+    "VendorItems": []
+  },
+  {
+    "Name": "NPC_BRAM_TALLOW",
+    "NpcId": "NPC_BRAM_TALLOW",
+    "DisplayName": "Bram Tallow",
+    "MeshId": "CHR_NPC_BRAMTALLOW",
+    "Greeting": "Welcome, welcome! Mind the barrels. Looking to buy something sturdy, or sell something shiny?",
+    "QuestIds": [
+      "Q02_MOSSBACK_MISCHIEF"
+    ],
+    "IsVendor": true,
+    "VendorItems": [
+      "ITM_T1_PLATE_HEAD",
+      "ITM_T1_PLATE_LEGS",
+      "ITM_T1_LEATHER_HEAD",
+      "ITM_T1_LEATHER_LEGS",
+      "ITM_T1_ROBE_HEAD",
+      "ITM_T1_ROBE_LEGS"
+    ]
+  },
+  {
+    "Name": "NPC_YSOLDE_THORN",
+    "NpcId": "NPC_YSOLDE_THORN",
+    "DisplayName": "Ysolde Thorn",
+    "MeshId": "CHR_NPC_YSOLDETHORN",
+    "Greeting": "Softly, now. The forest has long ears. Sit by the fire and tell me what you have seen.",
+    "QuestIds": [
+      "Q04_LANTERNS_HOLLOW",
+      "Q05_SECOND_SHARD"
+    ],
+    "IsVendor": false,
+    "VendorItems": []
+  },
+  {
+    "Name": "NPC_BROTHER_CAEL",
+    "NpcId": "NPC_BROTHER_CAEL",
+    "DisplayName": "Brother Cael",
+    "MeshId": "CHR_NPC_BROTHERCAEL",
+    "Greeting": "Peace be with you. The hills are restless tonight, but the tower is warm and the tea is hot.",
+    "QuestIds": [
+      "Q07_HOLLOW_PATROL",
+      "Q08_TITAN_OF_HILLS"
+    ],
+    "IsVendor": false,
+    "VendorItems": []
+  },
+  {
+    "Name": "NPC_DAWNSTAG",
+    "NpcId": "NPC_DAWNSTAG",
+    "DisplayName": "The Dawnstag",
+    "MeshId": "MNT_DAWNSTAG",
+    "Greeting": "The antlers glow softly, and a warm voice like wind through lanterns speaks in your mind: 'Little light, you have come at last.'",
+    "QuestIds": [
+      "Q06_DAWNSTAG_TRUST"
+    ],
+    "IsVendor": false,
+    "VendorItems": []
+  }
+]

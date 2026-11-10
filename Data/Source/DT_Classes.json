@@ -1,0 +1,214 @@
+[
+  {
+    "Name": "CLS_WARRIOR",
+    "ClassId": "CLS_WARRIOR",
+    "DisplayName": "Warrior",
+    "Description": "A steadfast shield-bearer who gathers Rage from every blow dealt and taken. Holds the attention of enemies so the rest of the party can work in peace.",
+    "Role": "Tank",
+    "ResourceType": "Rage",
+    "BodyMeshId": "CHR_WARRIOR_BODY",
+    "AnimBlueprintId": "ANIM_ABP_HUMANOID",
+    "PortraitIconId": "UI_PORTRAIT_WARRIOR",
+    "ClassTintPrimary": {
+      "R": 0.78,
+      "G": 0.3,
+      "B": 0.18,
+      "A": 1.0
+    },
+    "ClassTintSecondary": {
+      "R": 0.85,
+      "G": 0.8,
+      "B": 0.65,
+      "A": 1.0
+    },
+    "ArmorFamily": "Plate",
+    "WeaponType": "SwordShield",
+    "StartingAbilities": [
+      {
+        "AbilityId": "ABL_WAR_CLEAVE_STRIKE",
+        "UnlockLevel": 1,
+        "DefaultSlot": 0
+      },
+      {
+        "AbilityId": "ABL_WAR_SHIELD_SLAM",
+        "UnlockLevel": 2,
+        "DefaultSlot": 1
+      },
+      {
+        "AbilityId": "ABL_WAR_TAUNTING_ROAR",
+        "UnlockLevel": 4,
+        "DefaultSlot": 2
+      },
+      {
+        "AbilityId": "ABL_WAR_IRON_WALL",
+        "UnlockLevel": 6,
+        "DefaultSlot": 3
+      },
+      {
+        "AbilityId": "ABL_WAR_BULWARK",
+        "UnlockLevel": 10,
+        "DefaultSlot": 4
+      }
+    ],
+    "BaseStatsCurveId": "CLS_WARRIOR"
+  },
+  {
+    "Name": "CLS_MAGE",
+    "ClassId": "CLS_MAGE",
+    "DisplayName": "Mage",
+    "Description": "A lantern-keeper of the old fire arts. Builds Kindling with Ember Bolts, then releases it in a bright Crown Flare.",
+    "Role": "DPS",
+    "ResourceType": "Mana",
+    "BodyMeshId": "CHR_MAGE_BODY",
+    "AnimBlueprintId": "ANIM_ABP_HUMANOID",
+    "PortraitIconId": "UI_PORTRAIT_MAGE",
+    "ClassTintPrimary": {
+      "R": 0.45,
+      "G": 0.25,
+      "B": 0.75,
+      "A": 1.0
+    },
+    "ClassTintSecondary": {
+      "R": 0.98,
+      "G": 0.7,
+      "B": 0.25,
+      "A": 1.0
+    },
+    "ArmorFamily": "Robe",
+    "WeaponType": "Staff",
+    "StartingAbilities": [
+      {
+        "AbilityId": "ABL_MAG_EMBER_BOLT",
+        "UnlockLevel": 1,
+        "DefaultSlot": 0
+      },
+      {
+        "AbilityId": "ABL_MAG_CROWN_FLARE",
+        "UnlockLevel": 2,
+        "DefaultSlot": 1
+      },
+      {
+        "AbilityId": "ABL_MAG_FROST_SNARE",
+        "UnlockLevel": 4,
+        "DefaultSlot": 2
+      },
+      {
+        "AbilityId": "ABL_MAG_GLIMMER_WARD",
+        "UnlockLevel": 6,
+        "DefaultSlot": 3
+      },
+      {
+        "AbilityId": "ABL_MAG_STARFALL",
+        "UnlockLevel": 10,
+        "DefaultSlot": 4
+      }
+    ],
+    "BaseStatsCurveId": "CLS_MAGE"
+  },
+  {
+    "Name": "CLS_CLERIC",
+    "ClassId": "CLS_CLERIC",
+    "DisplayName": "Cleric",
+    "Description": "A dawn-priest who mends the wounded and smites the unworthy. Builds Devotion, then pours it out upon the whole party.",
+    "Role": "Healer",
+    "ResourceType": "Mana",
+    "BodyMeshId": "CHR_CLERIC_BODY",
+    "AnimBlueprintId": "ANIM_ABP_HUMANOID",
+    "PortraitIconId": "UI_PORTRAIT_CLERIC",
+    "ClassTintPrimary": {
+      "R": 0.95,
+      "G": 0.88,
+      "B": 0.55,
+      "A": 1.0
+    },
+    "ClassTintSecondary": {
+      "R": 1.0,
+      "G": 1.0,
+      "B": 1.0,
+      "A": 1.0
+    },
+    "ArmorFamily": "Robe",
+    "WeaponType": "MaceTome",
+    "StartingAbilities": [
+      {
+        "AbilityId": "ABL_CLR_RADIANT_SMITE",
+        "UnlockLevel": 1,
+        "DefaultSlot": 0
+      },
+      {
+        "AbilityId": "ABL_CLR_SANCTUARY_PULSE",
+        "UnlockLevel": 2,
+        "DefaultSlot": 1
+      },
+      {
+        "AbilityId": "ABL_CLR_PURIFY",
+        "UnlockLevel": 4,
+        "DefaultSlot": 2
+      },
+      {
+        "AbilityId": "ABL_CLR_MENDING_LIGHT",
+        "UnlockLevel": 6,
+        "DefaultSlot": 3
+      },
+      {
+        "AbilityId": "ABL_CLR_DAWNS_VIGIL",
+        "UnlockLevel": 10,
+        "DefaultSlot": 4
+      }
+    ],
+    "BaseStatsCurveId": "CLS_CLERIC"
+  },
+  {
+    "Name": "CLS_RANGER",
+    "ClassId": "CLS_RANGER",
+    "DisplayName": "Ranger",
+    "Description": "A swift scout of the Vale who fights at any distance. Spends Focus on deadly twin strikes and keeps foes at bay with traps.",
+    "Role": "DPS",
+    "ResourceType": "Focus",
+    "BodyMeshId": "CHR_RANGER_BODY",
+    "AnimBlueprintId": "ANIM_ABP_HUMANOID",
+    "PortraitIconId": "UI_PORTRAIT_RANGER",
+    "ClassTintPrimary": {
+      "R": 0.25,
+      "G": 0.6,
+      "B": 0.3,
+      "A": 1.0
+    },
+    "ClassTintSecondary": {
+      "R": 0.55,
+      "G": 0.4,
+      "B": 0.22,
+      "A": 1.0
+    },
+    "ArmorFamily": "Leather",
+    "WeaponType": "BowDaggers",
+    "StartingAbilities": [
+      {
+        "AbilityId": "ABL_RNG_QUICK_SHOT",
+        "UnlockLevel": 1,
+        "DefaultSlot": 0
+      },
+      {
+        "AbilityId": "ABL_RNG_TWIN_FANG",
+        "UnlockLevel": 2,
+        "DefaultSlot": 1
+      },
+      {
+        "AbilityId": "ABL_RNG_SNARE_TRAP",
+        "UnlockLevel": 4,
+        "DefaultSlot": 2
+      },
+      {
+        "AbilityId": "ABL_RNG_FADE_STEP",
+        "UnlockLevel": 6,
+        "DefaultSlot": 3
+      },
+      {
+        "AbilityId": "ABL_RNG_STAG_VOLLEY",
+        "UnlockLevel": 10,
+        "DefaultSlot": 4
+      }
+    ],
+    "BaseStatsCurveId": "CLS_RANGER"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "Name": "DA_Boss_SisterMorrow",
+  "BossMobId": "MOB_SISTER_MORROW",
+  "ArenaRadius": 2500.0,
+  "EnrageTime": 0.0,
+  "EnrageAbilityId": "ABL_MOB_BOSS_ENRAGE",
+  "Phases": [
+    {
+      "HealthThreshold": 1.0,
+      "AbilityRotation": [
+        {
+          "AbilityId": "ABL_MOB_WITHERING_MARK",
+          "Interval": 15.0,
+          "InitialDelay": 6.0
+        },
+        {
+          "AbilityId": "ABL_MOB_GRAVE_LAMENT",
+          "Interval": 20.0,
+          "InitialDelay": 12.0
+        }
+      ],
+      "OnEnterAbilities": []
+    }
+  ],
+  "AddSpawns": []
+}

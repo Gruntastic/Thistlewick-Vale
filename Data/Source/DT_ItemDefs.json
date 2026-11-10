@@ -1,0 +1,974 @@
+[
+  {
+    "Name": "ITM_T1_PLATE_HEAD",
+    "ItemDefId": "ITM_T1_PLATE_HEAD",
+    "DisplayName": "Wanderer's Roadworn Helm",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Head",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_PLATE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T1_PLATE",
+    "IconId": "UI_ICON_T1_HEAD",
+    "StatPoolId": "POOL_PLATE_HEAD",
+    "BaseArmor": 12.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 4
+  },
+  {
+    "Name": "ITM_T1_PLATE_CHEST",
+    "ItemDefId": "ITM_T1_PLATE_CHEST",
+    "DisplayName": "Wanderer's Roadworn Cuirass",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Chest",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_PLATE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T1_PLATE",
+    "IconId": "UI_ICON_T1_CHEST",
+    "StatPoolId": "POOL_PLATE_CHEST",
+    "BaseArmor": 17.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 6
+  },
+  {
+    "Name": "ITM_T1_PLATE_LEGS",
+    "ItemDefId": "ITM_T1_PLATE_LEGS",
+    "DisplayName": "Wanderer's Roadworn Greaves",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Legs",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_PLATE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T1_PLATE",
+    "IconId": "UI_ICON_T1_LEGS",
+    "StatPoolId": "POOL_PLATE_LEGS",
+    "BaseArmor": 14.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 5
+  },
+  {
+    "Name": "ITM_T1_PLATE_BOOTS",
+    "ItemDefId": "ITM_T1_PLATE_BOOTS",
+    "DisplayName": "Wanderer's Roadworn Boots",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Boots",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_PLATE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T1_PLATE",
+    "IconId": "UI_ICON_T1_BOOTS",
+    "StatPoolId": "POOL_PLATE_BOOTS",
+    "BaseArmor": 10.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 3
+  },
+  {
+    "Name": "ITM_T1_LEATHER_HEAD",
+    "ItemDefId": "ITM_T1_LEATHER_HEAD",
+    "DisplayName": "Wanderer's Thistlehide Cap",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Head",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_LEATHER_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T1_LEATHER",
+    "IconId": "UI_ICON_T1_HEAD",
+    "StatPoolId": "POOL_LEATHER_HEAD",
+    "BaseArmor": 7.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 4
+  },
+  {
+    "Name": "ITM_T1_LEATHER_CHEST",
+    "ItemDefId": "ITM_T1_LEATHER_CHEST",
+    "DisplayName": "Wanderer's Thistlehide Jerkin",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Chest",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_LEATHER_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T1_LEATHER",
+    "IconId": "UI_ICON_T1_CHEST",
+    "StatPoolId": "POOL_LEATHER_CHEST",
+    "BaseArmor": 10.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 5
+  },
+  {
+    "Name": "ITM_T1_LEATHER_LEGS",
+    "ItemDefId": "ITM_T1_LEATHER_LEGS",
+    "DisplayName": "Wanderer's Thistlehide Leggings",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Legs",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_LEATHER_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T1_LEATHER",
+    "IconId": "UI_ICON_T1_LEGS",
+    "StatPoolId": "POOL_LEATHER_LEGS",
+    "BaseArmor": 9.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 4
+  },
+  {
+    "Name": "ITM_T1_LEATHER_BOOTS",
+    "ItemDefId": "ITM_T1_LEATHER_BOOTS",
+    "DisplayName": "Wanderer's Thistlehide Boots",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Boots",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_LEATHER_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T1_LEATHER",
+    "IconId": "UI_ICON_T1_BOOTS",
+    "StatPoolId": "POOL_LEATHER_BOOTS",
+    "BaseArmor": 6.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 3
+  },
+  {
+    "Name": "ITM_T1_ROBE_HEAD",
+    "ItemDefId": "ITM_T1_ROBE_HEAD",
+    "DisplayName": "Wanderer's Woolen Hood",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Head",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_ROBE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T1_ROBE",
+    "IconId": "UI_ICON_T1_HEAD",
+    "StatPoolId": "POOL_ROBE_HEAD",
+    "BaseArmor": 4.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 4
+  },
+  {
+    "Name": "ITM_T1_ROBE_CHEST",
+    "ItemDefId": "ITM_T1_ROBE_CHEST",
+    "DisplayName": "Wanderer's Woolen Robe",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Chest",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_ROBE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T1_ROBE",
+    "IconId": "UI_ICON_T1_CHEST",
+    "StatPoolId": "POOL_ROBE_CHEST",
+    "BaseArmor": 5.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 5
+  },
+  {
+    "Name": "ITM_T1_ROBE_LEGS",
+    "ItemDefId": "ITM_T1_ROBE_LEGS",
+    "DisplayName": "Wanderer's Woolen Leggings",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Legs",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_ROBE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T1_ROBE",
+    "IconId": "UI_ICON_T1_LEGS",
+    "StatPoolId": "POOL_ROBE_LEGS",
+    "BaseArmor": 4.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 4
+  },
+  {
+    "Name": "ITM_T1_ROBE_BOOTS",
+    "ItemDefId": "ITM_T1_ROBE_BOOTS",
+    "DisplayName": "Wanderer's Woolen Slippers",
+    "SetTier": "T1_Wanderers",
+    "Slot": "Boots",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "GEAR_ROBE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T1_ROBE",
+    "IconId": "UI_ICON_T1_BOOTS",
+    "StatPoolId": "POOL_ROBE_BOOTS",
+    "BaseArmor": 3.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 3
+  },
+  {
+    "Name": "ITM_T1_WEAPON_WARRIOR",
+    "ItemDefId": "ITM_T1_WEAPON_WARRIOR",
+    "DisplayName": "Wanderer's Roadblade and Buckler",
+    "SetTier": "T1_Wanderers",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "WPN_SWORDSHIELD",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T1_WEAPON",
+    "StatPoolId": "POOL_WEAPON_WARRIOR",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 12.0,
+    "SellValue": 6
+  },
+  {
+    "Name": "ITM_T1_WEAPON_MAGE",
+    "ItemDefId": "ITM_T1_WEAPON_MAGE",
+    "DisplayName": "Wanderer's Hazel Staff",
+    "SetTier": "T1_Wanderers",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_MAGE"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "WPN_STAFF",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T1_WEAPON",
+    "StatPoolId": "POOL_WEAPON_MAGE",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 12.0,
+    "SellValue": 6
+  },
+  {
+    "Name": "ITM_T1_WEAPON_CLERIC",
+    "ItemDefId": "ITM_T1_WEAPON_CLERIC",
+    "DisplayName": "Wanderer's Prayer Mace and Primer",
+    "SetTier": "T1_Wanderers",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "WPN_MACETOME",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T1_WEAPON",
+    "StatPoolId": "POOL_WEAPON_CLERIC",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 12.0,
+    "SellValue": 6
+  },
+  {
+    "Name": "ITM_T1_WEAPON_RANGER",
+    "ItemDefId": "ITM_T1_WEAPON_RANGER",
+    "DisplayName": "Wanderer's Shortbow and Skinning Knives",
+    "SetTier": "T1_Wanderers",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 5,
+    "ItemLevelMax": 8,
+    "MeshId": "WPN_BOWDAGGERS",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T1_WEAPON",
+    "StatPoolId": "POOL_WEAPON_RANGER",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 12.0,
+    "SellValue": 6
+  },
+  {
+    "Name": "ITM_T2_PLATE_HEAD",
+    "ItemDefId": "ITM_T2_PLATE_HEAD",
+    "DisplayName": "Vale Guard Bulwark Helm",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Head",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_PLATE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T2_PLATE",
+    "IconId": "UI_ICON_T2_HEAD",
+    "StatPoolId": "POOL_PLATE_HEAD",
+    "BaseArmor": 24.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 16
+  },
+  {
+    "Name": "ITM_T2_PLATE_CHEST",
+    "ItemDefId": "ITM_T2_PLATE_CHEST",
+    "DisplayName": "Vale Guard Bulwark Cuirass",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Chest",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_PLATE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T2_PLATE",
+    "IconId": "UI_ICON_T2_CHEST",
+    "StatPoolId": "POOL_PLATE_CHEST",
+    "BaseArmor": 34.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 20
+  },
+  {
+    "Name": "ITM_T2_PLATE_LEGS",
+    "ItemDefId": "ITM_T2_PLATE_LEGS",
+    "DisplayName": "Vale Guard Bulwark Greaves",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Legs",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_PLATE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T2_PLATE",
+    "IconId": "UI_ICON_T2_LEGS",
+    "StatPoolId": "POOL_PLATE_LEGS",
+    "BaseArmor": 29.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 18
+  },
+  {
+    "Name": "ITM_T2_PLATE_BOOTS",
+    "ItemDefId": "ITM_T2_PLATE_BOOTS",
+    "DisplayName": "Vale Guard Bulwark Sabatons",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Boots",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_PLATE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T2_PLATE",
+    "IconId": "UI_ICON_T2_BOOTS",
+    "StatPoolId": "POOL_PLATE_BOOTS",
+    "BaseArmor": 19.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 12
+  },
+  {
+    "Name": "ITM_T2_LEATHER_HEAD",
+    "ItemDefId": "ITM_T2_LEATHER_HEAD",
+    "DisplayName": "Vale Guard Stagwatch Hood",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Head",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_LEATHER_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T2_LEATHER",
+    "IconId": "UI_ICON_T2_HEAD",
+    "StatPoolId": "POOL_LEATHER_HEAD",
+    "BaseArmor": 14.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 14
+  },
+  {
+    "Name": "ITM_T2_LEATHER_CHEST",
+    "ItemDefId": "ITM_T2_LEATHER_CHEST",
+    "DisplayName": "Vale Guard Stagwatch Jerkin",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Chest",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_LEATHER_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T2_LEATHER",
+    "IconId": "UI_ICON_T2_CHEST",
+    "StatPoolId": "POOL_LEATHER_CHEST",
+    "BaseArmor": 20.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 18
+  },
+  {
+    "Name": "ITM_T2_LEATHER_LEGS",
+    "ItemDefId": "ITM_T2_LEATHER_LEGS",
+    "DisplayName": "Vale Guard Stagwatch Leggings",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Legs",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_LEATHER_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T2_LEATHER",
+    "IconId": "UI_ICON_T2_LEGS",
+    "StatPoolId": "POOL_LEATHER_LEGS",
+    "BaseArmor": 17.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 16
+  },
+  {
+    "Name": "ITM_T2_LEATHER_BOOTS",
+    "ItemDefId": "ITM_T2_LEATHER_BOOTS",
+    "DisplayName": "Vale Guard Stagwatch Boots",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Boots",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_LEATHER_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T2_LEATHER",
+    "IconId": "UI_ICON_T2_BOOTS",
+    "StatPoolId": "POOL_LEATHER_BOOTS",
+    "BaseArmor": 12.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 11
+  },
+  {
+    "Name": "ITM_T2_ROBE_HEAD",
+    "ItemDefId": "ITM_T2_ROBE_HEAD",
+    "DisplayName": "Vale Guard Lanternkeeper's Cowl",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Head",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_ROBE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T2_ROBE",
+    "IconId": "UI_ICON_T2_HEAD",
+    "StatPoolId": "POOL_ROBE_HEAD",
+    "BaseArmor": 7.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 13
+  },
+  {
+    "Name": "ITM_T2_ROBE_CHEST",
+    "ItemDefId": "ITM_T2_ROBE_CHEST",
+    "DisplayName": "Vale Guard Lanternkeeper's Vestment",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Chest",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_ROBE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T2_ROBE",
+    "IconId": "UI_ICON_T2_CHEST",
+    "StatPoolId": "POOL_ROBE_CHEST",
+    "BaseArmor": 10.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 16
+  },
+  {
+    "Name": "ITM_T2_ROBE_LEGS",
+    "ItemDefId": "ITM_T2_ROBE_LEGS",
+    "DisplayName": "Vale Guard Lanternkeeper's Leggings",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Legs",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_ROBE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T2_ROBE",
+    "IconId": "UI_ICON_T2_LEGS",
+    "StatPoolId": "POOL_ROBE_LEGS",
+    "BaseArmor": 9.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 15
+  },
+  {
+    "Name": "ITM_T2_ROBE_BOOTS",
+    "ItemDefId": "ITM_T2_ROBE_BOOTS",
+    "DisplayName": "Vale Guard Lanternkeeper's Slippers",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "Boots",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "GEAR_ROBE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T2_ROBE",
+    "IconId": "UI_ICON_T2_BOOTS",
+    "StatPoolId": "POOL_ROBE_BOOTS",
+    "BaseArmor": 6.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 10
+  },
+  {
+    "Name": "ITM_T2_WEAPON_WARRIOR",
+    "ItemDefId": "ITM_T2_WEAPON_WARRIOR",
+    "DisplayName": "Vale Guard Oathblade and Aegis",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "WPN_SWORDSHIELD",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T2_WEAPON",
+    "StatPoolId": "POOL_WEAPON_WARRIOR",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 24.0,
+    "SellValue": 23
+  },
+  {
+    "Name": "ITM_T2_WEAPON_MAGE",
+    "ItemDefId": "ITM_T2_WEAPON_MAGE",
+    "DisplayName": "Vale Guard Lanternstaff",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_MAGE"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "WPN_STAFF",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T2_WEAPON",
+    "StatPoolId": "POOL_WEAPON_MAGE",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 24.0,
+    "SellValue": 23
+  },
+  {
+    "Name": "ITM_T2_WEAPON_CLERIC",
+    "ItemDefId": "ITM_T2_WEAPON_CLERIC",
+    "DisplayName": "Vale Guard Dawnmace and Psalter",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "WPN_MACETOME",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T2_WEAPON",
+    "StatPoolId": "POOL_WEAPON_CLERIC",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 24.0,
+    "SellValue": 23
+  },
+  {
+    "Name": "ITM_T2_WEAPON_RANGER",
+    "ItemDefId": "ITM_T2_WEAPON_RANGER",
+    "DisplayName": "Vale Guard Stagbow and Fangs",
+    "SetTier": "T2_ValeGuard",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 9,
+    "ItemLevelMax": 12,
+    "MeshId": "WPN_BOWDAGGERS",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T2_WEAPON",
+    "StatPoolId": "POOL_WEAPON_RANGER",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 24.0,
+    "SellValue": 23
+  },
+  {
+    "Name": "ITM_T3_PLATE_HEAD",
+    "ItemDefId": "ITM_T3_PLATE_HEAD",
+    "DisplayName": "Hollow Crown Crownforged Helm",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Head",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_PLATE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T3_PLATE",
+    "IconId": "UI_ICON_T3_HEAD",
+    "StatPoolId": "POOL_PLATE_HEAD",
+    "BaseArmor": 38.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 49
+  },
+  {
+    "Name": "ITM_T3_PLATE_CHEST",
+    "ItemDefId": "ITM_T3_PLATE_CHEST",
+    "DisplayName": "Hollow Crown Crownforged Cuirass",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Chest",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_PLATE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T3_PLATE",
+    "IconId": "UI_ICON_T3_CHEST",
+    "StatPoolId": "POOL_PLATE_CHEST",
+    "BaseArmor": 53.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 62
+  },
+  {
+    "Name": "ITM_T3_PLATE_LEGS",
+    "ItemDefId": "ITM_T3_PLATE_LEGS",
+    "DisplayName": "Hollow Crown Crownforged Greaves",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Legs",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_PLATE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T3_PLATE",
+    "IconId": "UI_ICON_T3_LEGS",
+    "StatPoolId": "POOL_PLATE_LEGS",
+    "BaseArmor": 46.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 55
+  },
+  {
+    "Name": "ITM_T3_PLATE_BOOTS",
+    "ItemDefId": "ITM_T3_PLATE_BOOTS",
+    "DisplayName": "Hollow Crown Crownforged Sabatons",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Boots",
+    "ArmorFamily": "Plate",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_PLATE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T3_PLATE",
+    "IconId": "UI_ICON_T3_BOOTS",
+    "StatPoolId": "POOL_PLATE_BOOTS",
+    "BaseArmor": 30.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 37
+  },
+  {
+    "Name": "ITM_T3_LEATHER_HEAD",
+    "ItemDefId": "ITM_T3_LEATHER_HEAD",
+    "DisplayName": "Hollow Crown Hollowbark Cowl",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Head",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_LEATHER_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T3_LEATHER",
+    "IconId": "UI_ICON_T3_HEAD",
+    "StatPoolId": "POOL_LEATHER_HEAD",
+    "BaseArmor": 23.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 44
+  },
+  {
+    "Name": "ITM_T3_LEATHER_CHEST",
+    "ItemDefId": "ITM_T3_LEATHER_CHEST",
+    "DisplayName": "Hollow Crown Hollowbark Jerkin",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Chest",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_LEATHER_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T3_LEATHER",
+    "IconId": "UI_ICON_T3_CHEST",
+    "StatPoolId": "POOL_LEATHER_CHEST",
+    "BaseArmor": 32.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 55
+  },
+  {
+    "Name": "ITM_T3_LEATHER_LEGS",
+    "ItemDefId": "ITM_T3_LEATHER_LEGS",
+    "DisplayName": "Hollow Crown Hollowbark Leggings",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Legs",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_LEATHER_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T3_LEATHER",
+    "IconId": "UI_ICON_T3_LEGS",
+    "StatPoolId": "POOL_LEATHER_LEGS",
+    "BaseArmor": 27.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 50
+  },
+  {
+    "Name": "ITM_T3_LEATHER_BOOTS",
+    "ItemDefId": "ITM_T3_LEATHER_BOOTS",
+    "DisplayName": "Hollow Crown Hollowbark Boots",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Boots",
+    "ArmorFamily": "Leather",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_LEATHER_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T3_LEATHER",
+    "IconId": "UI_ICON_T3_BOOTS",
+    "StatPoolId": "POOL_LEATHER_BOOTS",
+    "BaseArmor": 18.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 33
+  },
+  {
+    "Name": "ITM_T3_ROBE_HEAD",
+    "ItemDefId": "ITM_T3_ROBE_HEAD",
+    "DisplayName": "Hollow Crown Cindercrown Cowl",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Head",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_ROBE_HEAD",
+    "MaterialInstanceId": "MAT_GEAR_T3_ROBE",
+    "IconId": "UI_ICON_T3_HEAD",
+    "StatPoolId": "POOL_ROBE_HEAD",
+    "BaseArmor": 11.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 40
+  },
+  {
+    "Name": "ITM_T3_ROBE_CHEST",
+    "ItemDefId": "ITM_T3_ROBE_CHEST",
+    "DisplayName": "Hollow Crown Cindercrown Vestment",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Chest",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_ROBE_CHEST",
+    "MaterialInstanceId": "MAT_GEAR_T3_ROBE",
+    "IconId": "UI_ICON_T3_CHEST",
+    "StatPoolId": "POOL_ROBE_CHEST",
+    "BaseArmor": 16.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 50
+  },
+  {
+    "Name": "ITM_T3_ROBE_LEGS",
+    "ItemDefId": "ITM_T3_ROBE_LEGS",
+    "DisplayName": "Hollow Crown Cindercrown Leggings",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Legs",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_ROBE_LEGS",
+    "MaterialInstanceId": "MAT_GEAR_T3_ROBE",
+    "IconId": "UI_ICON_T3_LEGS",
+    "StatPoolId": "POOL_ROBE_LEGS",
+    "BaseArmor": 14.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 45
+  },
+  {
+    "Name": "ITM_T3_ROBE_BOOTS",
+    "ItemDefId": "ITM_T3_ROBE_BOOTS",
+    "DisplayName": "Hollow Crown Cindercrown Slippers",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "Boots",
+    "ArmorFamily": "Robe",
+    "AllowedClasses": [
+      "CLS_MAGE",
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "GEAR_ROBE_BOOTS",
+    "MaterialInstanceId": "MAT_GEAR_T3_ROBE",
+    "IconId": "UI_ICON_T3_BOOTS",
+    "StatPoolId": "POOL_ROBE_BOOTS",
+    "BaseArmor": 9.0,
+    "BaseWeaponDamage": 0.0,
+    "SellValue": 30
+  },
+  {
+    "Name": "ITM_T3_WEAPON_WARRIOR",
+    "ItemDefId": "ITM_T3_WEAPON_WARRIOR",
+    "DisplayName": "Hollow Crown Emberbrand and Barrowshield",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_WARRIOR"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "WPN_SWORDSHIELD",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T3_WEAPON",
+    "StatPoolId": "POOL_WEAPON_WARRIOR",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 40.0,
+    "SellValue": 72
+  },
+  {
+    "Name": "ITM_T3_WEAPON_MAGE",
+    "ItemDefId": "ITM_T3_WEAPON_MAGE",
+    "DisplayName": "Hollow Crown Cinderstaff",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_MAGE"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "WPN_STAFF",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T3_WEAPON",
+    "StatPoolId": "POOL_WEAPON_MAGE",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 40.0,
+    "SellValue": 72
+  },
+  {
+    "Name": "ITM_T3_WEAPON_CLERIC",
+    "ItemDefId": "ITM_T3_WEAPON_CLERIC",
+    "DisplayName": "Hollow Crown Sunward Mace and Grimoire",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_CLERIC"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "WPN_MACETOME",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T3_WEAPON",
+    "StatPoolId": "POOL_WEAPON_CLERIC",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 40.0,
+    "SellValue": 72
+  },
+  {
+    "Name": "ITM_T3_WEAPON_RANGER",
+    "ItemDefId": "ITM_T3_WEAPON_RANGER",
+    "DisplayName": "Hollow Crown Ashen Longbow and Fangs",
+    "SetTier": "T3_HollowCrown",
+    "Slot": "MainHand",
+    "ArmorFamily": "None",
+    "AllowedClasses": [
+      "CLS_RANGER"
+    ],
+    "ItemLevelMin": 14,
+    "ItemLevelMax": 16,
+    "MeshId": "WPN_BOWDAGGERS",
+    "MaterialInstanceId": "",
+    "IconId": "UI_ICON_T3_WEAPON",
+    "StatPoolId": "POOL_WEAPON_RANGER",
+    "BaseArmor": 0.0,
+    "BaseWeaponDamage": 40.0,
+    "SellValue": 72
+  }
+]
