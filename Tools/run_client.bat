@@ -2,7 +2,8 @@
 rem Game client that connects straight to a server with name and class, so tests need no login UI.
 rem Usage: run_client.bat [Name=Ash] [Class=CLS_WARRIOR] [Server=127.0.0.1:7777] [WinX=0] [WinY=40]
 rem Example: run_client.bat Bryn CLS_CLERIC 127.0.0.1:7777 1290 40
-rem The name and class travel on the URL (?Name=?Class=?Account=) and also as -TVName= -TVClass=.
+rem The name and class travel on the URL (?Character=?Class=?Account=; the engine replaces ?Name= with the online
+rem subsystem nickname) and also as -TVName= -TVClass=.
 setlocal
 if "%UE_ROOT%"=="" set "UE_ROOT=C:\Program Files\Epic Games\UE_5.8"
 set "EDITOR=%UE_ROOT%\Engine\Binaries\Win64\UnrealEditor.exe"
@@ -27,5 +28,5 @@ if not exist "%EDITOR%" (
 )
 
 echo [run_client] %TVNAME% (%TVCLASS%) connecting to %TVSERVER% (log: Saved\Logs\TV_Client_%TVNAME%.log)
-"%EDITOR%" "%PROJECT%" "%TVSERVER%?Name=%TVNAME%?Class=%TVCLASS%?Account=%TVNAME%" -game -windowed -ResX=1280 -ResY=720 -WinX=%WINX% -WinY=%WINY% -log -LOG=TV_Client_%TVNAME%.log -TVName=%TVNAME% -TVClass=%TVCLASS%
+"%EDITOR%" "%PROJECT%" "%TVSERVER%?Name=%TVNAME%?Character=%TVNAME%?Class=%TVCLASS%?Account=%TVNAME%" -game -windowed -ResX=1280 -ResY=720 -WinX=%WINX% -WinY=%WINY% -log -LOG=TV_Client_%TVNAME%.log -TVName=%TVNAME% -TVClass=%TVCLASS%
 endlocal

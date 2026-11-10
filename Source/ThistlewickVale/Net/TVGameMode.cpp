@@ -49,7 +49,14 @@ FString ATVGameMode::InitNewPlayer(APlayerController* NewPlayerController, const
 
 	if (ATVPlayerController* PC = Cast<ATVPlayerController>(NewPlayerController))
 	{
-		const FString Name = UGameplayStatics::ParseOption(Options, TEXT("Name"));
+		// ?Character= carries the character name. ?Name= is only a fallback: the client's UPendingNetGame replaces it with the
+		// online subsystem nickname (5.8 PendingNetGame.cpp, LocalPlayer->GetNickname(); with OSS Null that is the computer
+		// name plus a random suffix), so it never arrives as typed.
+		FString Name = UGameplayStatics::ParseOption(Options, TEXT("Character"));
+		if (Name.IsEmpty())
+		{
+			Name = UGameplayStatics::ParseOption(Options, TEXT("Name"));
+		}
 		const FString ClassString = UGameplayStatics::ParseOption(Options, TEXT("Class"));
 		FString Account = UGameplayStatics::ParseOption(Options, TEXT("Account"));
 		if (Account.IsEmpty())

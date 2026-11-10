@@ -210,7 +210,8 @@ void ATVPlayerController::ConnectToServer(const FString& Address, const FString&
 {
 	const FString SafeName = ATVGameMode::SanitizeName(CharacterName);
 	const FString SafeAccount = Account.IsEmpty() ? SafeName : ATVGameMode::SanitizeName(Account);
-	const FString Url = FString::Printf(TEXT("%s?Name=%s?Class=%s?Account=%s"), *Address, *SafeName, *ClassId.ToString(), *SafeAccount);
+	// ?Character= is what the server reads; the engine overwrites ?Name= with the online subsystem nickname.
+	const FString Url = FString::Printf(TEXT("%s?Name=%s?Character=%s?Class=%s?Account=%s"), *Address, *SafeName, *SafeName, *ClassId.ToString(), *SafeAccount);
 	UE_LOG(LogTV, Log, TEXT("%s Connecting: %s"), TV_NET_LOG_PREFIX, *Url);
 	ClientTravel(Url, TRAVEL_Absolute);
 }
