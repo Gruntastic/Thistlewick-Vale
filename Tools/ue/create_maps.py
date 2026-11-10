@@ -7,6 +7,11 @@ Creates under /Game/MMO/Maps:
   L_Barrow      40 m test floor, TargetPoint tagged "TV_DungeonEntrance", exit portal, point lights, nav bounds.
                 No directional/sky light: it is streamed into the overworld as a level instance.
 
+Smoke-test content (Tests/Net/README.md), until the Environment Artist places the real thing:
+  L_Thistlewick NPC_ELDER_WREN 7 m from spawn (quest Q01), six NODE_GLOWMOSS nodes 10 m apart west of spawn, and a
+                MOB_MOSSBACK_SCRAPPER spawn point (3 mobs) 57 m south-west, beyond aggro range of the bind stone.
+  L_Barrow      MOB_HOLLOWED_FOOTMAN_DGN and MOB_BARROW_WISP_DGN spawn points (2 each) 29 m from the entrance.
+
 Existing maps are left alone unless --force is given (then they are deleted and rebuilt).
 
 Run (editor Python, after the C++ module is built so TVDungeonPortal / TVEntryGameMode exist):
@@ -70,7 +75,17 @@ def new_map(name):
         if not FORCE:
             log("%s exists, skipping (use --force to rebuild)" % path)
             return False
-        unreal.EditorAssetLibrary.delete_asset(path)
+        # Rebuild in place: deleting a map package from the pythonscript commandlet leaves the .umap on disk (5.8),
+        # after which new_level refuses the path. Clearing the actors also keeps references to the map valid.
+        if not level_editor.load_level(path):
+            unreal.log_error("[create_maps] could not load " + path)
+            return False
+        # Keep World Settings and the builder brush (exact class Brush; volumes are Brush subclasses and go).
+        doomed = [a for a in actors.get_all_level_actors()
+                  if not isinstance(a, unreal.WorldSettings) and a.get_class() != unreal.Brush.static_class()]
+        actors.destroy_actors(doomed)
+        log("cleared %d actors from %s" % (len(doomed), path))
+        return True
     if not level_editor.new_level(path):
         unreal.log_error("[create_maps] could not create " + path)
         return False
@@ -80,6 +95,38 @@ def new_map(name):
 
 def save():
     level_editor.save_current_level()
+
+
+# Smoke-test layout, shared with Tests/Net/smoke/*.txt (keep the coordinates in sync).
+NPC_WREN_LOCATION = (500, 500, 0)
+GLOWMOSS_LOCATIONS = [(-1000 - 1000 * i, 1500, 0) for i in range(6)]
+SCRAPPER_SPAWN_LOCATION = (-4000, -4000, 100)
+
+
+def add_spawn_point(mob_id, count, location, label):
+    cls = load_cpp_class("TVSpawnPoint")
+    if not cls:
+        return None
+    point = spawn(cls, location, label=label)
+    point.set_editor_property("mob_id", unreal.Name(mob_id))
+    point.set_editor_property("count", count)
+    point.set_editor_property("respawn_time", 30.0)
+    return point
+
+
+def add_zone_test_content():
+    npc_class = load_cpp_class("TVNpc")
+    if npc_class:
+        npc = spawn(npc_class, NPC_WREN_LOCATION, (0, 0, -135), label="NPC_ElderWren")
+        npc.set_editor_property("npc_id", unreal.Name("NPC_ELDER_WREN"))
+    node_class = load_cpp_class("TVQuestNode")
+    if node_class:
+        for index, location in enumerate(GLOWMOSS_LOCATIONS):
+            node = spawn(node_class, location, label="Glowmoss_%d" % index)
+            node.set_editor_property("node_id", unreal.Name("NODE_GLOWMOSS"))
+            node.set_editor_property("kind", unreal.TVQuestNodeKind.COLLECT)
+            node.set_editor_property("mesh_id", unreal.Name("ENV_GLOWMOSS_CLUMP"))
+    add_spawn_point("MOB_MOSSBACK_SCRAPPER", 3, SCRAPPER_SPAWN_LOCATION, "Spawn_Scrappers")
 
 
 def build_entry():
@@ -112,6 +159,7 @@ def build_thistlewick():
     spawn(unreal.VolumetricCloud, (0, 0, 0), label="Clouds")
 
     add_nav_bounds(1000.0, 100.0, "NavBounds_Zone")
+    add_zone_test_content()
 
     portal_class = load_cpp_class("TVDungeonPortal")
     if portal_class:
@@ -142,6 +190,8 @@ def build_barrow():
         light.light_component.set_editor_property("light_color", unreal.Color(r=255, g=170, b=90, a=255))
 
     add_nav_bounds(40.0, 20.0, "NavBounds_Barrow")
+    add_spawn_point("MOB_HOLLOWED_FOOTMAN_DGN", 2, (-800, 1400, 100), "Spawn_Footmen")
+    add_spawn_point("MOB_BARROW_WISP_DGN", 2, (800, 1400, 100), "Spawn_Wisps")
     save()
 
 
