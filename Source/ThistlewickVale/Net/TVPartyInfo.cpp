@@ -33,8 +33,8 @@ void ATVPartyInfo::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
 bool ATVPartyInfo::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewTarget, const FVector& SrcLocation) const
 {
 	// Legacy replication passes the connection's PlayerController as RealViewer.
-	// VERIFY-5.8: Iris ignores IsNetRelevantFor. Config/DefaultEngine.ini forces net.Iris.UseIrisReplication=0 (also the
-	// 5.8.3 default in IrisConfig.cpp). If Iris is enabled later, replace this with a per-connection filter
+	// Iris ignores IsNetRelevantFor. Config/DefaultEngine.ini forces net.Iris.UseIrisReplication=0, which is also the
+	// default in the installed 5.8 IrisConfig.cpp (checked). If Iris is enabled later, replace this with a per-connection filter
 	// (UReplicationSystem::SetConnectionFilter / AddToConnectionFilter) keyed on the members' connections.
 	const APlayerController* ViewerPC = Cast<APlayerController>(RealViewer);
 	if (!ViewerPC)

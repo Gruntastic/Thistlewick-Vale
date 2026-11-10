@@ -43,8 +43,8 @@ namespace
 
 UTVGameplayAbility::UTVGameplayAbility()
 {
-	// VERIFY-5.8: GameplayAbility.h could not be staged; direct member writes as in earlier 5.x (the ASC reads them through
-	// GetInstancingPolicy()/GetNetExecutionPolicy(), which exist in 5.8).
+	// InstancingPolicy and NetExecutionPolicy are protected UPROPERTYs with no setters in 5.8 Abilities/GameplayAbility.h
+	// (checked); the ASC reads them through GetInstancingPolicy()/GetNetExecutionPolicy().
 	InstancingPolicy = EGameplayAbilityInstancingPolicy::InstancedPerActor;
 	NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::LocalPredicted;
 }
@@ -171,7 +171,7 @@ bool UTVGameplayAbility::CheckActivation(const UTVAbilitySystemComponent* ASC, c
 	return true;
 }
 
-// VERIFY-5.8: override signature reconstructed from AbilitySystemComponent_Abilities.cpp call sites.
+// Override signature checked against 5.8 Abilities/GameplayAbility.h.
 bool UTVGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 	const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const
 {
@@ -451,7 +451,7 @@ void UTVGameplayAbility::ApplyCooldownEffect(float Duration, const FGameplayTag&
 	SpecHandle.Data->DynamicGrantedTags.AddTag(CooldownTag);
 	if (bInActivationScope)
 	{
-		// VERIFY-5.8: UGameplayAbility::ApplyGameplayEffectSpecToOwner (handles the activation prediction key).
+		// UGameplayAbility::ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, SpecHandle) const, checked in 5.8 (uses the activation prediction key).
 		ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
 	}
 	else if (IsAuthority())
@@ -468,7 +468,7 @@ void UTVGameplayAbility::FinishAbility(bool bCancelled)
 	}
 	if (IsAuthority())
 	{
-		// VERIFY-5.8: EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled).
+		// EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled), checked in 5.8 Abilities/GameplayAbility.h.
 		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, bCancelled);
 	}
 	else if (bCancelled)

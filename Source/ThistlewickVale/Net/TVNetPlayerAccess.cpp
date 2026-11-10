@@ -80,7 +80,7 @@ namespace TVNet
 		return MaxValue > 0.f ? FMath::Clamp(ASC->GetNumericAttribute(Current) / MaxValue, 0.f, 1.f) : 0.f;
 	}
 
-	// VERIFY-5.8: assumes UTVAttributeSet_Vitals uses the standard ATTRIBUTE_ACCESSORS macro (static GetHealthAttribute() etc.).
+	// UTVAttributeSet_Vitals declares its attributes with ATTRIBUTE_ACCESSORS_BASIC (Combat/TVAttributeSets.h), so the static Get<Name>Attribute() accessors exist.
 	float GetHealthPercent(const ATVPlayerState* PS)
 	{
 		return GetRatio(PS, UTVAttributeSet_Vitals::GetHealthAttribute(), UTVAttributeSet_Vitals::GetMaxHealthAttribute());

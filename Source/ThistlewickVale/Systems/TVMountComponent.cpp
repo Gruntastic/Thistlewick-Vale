@@ -111,7 +111,7 @@ void UTVMountComponent::BindServerEvents()
 	ATVPlayerState* PS = GetTVPlayerState();
 	if (UAbilitySystemComponent* ASC = PS ? PS->GetAbilitySystemComponent() : nullptr)
 	{
-		// VERIFY-5.8: FGenericAbilityDelegate is assumed to be DECLARE_MULTICAST_DELEGATE_OneParam(..., UGameplayAbility*) (declared in Abilities/GameplayAbility.h, not readable from the PC).
+		// FGenericAbilityDelegate is DECLARE_MULTICAST_DELEGATE_OneParam(FGenericAbilityDelegate, UGameplayAbility*) (checked in 5.8 Abilities/GameplayAbilityTypes.h).
 		AbilityActivatedHandle = ASC->AbilityActivatedCallbacks.AddUObject(this, &UTVMountComponent::HandleAbilityActivated);
 		// Verified in 5.8 AbilitySystemComponent.h: FAbilityFailedDelegate(const UGameplayAbility*, const FGameplayTagContainer&).
 		AbilityFailedHandle = ASC->AbilityFailedCallbacks.AddUObject(this, &UTVMountComponent::HandleAbilityFailed);
@@ -328,7 +328,8 @@ void UTVMountComponent::SpawnMountVisual()
 			if (!AnimClass)
 			{
 				// Manifest points at the ABP asset; the runtime class is the generated "_C" class.
-				// VERIFY-5.8: generated-class path convention for animation blueprints in cooked builds.
+				// Generated classes are named <Asset>_C in the same package ("/Game/X/ABP.ABP_C"). In a cooked build the
+				// UAnimBlueprint itself is editor-only and does not load, so the manifest should point at the _C class there.
 				const FString ClassPath = AnimAsset->GetPathName() + TEXT("_C");
 				AnimClass = LoadObject<UClass>(nullptr, *ClassPath);
 			}

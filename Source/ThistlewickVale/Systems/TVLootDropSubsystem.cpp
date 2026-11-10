@@ -5,11 +5,12 @@
 #include "Combat/TVCombatEventsSubsystem.h"
 #include "Combat/TVCharacterBase.h"
 #include "Combat/TVPlayerState.h"
+#include "Combat/TVCombatLibrary.h"
+#include "Combat/TVCombatRows.h"
 #include "Core/TVProjectSettings.h"
 #include "ThistlewickVale.h"
 #include "Engine/DataTable.h"
 #include "Engine/World.h"
-#include "UObject/UnrealType.h"
 
 bool UTVLootDropSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 {
@@ -56,22 +57,13 @@ bool UTVLootDropSubsystem::GetMobRewards(FName MobId, FName& OutLootTableId, int
 {
 	OutLootTableId = NAME_None;
 	OutXPReward = 0;
-	const UDataTable* Table = UTVProjectSettings::Get()->LoadTable(TEXT("Mobs"));
-	const UScriptStruct* RowStruct = Table ? Table->GetRowStruct() : nullptr;
-	const uint8* Row = Table && !MobId.IsNone() ? Table->FindRowUnchecked(MobId) : nullptr;
-	if (!RowStruct || !Row)
+	const FTVMobRow* Row = MobId.IsNone() ? nullptr : UTVCombatLibrary::FindMobRow(MobId);
+	if (!Row)
 	{
 		return false;
 	}
-	// INTERFACE-REQUEST: Combat's FTVMobRow header path is not in the ledger, so the two fields are read by name (DATA_SCHEMAS section 5).
-	if (const FNameProperty* LootProp = FindFProperty<FNameProperty>(RowStruct, TEXT("LootTableId")))
-	{
-		OutLootTableId = LootProp->GetPropertyValue_InContainer(Row);
-	}
-	if (const FIntProperty* XPProp = FindFProperty<FIntProperty>(RowStruct, TEXT("XPReward")))
-	{
-		OutXPReward = XPProp->GetPropertyValue_InContainer(Row);
-	}
+	OutLootTableId = Row->LootTableId;
+	OutXPReward = Row->XPReward;
 	return true;
 }
 

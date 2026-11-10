@@ -304,7 +304,7 @@ void ATVCharacterBase::ApplyVisualsFromManifest(FName MeshId, FName AnimBlueprin
 		UObject* MeshAsset = Registry->LoadSync(MeshId);
 		if (USkeletalMesh* SkeletalMesh = Cast<USkeletalMesh>(MeshAsset))
 		{
-			// VERIFY-5.8: SetSkeletalMeshAsset (5.1+ replacement for SetSkeletalMesh); SkeletalMeshComponent.h not staged.
+			// SetSkeletalMeshAsset checked in 5.8 Components/SkeletalMeshComponent.h.
 			GetMesh()->SetSkeletalMeshAsset(SkeletalMesh);
 			GetMesh()->SetVisibility(true);
 			PlaceholderMesh->SetVisibility(false);

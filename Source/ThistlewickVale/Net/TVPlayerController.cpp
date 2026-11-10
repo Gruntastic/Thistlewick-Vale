@@ -18,12 +18,13 @@
 #include "Misc/CommandLine.h"
 #include "Misc/Parse.h"
 #include "TimerManager.h"
-#include "UObject/UnrealType.h"
 #include "Core/TVProjectSettings.h"
 #include "Combat/TVPlayerState.h"
 #include "Combat/TVCharacterBase.h"
 #include "Combat/TVTargetingComponent.h"
 #include "Combat/TVAbilitySystemComponent.h"
+#include "Combat/TVCombatLibrary.h"
+#include "Combat/TVCombatRows.h"
 #include "Systems/TVSaveSubsystem.h"
 #include "Systems/TVMountComponent.h"
 #include "Systems/TVInteractable.h"
@@ -248,7 +249,7 @@ void ATVPlayerController::HandleLoginComplete(const FString& Account, const FStr
 	}
 	if (!Bar.ContainsByPredicate([](const FName& Id) { return !Id.IsNone(); }))
 	{
-		Bar = BuildDefaultActionBar(ClassId);
+		Bar = BuildDefaultActionBar(ClassId, PS ? PS->GetCharacterLevel() : 1);
 	}
 	Bar.SetNum(NumActionSlots);
 	TVNet::SetActionBar(PS, Bar);
@@ -292,48 +293,33 @@ void ATVPlayerController::SaveCharacterNow(const TCHAR* Reason)
 
 // ================================================================================================ action bar
 
-TArray<FName> ATVPlayerController::BuildDefaultActionBar(FName ClassId)
+TArray<FName> ATVPlayerController::BuildDefaultActionBar(FName ClassId, int32 CharacterLevel)
 {
 	TArray<FName> ActionBar;
 	ActionBar.Init(NAME_None, NumActionSlots);
 
-	// DT_Classes.StartingAbilities [{AbilityId, UnlockLevel, DefaultSlot}] read by reflection so Net does not depend on
-	// the Combat row header. Slots are treated as 0-based; out-of-range slots go to the first free slot.
-	// VERIFY-5.8 / contract: DATA_SCHEMAS 2 does not say whether DefaultSlot is 0- or 1-based.
-	const UTVProjectSettings* Settings = UTVProjectSettings::Get();
-	const UDataTable* Classes = Settings ? Settings->LoadTable(TEXT("Classes")) : nullptr;
-	const uint8* Row = Classes ? Classes->FindRowUnchecked(ClassId) : nullptr;
-	const UScriptStruct* RowStruct = Classes ? Classes->GetRowStruct() : nullptr;
-	if (!Row || !RowStruct)
+	// DT_Classes.StartingAbilities (FTVAbilityUnlock in Combat/TVCombatRows.h): DefaultSlot is 0-9 and -1 = no slot.
+	// Abilities above the character's level are left off, as in ATVPlayerState::FillDefaultActionBar; abilities
+	// without a free or valid slot go to the first free slot.
+	const FTVClassRow* Row = UTVCombatLibrary::FindClassRow(ClassId);
+	if (!Row)
 	{
 		return ActionBar;
 	}
-	const FArrayProperty* ArrayProperty = CastField<FArrayProperty>(RowStruct->FindPropertyByName(TEXT("StartingAbilities")));
-	const FStructProperty* Inner = ArrayProperty ? CastField<FStructProperty>(ArrayProperty->Inner) : nullptr;
-	if (!Inner)
-	{
-		return ActionBar;
-	}
-	const FNameProperty* IdProperty = CastField<FNameProperty>(Inner->Struct->FindPropertyByName(TEXT("AbilityId")));
-	const FIntProperty* SlotProperty = CastField<FIntProperty>(Inner->Struct->FindPropertyByName(TEXT("DefaultSlot")));
-	if (!IdProperty)
-	{
-		return ActionBar;
-	}
-	FScriptArrayHelper Helper(ArrayProperty, ArrayProperty->ContainerPtrToValuePtr<void>(Row));
 	TArray<FName> Unplaced;
-	for (int32 Index = 0; Index < Helper.Num(); ++Index)
+	for (const FTVAbilityUnlock& Unlock : Row->StartingAbilities)
 	{
-		const uint8* Element = Helper.GetRawPtr(Index);
-		const FName AbilityId = IdProperty->GetPropertyValue_InContainer(Element);
-		const int32 Slot = SlotProperty ? SlotProperty->GetPropertyValue_InContainer(Element) : INDEX_NONE;
-		if (ActionBar.IsValidIndex(Slot) && ActionBar[Slot].IsNone())
+		if (Unlock.AbilityId.IsNone() || Unlock.UnlockLevel > CharacterLevel)
 		{
-			ActionBar[Slot] = AbilityId;
+			continue;
+		}
+		if (ActionBar.IsValidIndex(Unlock.DefaultSlot) && ActionBar[Unlock.DefaultSlot].IsNone())
+		{
+			ActionBar[Unlock.DefaultSlot] = Unlock.AbilityId;
 		}
 		else
 		{
-			Unplaced.Add(AbilityId);
+			Unplaced.Add(Unlock.AbilityId);
 		}
 	}
 	for (const FName& AbilityId : Unplaced)
@@ -581,7 +567,9 @@ void ATVPlayerController::HandleLook(const FInputActionValue& Value)
 	}
 	const FVector2D Axis = Value.Get<FVector2D>();
 	AddYawInput(Axis.X);
-	// VERIFY-5.8: Mouse2D Y is positive when moving up; negated here for non-inverted look. Flip if it feels inverted.
+	// Mouse2D Y is positive when the mouse moves up. 5.8 still has UInputSettings::bEnableLegacyInputScales on by default,
+	// so AddPitchInput multiplies by InputPitchScale (-2.5, BaseGame.ini): negating here gives a non-inverted look, as in
+	// the third-person template (which negates Y in its mapping context). Checked in 5.8 PlayerController.cpp.
 	AddPitchInput(-Axis.Y);
 }
 

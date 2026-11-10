@@ -512,7 +512,7 @@ void UGA_TV_Cone::ExecuteAbility()
 // Server-only twins
 // =====================================================================================================================
 
-// VERIFY-5.8: NetExecutionPolicy written directly (GameplayAbility.h not staged).
+// NetExecutionPolicy is a protected UPROPERTY of UGameplayAbility (checked in 5.8 Abilities/GameplayAbility.h).
 UGA_TV_DirectDamage_AI::UGA_TV_DirectDamage_AI() { NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::ServerOnly; }
 UGA_TV_Heal_AI::UGA_TV_Heal_AI() { NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::ServerOnly; }
 UGA_TV_ApplyEffect_AI::UGA_TV_ApplyEffect_AI() { NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::ServerOnly; }

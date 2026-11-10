@@ -24,14 +24,12 @@ class THISTLEWICKVALE_API UTVGameplayAbility : public UGameplayAbility
 public:
 	UTVGameplayAbility();
 
-	// VERIFY-5.8: signature taken from ASC call sites (CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, &FailureTags)).
+	// Signatures below checked against 5.8 Abilities/GameplayAbility.h.
 	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 		const FGameplayTagContainer* SourceTags = nullptr, const FGameplayTagContainer* TargetTags = nullptr,
 		FGameplayTagContainer* OptionalRelevantTags = nullptr) const override;
-	// VERIFY-5.8: long-stable signature; the ASC calls CallActivateAbility which forwards here.
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 		const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
-	// VERIFY-5.8: matches Instance->EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled) in the ASC.
 	virtual void EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 		const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility, bool bWasCancelled) override;
 
