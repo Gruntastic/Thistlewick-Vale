@@ -287,6 +287,10 @@ void ATVDungeonManager::LeaveDungeon(ATVPlayerState* Player)
 	}
 	Instance->Inside.RemoveAll([Player](const TWeakObjectPtr<ATVPlayerState>& P) { return !P.IsValid() || P.Get() == Player; });
 	const FString InstanceName = Instance->InstanceName;
+	if (UTVMountComponent* Mount = TVNet::GetMount(Player))
+	{
+		Mount->NotifyLeftDungeon();
+	}
 
 	const FTransform Out = GetWorldReturnTransform();
 	ATVPlayerController* PC = GetTVPC(Player);
@@ -321,13 +325,10 @@ void ATVDungeonManager::TeleportInto(ATVPlayerState* Player, FTVDungeonInstance&
 	{
 		return;
 	}
-	// GDD 11: dismount on entering the dungeon.
+	// GDD 11: dismount on entering the dungeon; Systems blocks mounting until NotifyLeftDungeon.
 	if (UTVMountComponent* Mount = TVNet::GetMount(Player))
 	{
-		if (Mount->IsMounted())
-		{
-			Mount->ServerSetMounted(false);
-		}
+		Mount->NotifyEnteredDungeon();
 	}
 
 	const FTransform& Entrance = Instance.EntranceTransform;
@@ -408,6 +409,10 @@ void ATVDungeonManager::HandleLogout(ATVPlayerState* Player)
 		return;
 	}
 	Instance->Inside.RemoveAll([Player](const TWeakObjectPtr<ATVPlayerState>& P) { return !P.IsValid() || P.Get() == Player; });
+	if (UTVMountComponent* Mount = TVNet::GetMount(Player))
+	{
+		Mount->NotifyLeftDungeon();
+	}
 	if (APawn* Pawn = Player->GetPawn())
 	{
 		const FTransform Out = GetWorldReturnTransform();

@@ -26,6 +26,12 @@ namespace TVNet
 
 	THISTLEWICKVALE_API UTVMountComponent* GetMount(const ATVPlayerState* PS);
 
+	/** ATVPlayerState::ActionBar (10 slots, owned and replicated by Combat). Empty array if PS is null. */
+	THISTLEWICKVALE_API TArray<FName> GetActionBar(const ATVPlayerState* PS);
+
+	/** Server: writes ATVPlayerState::ActionBar. */
+	THISTLEWICKVALE_API void SetActionBar(ATVPlayerState* PS, const TArray<FName>& Bar);
+
 	/** 0..1, 1 if attributes are unavailable. */
 	THISTLEWICKVALE_API float GetHealthPercent(const ATVPlayerState* PS);
 	THISTLEWICKVALE_API float GetResourcePercent(const ATVPlayerState* PS);

@@ -55,6 +55,21 @@ namespace TVNet
 		return PS ? const_cast<ATVPlayerState*>(PS)->GetMount() : nullptr; // getter constness not specified in INTERFACES.md
 	}
 
+	TArray<FName> GetActionBar(const ATVPlayerState* PS)
+	{
+		// Lead: Combat adds `TArray<FName> ActionBar` (10 slots) to ATVPlayerState; assumed public.
+		return PS ? PS->ActionBar : TArray<FName>();
+	}
+
+	void SetActionBar(ATVPlayerState* PS, const TArray<FName>& Bar)
+	{
+		if (PS)
+		{
+			PS->ActionBar = Bar;
+			PS->ForceNetUpdate();
+		}
+	}
+
 	static float GetRatio(const ATVPlayerState* PS, const FGameplayAttribute& Current, const FGameplayAttribute& Max)
 	{
 		const UAbilitySystemComponent* ASC = PS ? const_cast<ATVPlayerState*>(PS)->GetAbilitySystemComponent() : nullptr;
